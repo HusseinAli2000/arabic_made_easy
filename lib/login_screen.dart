@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final VoidCallback showRegisterPage;
+  const LoginScreen({super.key, required this.showRegisterPage});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -142,20 +143,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Not a member? ',
                         style: TextStyle(
                           color: Color.fromARGB(255, 205, 234, 232),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        'Register now',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 7, 82, 75),
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Akaya',
+                      GestureDetector(
+                        onTap: widget.showRegisterPage,
+                        child: const Text(
+                          'Register now',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 7, 82, 75),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Akaya',
+                          ),
                         ),
                       ),
                     ],
