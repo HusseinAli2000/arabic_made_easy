@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95667753840",
+    "project_id": "arabic-made-easy-37d0d",
+    "storage_bucket": "arabic-made-easy-37d0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95667753840:android:157aa4338ba37f9d1d75b5",
+        "android_client_info": {
+          "package_name": "com.example.arabic_made_easy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95667753840-qngq2rqmbktat8m0bm80i7223af0e3sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH5AMoej0Rk5YpYFbGE6vzk4tnu1enhq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95667753840-qngq2rqmbktat8m0bm80i7223af0e3sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
