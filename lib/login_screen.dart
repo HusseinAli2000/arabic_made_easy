@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
               'Arabic Made Easy',
               style: TextStyle(
                 fontFamily: 'Akaya',
-                fontSize: 31,
+                fontSize: 30,
                 color: Colors.teal,
                 fontWeight: FontWeight.bold,
               ),
