@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -36,6 +37,23 @@ class LoginScreenStful extends StatefulWidget {
 }
 
 class _LoginScreenStfulState extends State<LoginScreenStful> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
+    );
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,10 +86,11 @@ class _LoginScreenStfulState extends State<LoginScreenStful> {
                     border: Border.all(color: Colors.white70),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: TextField(
-                      decoration: InputDecoration(
+                      controller: emailController,
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
                       ),
@@ -90,11 +109,12 @@ class _LoginScreenStfulState extends State<LoginScreenStful> {
                     border: Border.all(color: Colors.white70),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: TextField(
+                      controller: passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
                       ),
@@ -107,19 +127,22 @@ class _LoginScreenStfulState extends State<LoginScreenStful> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 205, 234, 232),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: GestureDetector(
+                  onTap: signIn,
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 205, 234, 232),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),

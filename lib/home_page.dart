@@ -103,6 +103,16 @@ class _HomePageStfulState extends State<HomePageStful> {
               ],
             ),
           ),
+          MaterialButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+            color: Colors.teal,
+            child: const Text(
+              'Sign out',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
         ],
       ),
     );
