@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'main_page.dart';
+import 'package:mi_cards/home_page.dart';
 import 'login_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(
-    const MainPage(),
+    const HomePage(),
   );
 }
