@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mi_cards/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mi_cards/main_page.dart';
 

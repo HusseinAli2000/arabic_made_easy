@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'second_page.dart';
 
-class Alphabet extends StatelessWidget {
+class Alphabet extends StatefulWidget {
   const Alphabet({super.key});
 
+  @override
+  State<Alphabet> createState() => _AlphabetState();
+}
+
+class _AlphabetState extends State<Alphabet> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,86 +29,72 @@ class Alphabet extends StatelessWidget {
           backgroundColor: Colors.teal[100],
         ),
         backgroundColor: Colors.teal[300],
-        body: const AlphabetStful(),
-      ),
-    );
-  }
-}
-
-class AlphabetStful extends StatefulWidget {
-  const AlphabetStful({super.key});
-
-  @override
-  State<AlphabetStful> createState() => _AlphabetStfulState();
-}
-
-class _AlphabetStfulState extends State<AlphabetStful> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Column(
           children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PageTwo(),
-                      ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PageTwo(),
+                          ),
+                        );
+                      },
                     );
                   },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.arrow_back,
-                    color: Colors.teal,
-                    size: 24.0,
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 210, 235, 233)),
                   ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Icon(
+                        Icons.arrow_back,
+                        color: Colors.teal,
+                        size: 24.0,
                       ),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                     );
                   },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.home,
-                    color: Colors.teal,
-                    size: 24.0,
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 210, 235, 233)),
                   ),
-                ],
-              ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Icon(
+                        Icons.home,
+                        color: Colors.teal,
+                        size: 24.0,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }

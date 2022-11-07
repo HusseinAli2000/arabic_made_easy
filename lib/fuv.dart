@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'second_page.dart';
 
-class FUV extends StatelessWidget {
+class FUV extends StatefulWidget {
   const FUV({super.key});
 
+  @override
+  State<FUV> createState() => _FUVState();
+}
+
+class _FUVState extends State<FUV> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,86 +29,72 @@ class FUV extends StatelessWidget {
           backgroundColor: Colors.teal[100],
         ),
         backgroundColor: Colors.teal[300],
-        body: const FUVStful(),
-      ),
-    );
-  }
-}
-
-class FUVStful extends StatefulWidget {
-  const FUVStful({super.key});
-
-  @override
-  State<FUVStful> createState() => _FUVStfulState();
-}
-
-class _FUVStfulState extends State<FUVStful> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Column(
           children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PageTwo(),
-                      ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PageTwo(),
+                          ),
+                        );
+                      },
                     );
                   },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.arrow_back,
-                    color: Colors.teal,
-                    size: 24.0,
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 210, 235, 233)),
                   ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Icon(
+                        Icons.arrow_back,
+                        color: Colors.teal,
+                        size: 24.0,
                       ),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                     );
                   },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.home,
-                    color: Colors.teal,
-                    size: 24.0,
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 210, 235, 233)),
                   ),
-                ],
-              ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Icon(
+                        Icons.home,
+                        color: Colors.teal,
+                        size: 24.0,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }
