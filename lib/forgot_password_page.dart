@@ -67,6 +67,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Center(
@@ -120,7 +121,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 150,
+                  height: 130,
                 ),
                 const CircleAvatar(
                   radius: 40.0,
@@ -131,11 +132,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 ),
                 const Text(
                   'Enter your Email below to get a reset Password link',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Color.fromARGB(255, 7, 82, 75),
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Akaya',
-                      fontSize: 18),
+                      fontSize: 20),
                 ),
                 const SizedBox(
                   height: 20,

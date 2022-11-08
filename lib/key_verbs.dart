@@ -13,6 +13,7 @@ class _KeyVerbsState extends State<KeyVerbs> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Center(

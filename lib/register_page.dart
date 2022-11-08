@@ -34,7 +34,9 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Center(
             child: Text(
@@ -61,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     backgroundImage: AssetImage('images/icon.png'),
                   ),
                   const Text(
-                    'Welcome! Register Below',
+                    'Sign Up Below',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35,
@@ -143,27 +145,55 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: GestureDetector(
-                      onTap: signUp,
-                      child: Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.teal,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 205, 234, 232),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  //   child: GestureDetector(
+                  //     onTap: signUp,
+                  //     child: Container(
+                  //       padding: const EdgeInsets.all(20),
+                  //       decoration: BoxDecoration(
+                  //         color: Colors.teal,
+                  //         borderRadius: BorderRadius.circular(12),
+                  //       ),
+                  //       child: const Center(
+                  //         child: Text(
+                  //           'Sign Up',
+                  //           style: TextStyle(
+                  //             color: Color.fromARGB(255, 205, 234, 232),
+                  //             fontWeight: FontWeight.bold,
+                  //             fontSize: 18,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        signUp,
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(255, 210, 235, 233)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Colors.teal,
+                            fontFamily: 'Caveat',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(
@@ -184,7 +214,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       GestureDetector(
                         onTap: widget.showLoginPage,
                         child: const Text(
-                          'Login now',
+                          'Sign In',
                           style: TextStyle(
                             color: Color.fromARGB(255, 7, 82, 75),
                             fontWeight: FontWeight.bold,

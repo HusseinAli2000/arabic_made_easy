@@ -32,7 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Center(
             child: Text(
@@ -48,9 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
           backgroundColor: Colors.teal[100],
         ),
         backgroundColor: Colors.teal[300],
-        body: SafeArea(
-          child: Center(
-            child: SingleChildScrollView(
+        body: Center(
+          child: SingleChildScrollView(
+            child: SafeArea(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -59,7 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     backgroundImage: AssetImage('images/icon.png'),
                   ),
                   const Text(
-                    'Welcome to Arabic Made Easy!',
+                    'Welcome !',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35,
@@ -67,6 +70,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color.fromARGB(255, 205, 234, 232),
                     ),
                   ),
+                  const Text(
+                    'Sign In to acess your Arabic learning',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      fontFamily: 'Caveat',
+                      color: Color.fromARGB(255, 205, 234, 232),
+                    ),
+                  ),
+
                   const SizedBox(
                     height: 15,
                   ),
@@ -147,27 +161,55 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: GestureDetector(
-                      onTap: signIn,
-                      child: Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.teal,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 205, 234, 232),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  //   child: GestureDetector(
+                  //     onTap: signIn,
+                  //     child: Container(
+                  //       padding: const EdgeInsets.all(20),
+                  //       decoration: BoxDecoration(
+                  //         color: Colors.teal,
+                  //         borderRadius: BorderRadius.circular(12),
+                  //       ),
+                  //       child: const Center(
+                  //         child: Text(
+                  //           'Sign In',
+                  //           style: TextStyle(
+                  //             color: Color.fromARGB(255, 205, 234, 232),
+                  //             fontWeight: FontWeight.bold,
+                  //             fontSize: 18,
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        signIn,
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(255, 210, 235, 233)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          'Sign In',
+                          style: TextStyle(
+                            color: Colors.teal,
+                            fontFamily: 'Caveat',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(
@@ -188,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       GestureDetector(
                         onTap: widget.showRegisterPage,
                         child: const Text(
-                          'Register now',
+                          'Sign Up',
                           style: TextStyle(
                             color: Color.fromARGB(255, 7, 82, 75),
                             fontWeight: FontWeight.bold,

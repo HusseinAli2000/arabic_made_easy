@@ -10,9 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Future signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Center(
@@ -39,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(),
               const Text(
-                'Login Sucessful',
+                'Logged in sucessfully',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
                   fontSize: 25.0,
@@ -92,16 +97,30 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              MaterialButton(
+              ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    FirebaseAuth.instance.signOut();
-                  });
+                  FirebaseAuth.instance.signOut();
                 },
-                color: Colors.teal,
-                child: const Text(
-                  'Sign out',
-                  style: TextStyle(color: Colors.white),
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(
+                      Color.fromARGB(255, 210, 235, 233)),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Text(
+                      'Sign Out',
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontFamily: 'Caveat',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25.0,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                  ],
                 ),
               ),
             ],
