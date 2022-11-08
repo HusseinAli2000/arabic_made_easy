@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'forgot_password_page.dart';
+
 class LoginScreen extends StatefulWidget {
   final VoidCallback showRegisterPage;
   const LoginScreen({super.key, required this.showRegisterPage});
@@ -117,6 +119,36 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ForgotPasswordPage(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 7, 82, 75),
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Akaya',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
                       onTap: signIn,
                       child: Container(
@@ -149,6 +181,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           color: Color.fromARGB(255, 205, 234, 232),
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Akaya',
+                          fontSize: 16,
                         ),
                       ),
                       GestureDetector(
@@ -159,6 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Color.fromARGB(255, 7, 82, 75),
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Akaya',
+                            fontSize: 15,
                           ),
                         ),
                       ),

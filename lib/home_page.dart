@@ -94,7 +94,9 @@ class _HomePageState extends State<HomePage> {
               ),
               MaterialButton(
                 onPressed: () {
-                  FirebaseAuth.instance.signOut();
+                  setState(() {
+                    FirebaseAuth.instance.signOut();
+                  });
                 },
                 color: Colors.teal,
                 child: const Text(

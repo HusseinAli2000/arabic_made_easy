@@ -173,10 +173,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        'I am a memeber ! ',
+                        'Are you a member? ',
                         style: TextStyle(
                           color: Color.fromARGB(255, 205, 234, 232),
                           fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          fontFamily: 'Akaya',
                         ),
                       ),
                       GestureDetector(
@@ -187,6 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             color: Color.fromARGB(255, 7, 82, 75),
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Akaya',
+                            fontSize: 15,
                           ),
                         ),
                       ),
