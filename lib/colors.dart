@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'second_page.dart';
 
-class Colors extends StatefulWidget {
-  const Colors({super.key});
+class ColorsPage extends StatefulWidget {
+  const ColorsPage({super.key});
 
   @override
-  State<Colors> createState() => _ColorsState();
+  State<ColorsPage> createState() => _ColorsPageState();
 }
 
-class _ColorsState extends State<Colors> {
+class _ColorsPageState extends State<ColorsPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

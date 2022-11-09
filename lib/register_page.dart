@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'main_page.dart';
+
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
   const RegisterPage({super.key, required this.showLoginPage});
@@ -40,8 +42,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   "Please enter a valid Email and ensure your Password is at least 6 characters long and ensure that Password and Confirm Password are the same and remember passwords are case sensitive",
                   style: TextStyle(
                     color: Color.fromARGB(255, 235, 234, 243),
-                    fontFamily: 'Pacifico',
-                    fontSize: 17,
+                    fontFamily: 'Caveat',
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -58,6 +61,45 @@ class _RegisterPageState extends State<RegisterPage> {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              setState(
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MainPage(),
+                    ),
+                  );
+                },
+              );
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 235, 234, 243),
+            ),
+          ),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MainPage(),
+                    ),
+                  );
+                });
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
+                  Icons.home,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                ),
+              ),
+            ),
+          ],
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -216,29 +258,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    //   child: GestureDetector(
-                    //     onTap: signUp,
-                    //     child: Container(
-                    //       padding: const EdgeInsets.all(20),
-                    //       decoration: BoxDecoration(
-                    //         color: Colors.teal,
-                    //         borderRadius: BorderRadius.circular(12),
-                    //       ),
-                    //       child: const Center(
-                    //         child: Text(
-                    //           'Sign Up',
-                    //           style: TextStyle(
-                    //             color: Color.fromARGB(255, 205, 234, 232),
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 18,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                     ElevatedButton(
                       onPressed: () {
                         setState(
@@ -247,7 +266,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(130, 79, 64, 179),
+                          Color.fromARGB(130, 35, 61, 155),
                         ),
                       ),
                       child: Row(
@@ -278,7 +297,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'Are you a member? ',
+                          'Already a member? ',
                           style: TextStyle(
                             color: Color.fromARGB(100, 235, 234, 243),
                             fontWeight: FontWeight.bold,

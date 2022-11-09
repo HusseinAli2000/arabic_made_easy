@@ -105,7 +105,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -156,7 +156,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -200,7 +200,7 @@ class _PageTwoState extends State<PageTwo> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Numbers(),
+                              builder: (context) => const ColorsPage(),
                             ),
                           );
                         },
@@ -208,7 +208,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -259,7 +259,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -310,7 +310,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -361,7 +361,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(
@@ -412,7 +412,7 @@ class _PageTwoState extends State<PageTwo> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(

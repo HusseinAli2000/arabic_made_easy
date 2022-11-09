@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 79, 64, 179),
+                        Color.fromARGB(130, 35, 61, 155),
                       ),
                     ),
                     child: Row(

@@ -31,8 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
               "Wrong Email or Password, if you have forgotten your Password click on 'Forgot Password?' to reset your Password",
               style: TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Pacifico',
-                fontSize: 17,
+                fontFamily: 'Caveat',
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
@@ -120,7 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: Color.fromARGB(255, 235, 234, 243),
                       ),
                     ),
-
                     const SizedBox(
                       height: 15,
                     ),
@@ -221,29 +221,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    //   child: GestureDetector(
-                    //     onTap: signIn,
-                    //     child: Container(
-                    //       padding: const EdgeInsets.all(20),
-                    //       decoration: BoxDecoration(
-                    //         color: Colors.teal,
-                    //         borderRadius: BorderRadius.circular(12),
-                    //       ),
-                    //       child: const Center(
-                    //         child: Text(
-                    //           'Sign In',
-                    //           style: TextStyle(
-                    //             color: Color.fromARGB(255, 205, 234, 232),
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 18,
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                     ElevatedButton(
                       onPressed: () {
                         setState(
@@ -252,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(130, 79, 64, 179),
+                          Color.fromARGB(130, 35, 61, 155),
                         ),
                       ),
                       child: Row(

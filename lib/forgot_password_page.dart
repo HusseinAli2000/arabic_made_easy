@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'main_page.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -33,8 +32,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Pacifico',
-                fontSize: 17,
+                fontFamily: 'Caveat',
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
               ),
             ),
           );
@@ -51,8 +51,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Pacifico',
-                fontSize: 17,
+                fontFamily: 'Caveat',
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
               ),
             ),
           );
@@ -146,38 +147,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               child: SafeArea(
                 child: Column(
                   children: [
-                    // Row(
-                    //   children: [
-                    //     ElevatedButton(
-                    //       onPressed: () {
-                    //         setState(
-                    //           () {
-                    //             Navigator.push(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                 builder: (context) => const MainPage(),
-                    //               ),
-                    //             );
-                    //           },
-                    //         );
-                    //       },
-                    //       style: const ButtonStyle(
-                    //         backgroundColor: MaterialStatePropertyAll(
-                    //             Color.fromARGB(255, 210, 235, 233)),
-                    //       ),
-                    //       child: Row(
-                    //         mainAxisSize: MainAxisSize.min,
-                    //         children: const [
-                    //           Icon(
-                    //             Icons.arrow_back,
-                    //             color: Colors.teal,
-                    //             size: 24.0,
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                     const CircleAvatar(
                       backgroundColor: Color.fromARGB(0, 95, 123, 215),
                       radius: 40.0,
@@ -227,29 +196,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         ),
                       ),
                     ),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       passwordReset();
-                    //     });
-                    //   },
-                    //   style: const ButtonStyle(
-                    //     backgroundColor: MaterialStatePropertyAll(
-                    //       Color.fromARGB(130, 79, 64, 179),
-                    //     ),
-                    //   ),
-                    //   child: const Text(
-                    //     'Reset Password',
-                    //     style: TextStyle(
-                    //       color: Color.fromARGB(255, 235, 234, 243),
-                    //       fontFamily: 'Caveat',
-                    //       fontWeight: FontWeight.bold,
-                    //       fontSize: 25.0,
-                    //     ),
-                    //   ),
-                    // ),
                     const SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
                     ElevatedButton(
                       onPressed: () {
@@ -259,7 +207,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(130, 79, 64, 179),
+                          Color.fromARGB(130, 35, 61, 155),
                         ),
                       ),
                       child: Row(
