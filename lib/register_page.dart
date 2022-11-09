@@ -25,9 +25,29 @@ class _RegisterPageState extends State<RegisterPage> {
   Future signUp() async {
     if (passwordController.text.trim() ==
         confirmPasswordController.text.trim()) {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      try {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
-          password: passwordController.text.trim());
+          password: passwordController.text.trim(),
+        );
+      } on FirebaseAuthException {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return const AlertDialog(
+                backgroundColor: Color.fromARGB(240, 34, 27, 78),
+                content: Text(
+                  "Please enter a valid Email and ensure your Password is at least 6 characters long and ensure that Password and Confirm Password are the same and remember passwords are case sensitive",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 235, 234, 243),
+                    fontFamily: 'Pacifico',
+                    fontSize: 17,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              );
+            });
+      }
     }
   }
 

@@ -16,10 +16,30 @@ class _LoginScreenState extends State<LoginScreen> {
   final passwordController = TextEditingController();
 
   Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text.trim(),
-      password: passwordController.text.trim(),
-    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+    } on FirebaseAuthException {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            backgroundColor: Color.fromARGB(240, 34, 27, 78),
+            content: Text(
+              "Wrong Email or Password, if you have forgotten your Password click on 'Forgot Password?' to reset your Password",
+              style: TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontFamily: 'Pacifico',
+                fontSize: 17,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          );
+        },
+      );
+    }
   }
 
   @override
