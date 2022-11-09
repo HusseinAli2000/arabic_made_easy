@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'second_page.dart';
 
-class Pronounciation extends StatefulWidget {
-  const Pronounciation({super.key});
+class Animals extends StatefulWidget {
+  const Animals({super.key});
 
   @override
-  State<Pronounciation> createState() => _PronounciationState();
+  State<Animals> createState() => _AnimalsState();
 }
 
-class _PronounciationState extends State<Pronounciation> {
+class _AnimalsState extends State<Animals> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

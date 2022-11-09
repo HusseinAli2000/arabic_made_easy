@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 95, 123, 215),
+                      backgroundColor: Color.fromARGB(0, 95, 123, 215),
                       radius: 40.0,
                       backgroundImage: AssetImage('images/icon4.png'),
                     ),

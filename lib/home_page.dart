@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const CircleAvatar(
-                    backgroundColor: Color.fromARGB(255, 95, 123, 215),
+                    backgroundColor: Color.fromARGB(0, 95, 123, 215),
                     radius: 50.0,
                     backgroundImage: AssetImage('images/icon4.png'),
                   ),

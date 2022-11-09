@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'animals.dart';
 import 'home_page.dart';
 import 'numbers.dart';
 import 'alphabet.dart';
 import 'key_verbs.dart';
 import 'fuv.dart';
 import 'basic_sentences.dart';
-import 'pronounciation.dart';
+import 'colors.dart';
 
 class PageTwo extends StatefulWidget {
   const PageTwo({super.key});
@@ -123,6 +124,14 @@ class _PageTwoState extends State<PageTwo> {
                           ),
                         ),
                         SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/abc.png'),
+                        ),
+                        SizedBox(
                           width: 17,
                           height: 20,
                         ),
@@ -166,6 +175,15 @@ class _PageTwoState extends State<PageTwo> {
                           ),
                         ),
                         SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage:
+                              AssetImage('images/number-blocks.png'),
+                        ),
+                        SizedBox(
                           width: 17,
                           height: 20,
                         ),
@@ -182,7 +200,7 @@ class _PageTwoState extends State<PageTwo> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Pronounciation(),
+                              builder: (context) => const Numbers(),
                             ),
                           );
                         },
@@ -201,12 +219,71 @@ class _PageTwoState extends State<PageTwo> {
                           height: 50,
                         ),
                         Text(
-                          'Pronounciation',
+                          'Colors',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Pacifico',
                             fontSize: 20.0,
                           ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/colors.png'),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Animals(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Animals',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/animals.png'),
                         ),
                         SizedBox(
                           width: 17,
@@ -252,6 +329,14 @@ class _PageTwoState extends State<PageTwo> {
                           ),
                         ),
                         SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/verbs.png'),
+                        ),
+                        SizedBox(
                           width: 17,
                           height: 20,
                         ),
@@ -287,12 +372,20 @@ class _PageTwoState extends State<PageTwo> {
                           height: 50,
                         ),
                         Text(
-                          'Basic Sentences',
+                          'Basic Phrases',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Pacifico',
                             fontSize: 20.0,
                           ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/phrases.png'),
                         ),
                         SizedBox(
                           width: 17,
@@ -330,12 +423,20 @@ class _PageTwoState extends State<PageTwo> {
                           height: 50,
                         ),
                         Text(
-                          'Frequently Used Vocabulary',
+                          'Frequently Used Words',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Pacifico',
                             fontSize: 20.0,
                           ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
+                          radius: 20.0,
+                          backgroundImage: AssetImage('images/words.png'),
                         ),
                         SizedBox(
                           width: 17,
