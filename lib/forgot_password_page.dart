@@ -33,9 +33,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Caveat',
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
+                fontFamily: 'Pacifico',
+                fontSize: 17,
               ),
             ),
           );
@@ -52,9 +51,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Caveat',
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
+                fontFamily: 'Pacifico',
+                fontSize: 17,
               ),
             ),
           );
@@ -82,7 +80,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 },
               );
             },
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 235, 234, 243),
+            ),
           ),
           actions: [
             GestureDetector(
@@ -98,7 +99,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               },
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
-                child: Icon(Icons.home),
+                child: Icon(
+                  Icons.home,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                ),
               ),
             ),
           ],
@@ -187,9 +191,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Color.fromARGB(255, 235, 234, 243),
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Caveat',
-                          fontSize: 22),
+                          fontFamily: 'Pacifico',
+                          fontSize: 17),
                     ),
                     const SizedBox(
                       height: 20,
@@ -207,6 +210,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontFamily: 'Caveat',
+                              fontSize: 20,
                             ),
                             controller: emailController,
                             decoration: const InputDecoration(
@@ -214,6 +219,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               hintText: 'Email',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontFamily: 'Caveat',
+                                fontSize: 20,
                               ),
                             ),
                           ),
@@ -266,9 +273,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             'Reset Password',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Caveat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22.0,
+                              fontFamily: 'Pacifico',
+                              fontSize: 17.0,
                             ),
                           ),
                           SizedBox(

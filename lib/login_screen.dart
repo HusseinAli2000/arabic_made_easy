@@ -86,9 +86,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Welcome !',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35,
-                        fontFamily: 'Caveat',
+                        fontSize: 30,
+                        fontFamily: 'Pacifico',
                         color: Color.fromARGB(255, 235, 234, 243),
                       ),
                     ),
@@ -96,9 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Sign In to acess your Arabic learning',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        fontFamily: 'Caveat',
+                        fontSize: 20,
+                        fontFamily: 'Pacifico',
                         color: Color.fromARGB(255, 235, 234, 243),
                       ),
                     ),
@@ -119,6 +117,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontSize: 20,
+                              fontFamily: 'Caveat',
                             ),
                             controller: emailController,
                             decoration: const InputDecoration(
@@ -126,6 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               hintText: 'Email',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
                             ),
                           ),
@@ -148,6 +150,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontFamily: 'Caveat',
+                              fontSize: 20,
                             ),
                             controller: passwordController,
                             obscureText: true,
@@ -156,6 +160,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               hintText: 'Password',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
                             ),
                           ),
@@ -240,9 +246,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Sign In',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Caveat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25.0,
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
                             ),
                           ),
                           SizedBox(

@@ -21,297 +21,333 @@ class _PageTwoState extends State<PageTwo> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomePage(),
+                  ),
+                );
+              });
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 235, 234, 243),
+            ),
+          ),
+          actions: [
+            GestureDetector(
+              onTap: () {},
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
+                  Icons.settings,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                ),
+              ),
+            ),
+          ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 32, 6, 96),
+                  Color.fromARGB(255, 57, 119, 194),
+                ],
+              ),
+            ),
+          ),
           title: const Center(
             child: Text(
               'Arabic Made Easy',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
-                color: Colors.teal,
+                color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          backgroundColor: Colors.teal[100],
         ),
-        backgroundColor: Colors.teal[300],
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(
-                      () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(255, 210, 235, 233)),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(
-                        Icons.arrow_back,
-                        color: Colors.teal,
-                        size: 24.0,
-                      ),
-                    ],
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(
-                      () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(255, 210, 235, 233)),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(
-                        Icons.home,
-                        color: Colors.teal,
-                        size: 24.0,
-                      ),
-                    ],
-                  ),
-                ),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 125, 173, 232),
+                Color.fromARGB(255, 20, 0, 70),
               ],
             ),
-            const SizedBox(
-              height: 125.0,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Alphabet(),
+          ),
+          child: Center(
+            child: SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Alphabet(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
                       ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Alphabet',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Alphabet',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    width: 5,
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Numbers(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Numbers',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Pronounciation(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Pronounciation',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const KeyVerbs(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Key Verbs',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const BasicSentences(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Basic Sentences',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const FUV(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 79, 64, 179),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Frequently Used Vocabulary',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Numbers(),
-                      ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Numbers',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Pronounciation(),
-                      ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Pronounciation',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const KeyVerbs(),
-                      ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Key verbs',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BasicSentences(),
-                      ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Basic sentences',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const FUV(),
-                      ),
-                    );
-                  },
-                );
-              },
-              style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 210, 235, 233)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text(
-                    'Frequently used vocabulary',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      fontFamily: 'Caveat',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

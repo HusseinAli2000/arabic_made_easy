@@ -61,9 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
           ),
-          backgroundColor: Colors.teal[100],
         ),
-        backgroundColor: Colors.teal[300],
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -87,11 +85,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       backgroundImage: AssetImage('images/icon4.png'),
                     ),
                     const Text(
-                      'Sign Up Below',
+                      'Sign Up Below:',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35,
-                        fontFamily: 'Caveat',
+                        fontSize: 25,
+                        fontFamily: 'Pacifico',
                         color: Color.fromARGB(255, 235, 234, 243),
                       ),
                     ),
@@ -111,6 +108,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontSize: 20,
+                              fontFamily: 'Caveat',
                             ),
                             controller: emailController,
                             decoration: const InputDecoration(
@@ -118,6 +117,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               hintText: 'Email',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
                             ),
                           ),
@@ -140,6 +141,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontSize: 20,
+                              fontFamily: 'Caveat',
                             ),
                             controller: passwordController,
                             obscureText: true,
@@ -148,6 +151,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               hintText: 'Password',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
                             ),
                           ),
@@ -170,6 +175,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           child: TextField(
                             style: const TextStyle(
                               color: Color.fromARGB(200, 20, 0, 75),
+                              fontSize: 20,
+                              fontFamily: 'Caveat',
                             ),
                             controller: confirmPasswordController,
                             obscureText: true,
@@ -178,6 +185,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               hintText: 'Confirm Password',
                               hintStyle: TextStyle(
                                 color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
                             ),
                           ),
@@ -232,9 +241,8 @@ class _RegisterPageState extends State<RegisterPage> {
                             'Sign Up',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Caveat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25.0,
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
                             ),
                           ),
                           SizedBox(

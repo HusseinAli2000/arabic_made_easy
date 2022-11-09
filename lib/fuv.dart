@@ -16,84 +16,87 @@ class _FUVState extends State<FUV> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PageTwo(),
+                  ),
+                );
+              });
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 235, 234, 243),
+            ),
+          ),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                setState(
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Icon(
+                  Icons.home,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                ),
+              ),
+            ),
+          ],
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 32, 6, 96),
+                  Color.fromARGB(255, 57, 119, 194),
+                ],
+              ),
+            ),
+          ),
           title: const Center(
             child: Text(
               'Arabic Made Easy',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
-                color: Colors.teal,
+                color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          backgroundColor: Colors.teal[100],
         ),
-        backgroundColor: Colors.teal[300],
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(
-                      () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageTwo(),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(255, 210, 235, 233)),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(
-                        Icons.arrow_back,
-                        color: Colors.teal,
-                        size: 24.0,
-                      ),
-                    ],
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(
-                      () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(255, 210, 235, 233)),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(
-                        Icons.home,
-                        color: Colors.teal,
-                        size: 24.0,
-                      ),
-                    ],
-                  ),
-                ),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 125, 173, 232),
+                Color.fromARGB(255, 20, 0, 70),
               ],
             ),
-          ],
+          ),
+          child: Center(
+            child: SafeArea(
+              child: Column(
+                children: const [],
+              ),
+            ),
+          ),
         ),
       ),
     );
