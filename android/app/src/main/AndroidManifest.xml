@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.arabic_made_easy">
    <application
-        android:label="arabic_made_easy"
+        android:label="Arabic Made Easy"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
