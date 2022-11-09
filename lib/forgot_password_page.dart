@@ -27,7 +27,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         context: context,
         builder: (context) {
           return const AlertDialog(
-            backgroundColor: Color.fromARGB(230, 34, 27, 78),
+            backgroundColor: Color.fromARGB(240, 34, 27, 78),
             content: Text(
               'Password reset link has been sent ! Check your Email',
               textAlign: TextAlign.center,
@@ -45,7 +45,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: const Color.fromARGB(230, 34, 27, 78),
+            backgroundColor: const Color.fromARGB(240, 34, 27, 78),
             content: Text(
               e.message.toString(),
               textAlign: TextAlign.center,
