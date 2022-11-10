@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mi_cards/alphabet_page.dart';
 import 'animals.dart';
 import 'home_page.dart';
 import 'numbers.dart';
-import 'alphabet.dart';
 import 'key_verbs.dart';
 import 'fuv.dart';
 import 'basic_sentences.dart';
@@ -64,7 +64,7 @@ class _PageTwoState extends State<PageTwo> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Classes',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -97,7 +97,7 @@ class _PageTwoState extends State<PageTwo> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Alphabet(),
+                              builder: (context) => const AlphabetPage(),
                             ),
                           );
                         },
@@ -110,12 +110,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Alphabet',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -123,16 +123,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/abc.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/abc.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -161,12 +161,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Numbers',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -174,17 +174,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/number-blocks.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage:
-                              AssetImage('images/number-blocks.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -213,12 +212,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Colors',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -226,16 +225,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/colors.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/colors.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -264,12 +263,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Animals',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -277,16 +276,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/animals.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/animals.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -315,12 +314,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Key Verbs',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -328,16 +327,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/verbs.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/verbs.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -366,12 +365,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Basic Phrases',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -379,16 +378,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/phrases.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/phrases.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],
@@ -417,12 +416,12 @@ class _PageTwoState extends State<PageTwo> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
+                      children: [
+                        const SizedBox(
+                          width: 10,
                           height: 50,
                         ),
-                        Text(
+                        const Text(
                           'Frequently Used Words',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
@@ -430,16 +429,16 @@ class _PageTwoState extends State<PageTwo> {
                             fontSize: 20.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/words.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
                           width: 10,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-                          radius: 20.0,
-                          backgroundImage: AssetImage('images/words.png'),
-                        ),
-                        SizedBox(
-                          width: 17,
                           height: 20,
                         ),
                       ],

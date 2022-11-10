@@ -98,10 +98,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const CircleAvatar(
-                      backgroundColor: Color.fromARGB(0, 95, 123, 215),
-                      radius: 40.0,
-                      backgroundImage: AssetImage('images/icon4.png'),
+                    Image.asset(
+                      'images/icon4.png',
+                      height: 70,
+                      width: 70,
                     ),
                     const Text(
                       'Welcome !',
