@@ -69,7 +69,7 @@ class _AnimalsState extends State<Animals> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Animals Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,

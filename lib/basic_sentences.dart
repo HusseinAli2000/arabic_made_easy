@@ -69,7 +69,7 @@ class _BasicSentencesState extends State<BasicSentences> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Basic Phrases Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,

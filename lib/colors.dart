@@ -69,7 +69,7 @@ class _ColorsPageState extends State<ColorsPage> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Colors Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'letter_names.dart';
 import 'home_page.dart';
+import 'letter_sounds.dart';
 import 'second_page.dart';
 
 class AlphabetPage extends StatefulWidget {
@@ -141,7 +142,18 @@ class _AlphabetPageState extends State<AlphabetPage> {
                     height: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LetterSounds(),
+                            ),
+                          );
+                        },
+                      );
+                    },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(130, 35, 61, 155),

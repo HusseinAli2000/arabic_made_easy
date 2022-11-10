@@ -32,7 +32,8 @@ flutter:
 
 
   assets:
-    - assets/
+    - assets/letter_names/
+    - assets/letter_sounds/
     - images/
 
 

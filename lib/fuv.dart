@@ -69,10 +69,10 @@ class _FUVState extends State<FUV> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Frequently Used Words Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
-                fontSize: 30,
+                fontSize: 22,
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),

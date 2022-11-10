@@ -69,7 +69,7 @@ class _KeyVerbsState extends State<KeyVerbs> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Key Verbs Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,

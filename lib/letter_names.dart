@@ -138,7 +138,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('note1.wav'),
+                                    AssetSource('letter_names/1.wav'),
                                   );
                                 },
                               )
@@ -187,7 +187,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('2.wav'),
+                                    AssetSource('letter_names/2.wav'),
                                   );
                                 },
                               )
@@ -236,7 +236,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('3.wav'),
+                                    AssetSource('letter_names/3.wav'),
                                   );
                                 },
                               )
@@ -285,7 +285,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('4.wav'),
+                                    AssetSource('letter_names/4.wav'),
                                   );
                                 },
                               )
@@ -334,7 +334,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('5.wav'),
+                                    AssetSource('letter_names/5.wav'),
                                   );
                                 },
                               )
@@ -383,7 +383,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('6.wav'),
+                                    AssetSource('letter_names/6.wav'),
                                   );
                                 },
                               )
@@ -432,7 +432,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('7.wav'),
+                                    AssetSource('letter_names/7.wav'),
                                   );
                                 },
                               )
@@ -481,7 +481,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('8.wav'),
+                                    AssetSource('letter_names/8.wav'),
                                   );
                                 },
                               )
@@ -530,7 +530,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('9.wav'),
+                                    AssetSource('letter_names/9.wav'),
                                   );
                                 },
                               )
@@ -579,7 +579,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('10.wav'),
+                                    AssetSource('letter_names/10.wav'),
                                   );
                                 },
                               )
@@ -628,7 +628,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('11.wav'),
+                                    AssetSource('letter_names/11.wav'),
                                   );
                                 },
                               )
@@ -677,7 +677,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('12.wav'),
+                                    AssetSource('letter_names/12.wav'),
                                   );
                                 },
                               )
@@ -726,7 +726,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('13.wav'),
+                                    AssetSource('letter_names/13.wav'),
                                   );
                                 },
                               )
@@ -775,7 +775,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('14.wav'),
+                                    AssetSource('letter_names/14.wav'),
                                   );
                                 },
                               )
@@ -824,7 +824,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('15.wav'),
+                                    AssetSource('letter_names/15.wav'),
                                   );
                                 },
                               )
@@ -873,7 +873,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('16.wav'),
+                                    AssetSource('letter_names/16.wav'),
                                   );
                                 },
                               )
@@ -907,7 +907,7 @@ class _AlphabetState extends State<Alphabet> {
                                 width: 15,
                               ),
                               const Text(
-                                'Dhaad',
+                                'Dhaa',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
@@ -922,7 +922,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('17.wav'),
+                                    AssetSource('letter_names/17.wav'),
                                   );
                                 },
                               )
@@ -971,7 +971,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('18.wav'),
+                                    AssetSource('letter_names/18.wav'),
                                   );
                                 },
                               )
@@ -1020,7 +1020,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('19.wav'),
+                                    AssetSource('letter_names/19.wav'),
                                   );
                                 },
                               )
@@ -1069,7 +1069,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('20.wav'),
+                                    AssetSource('letter_names/20.wav'),
                                   );
                                 },
                               )
@@ -1118,7 +1118,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('21.wav'),
+                                    AssetSource('letter_names/21.wav'),
                                   );
                                 },
                               )
@@ -1167,7 +1167,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('22.wav'),
+                                    AssetSource('letter_names/22.wav'),
                                   );
                                 },
                               )
@@ -1216,7 +1216,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('23.wav'),
+                                    AssetSource('letter_names/23.wav'),
                                   );
                                 },
                               )
@@ -1265,7 +1265,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('24.wav'),
+                                    AssetSource('letter_names/24.wav'),
                                   );
                                 },
                               )
@@ -1314,7 +1314,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('25.wav'),
+                                    AssetSource('letter_names/25.wav'),
                                   );
                                 },
                               )
@@ -1363,7 +1363,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('27.wav'),
+                                    AssetSource('letter_names/26.wav'),
                                   );
                                 },
                               )
@@ -1412,7 +1412,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('26.wav'),
+                                    AssetSource('letter_names/27.wav'),
                                   );
                                 },
                               )
@@ -1461,7 +1461,7 @@ class _AlphabetState extends State<Alphabet> {
                                 ),
                                 onPressed: () {
                                   AudioPlayer().play(
-                                    AssetSource('28.wav'),
+                                    AssetSource('letter_names/28.wav'),
                                   );
                                 },
                               )

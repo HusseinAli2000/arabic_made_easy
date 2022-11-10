@@ -69,7 +69,7 @@ class _NumbersState extends State<Numbers> {
           ),
           title: const Center(
             child: Text(
-              'Arabic Made Easy',
+              'Numbers Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
