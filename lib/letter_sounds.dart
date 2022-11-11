@@ -113,7 +113,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/aa.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -148,7 +148,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/2.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -183,7 +183,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/3.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -218,7 +218,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/4.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -253,7 +253,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/5.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -288,7 +288,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/6.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -323,7 +323,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/7.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -358,7 +358,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/8.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -393,7 +393,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/9.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -428,7 +428,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/10.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -463,7 +463,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/11.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -498,7 +498,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/12.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -533,7 +533,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/13.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -568,7 +568,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/14.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -603,7 +603,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/15.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -638,7 +638,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/16.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -673,7 +673,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/17.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -708,7 +708,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/18.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -743,7 +743,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/19.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -778,7 +778,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/20.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -813,7 +813,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/21.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -848,7 +848,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/22.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -883,7 +883,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/23.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -918,7 +918,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/24.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -953,7 +953,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/25.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -988,7 +988,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/26.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -1023,7 +1023,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/27.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
@@ -1058,7 +1058,7 @@ class _LetterSoundsState extends State<LetterSounds> {
                             child: Image.asset(
                               'images/28.png',
                               color: const Color.fromARGB(255, 235, 234, 243),
-                              height: 50,
+                              height: 37,
                             ),
                           ),
                           const SizedBox(
