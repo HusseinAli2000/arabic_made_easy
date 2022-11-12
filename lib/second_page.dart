@@ -422,7 +422,7 @@ class _PageTwoState extends State<PageTwo> {
                           height: 50,
                         ),
                         const Text(
-                          'Frequently Used Words',
+                          'Commonly Used Words',
                           style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Pacifico',

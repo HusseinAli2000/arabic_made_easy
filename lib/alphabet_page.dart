@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'alphabet_quiz.dart';
 
 import 'letter_names.dart';
 import 'home_page.dart';
@@ -75,7 +76,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
               'Alphabet Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
-                fontSize: 30,
+                fontSize: 25,
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),
@@ -185,7 +186,18 @@ class _AlphabetPageState extends State<AlphabetPage> {
                     height: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AlphabetQuiz(),
+                            ),
+                          );
+                        },
+                      );
+                    },
                     style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
                         Color.fromARGB(130, 35, 61, 155),

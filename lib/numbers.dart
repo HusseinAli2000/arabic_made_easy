@@ -72,7 +72,7 @@ class _NumbersState extends State<Numbers> {
               'Numbers Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
-                fontSize: 30,
+                fontSize: 25,
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),

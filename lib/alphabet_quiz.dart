@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'alphabet_page.dart';
 import 'home_page.dart';
-import 'second_page.dart';
 
-class FUV extends StatefulWidget {
-  const FUV({super.key});
+class AlphabetQuiz extends StatefulWidget {
+  const AlphabetQuiz({super.key});
 
   @override
-  State<FUV> createState() => _FUVState();
+  State<AlphabetQuiz> createState() => _AlphabetQuizState();
 }
 
-class _FUVState extends State<FUV> {
+class _AlphabetQuizState extends State<AlphabetQuiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +22,7 @@ class _FUVState extends State<FUV> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PageTwo(),
+                    builder: (context) => const AlphabetPage(),
                   ),
                 );
               });
@@ -69,10 +69,10 @@ class _FUVState extends State<FUV> {
           ),
           title: const Center(
             child: Text(
-              'Common Words Class',
+              'Alphabet Quiz',
               style: TextStyle(
                 fontFamily: 'Akaya',
-                fontSize: 25,
+                fontSize: 30,
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontWeight: FontWeight.bold,
               ),

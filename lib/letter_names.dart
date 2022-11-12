@@ -11,6 +11,7 @@ class Alphabet extends StatefulWidget {
 }
 
 class _AlphabetState extends State<Alphabet> {
+  double percent = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -140,6 +141,7 @@ class _AlphabetState extends State<Alphabet> {
                                   AudioPlayer().play(
                                     AssetSource('letter_names/1.wav'),
                                   );
+                                  percent = percent + 0.01;
                                 },
                               )
                             ],
