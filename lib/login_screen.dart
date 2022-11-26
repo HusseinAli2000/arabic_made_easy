@@ -1,3 +1,4 @@
+import 'package:arabic_made_easy/second_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -281,7 +282,42 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Or ',
+                          style: TextStyle(
+                            color: Color.fromARGB(100, 235, 234, 243),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Akaya',
+                            fontSize: 16,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PageTwo(),
+                                ),
+                              );
+                            });
+                          },
+                          child: const Text(
+                            'Continue as a Guest',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Akaya',
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

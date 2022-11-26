@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mi_cards/alphabet_page.dart';
+import 'alphabet_page.dart';
 import 'animals.dart';
 import 'home_page.dart';
+import 'main_page.dart';
 import 'numbers.dart';
 import 'key_verbs.dart';
 import 'fuv.dart';
@@ -24,17 +26,18 @@ class _PageTwoState extends State<PageTwo> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
+              FirebaseAuth.instance.signOut();
               setState(() {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomePage(),
+                    builder: (context) => const MainPage(),
                   ),
                 );
               });
             },
             icon: const Icon(
-              Icons.arrow_back,
+              Icons.logout,
               color: Color.fromARGB(255, 235, 234, 243),
             ),
           ),

@@ -35,22 +35,11 @@ class _LetterSoundsState extends State<LetterSounds> {
           ),
           actions: [
             GestureDetector(
-              onTap: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                );
-              },
+              onTap: () {},
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Icon(
-                  Icons.home,
+                  Icons.settings,
                   color: Color.fromARGB(255, 235, 234, 243),
                 ),
               ),

@@ -1,4 +1,4 @@
-name: mi_cards
+name: arabic_made_easy
 description: A new Flutter project.
 
 
@@ -19,6 +19,13 @@ dependencies:
   audioplayers: ^1.1.1
   percent_indicator: ^4.2.2
   animations: ^2.0.7
+  dio: ^4.0.6
+  enum_to_string: ^2.0.1
+  equatable: ^2.0.5
+  flutter_hooks: ^0.18.5+1
+  hooks_riverpod: ^2.1.1
+  html_character_entities: ^1.0.0+1
+  meta: ^1.8.0
 
 dev_dependencies:
   flutter_test:

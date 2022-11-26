@@ -11,7 +11,6 @@ class Alphabet extends StatefulWidget {
 }
 
 class _AlphabetState extends State<Alphabet> {
-  double percent = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,22 +35,11 @@ class _AlphabetState extends State<Alphabet> {
           ),
           actions: [
             GestureDetector(
-              onTap: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                );
-              },
+              onTap: () {},
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Icon(
-                  Icons.home,
+                  Icons.settings,
                   color: Color.fromARGB(255, 235, 234, 243),
                 ),
               ),
@@ -141,9 +129,8 @@ class _AlphabetState extends State<Alphabet> {
                                   AudioPlayer().play(
                                     AssetSource('letter_names/1.wav'),
                                   );
-                                  percent = percent + 0.01;
                                 },
-                              )
+                              ),
                             ],
                           ),
                         ],

@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -91,11 +92,12 @@ class _HomePageState extends State<HomePage> {
                     height: 100,
                     width: 100,
                   ),
-                  const Text(
-                    'Logged In Sucessfully',
-                    style: TextStyle(
+                  Text(
+                    'Signed in as: ${user.email!}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
                       fontFamily: 'Pacifico',
-                      fontSize: 25.0,
+                      fontSize: 18.0,
                       color: Color.fromARGB(255, 235, 234, 243),
                     ),
                   ),

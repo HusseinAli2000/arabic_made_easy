@@ -34,22 +34,11 @@ class _AlphabetQuizState extends State<AlphabetQuiz> {
           ),
           actions: [
             GestureDetector(
-              onTap: () {
-                setState(
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                );
-              },
+              onTap: () {},
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Icon(
-                  Icons.home,
+                  Icons.settings,
                   color: Color.fromARGB(255, 235, 234, 243),
                 ),
               ),
@@ -93,7 +82,126 @@ class _AlphabetQuizState extends State<AlphabetQuiz> {
           child: Center(
             child: SafeArea(
               child: Column(
-                children: const [],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(
+                          width: 13,
+                          height: 50,
+                        ),
+                        const Text(
+                          'Easy',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/quiz.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(
+                          width: 13,
+                          height: 50,
+                        ),
+                        const Text(
+                          'Medium',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/quiz.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(
+                          width: 13,
+                          height: 50,
+                        ),
+                        const Text(
+                          'Hard',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/quiz.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
