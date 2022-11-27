@@ -1,5 +1,5 @@
+import 'package:arabic_made_easy/number_pronunciation.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 import 'second_page.dart';
 
 class Numbers extends StatefulWidget {
@@ -82,7 +82,121 @@ class _NumbersState extends State<Numbers> {
           child: Center(
             child: SafeArea(
               child: Column(
-                children: const [],
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const NumberPronunciation(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Numerals',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        SizedBox(
+                          width: 15,
+                          height: 50,
+                        ),
+                        Text(
+                          'Ordinal Numbers',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(130, 35, 61, 155),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const SizedBox(
+                          width: 13,
+                          height: 50,
+                        ),
+                        const Text(
+                          'Quiz',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Pacifico',
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Image.asset(
+                          'images/quiz.png',
+                          height: 35,
+                          width: 35,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

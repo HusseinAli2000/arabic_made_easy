@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+
 import 'second_page.dart';
 
 class BasicSentences extends StatefulWidget {
