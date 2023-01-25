@@ -84,141 +84,143 @@ class _AlphabetPageState extends State<AlphabetPage> {
           ),
           child: Center(
             child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Alphabet(),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Alphabet(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          SizedBox(
+                            width: 15,
+                            height: 70,
+                          ),
+                          Text(
+                            'Letter Names',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
                             ),
-                          );
-                        },
-                      );
-                    },
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 35, 61, 155),
+                          ),
+                          SizedBox(
+                            width: 17,
+                            height: 20,
+                          ),
+                        ],
                       ),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
-                          height: 50,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LetterSounds(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
                         ),
-                        Text(
-                          'Letter Names',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontFamily: 'Pacifico',
-                            fontSize: 20.0,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          SizedBox(
+                            width: 15,
+                            height: 70,
                           ),
-                        ),
-                        SizedBox(
-                          width: 17,
-                          height: 20,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LetterSounds(),
+                          Text(
+                            'Letter Sounds',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
                             ),
-                          );
-                        },
-                      );
-                    },
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 35, 61, 155),
+                          ),
+                          SizedBox(
+                            width: 17,
+                            height: 20,
+                          ),
+                        ],
                       ),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 15,
-                          height: 50,
-                        ),
-                        Text(
-                          'Letter Sounds',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontFamily: 'Pacifico',
-                            fontSize: 20.0,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 17,
-                          height: 20,
-                        ),
-                      ],
-                    ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const AlphabetQuiz(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 35, 61, 155),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AlphabetQuiz(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const SizedBox(
-                          width: 13,
-                          height: 50,
-                        ),
-                        const Text(
-                          'Quiz',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontFamily: 'Pacifico',
-                            fontSize: 20.0,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(
+                            width: 13,
+                            height: 70,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Image.asset(
-                          'images/quiz.png',
-                          height: 35,
-                          width: 35,
-                        ),
-                        const SizedBox(
-                          width: 10,
-                          height: 20,
-                        ),
-                      ],
+                          const Text(
+                            'Quiz',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Image.asset(
+                            'images/quiz.png',
+                            height: 35,
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                            height: 20,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

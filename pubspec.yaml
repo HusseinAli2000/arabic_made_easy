@@ -23,6 +23,7 @@ dependencies:
   enum_to_string: ^2.0.1
   equatable: ^2.0.5
   flutter_hooks: ^0.18.5+1
+  google_nav_bar: ^5.0.6
   hooks_riverpod: ^2.1.1
   html_character_entities: ^1.0.0+1
   meta: ^1.8.0
