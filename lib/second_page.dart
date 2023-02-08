@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:arabic_made_easy/shapes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -27,14 +28,15 @@ class _PageTwoState extends State<PageTwo> {
       home: Scaffold(
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 32, 6, 96),
-              Color.fromARGB(255, 57, 119, 194),
-            ],
-          )),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 32, 6, 96),
+                Color.fromARGB(255, 57, 119, 194),
+              ],
+            ),
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 9),
             child: GNav(
@@ -338,7 +340,18 @@ class _PageTwoState extends State<PageTwo> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Shapes(),
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                           Color.fromARGB(130, 35, 61, 155),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'alphabet_quiz.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'letter_names.dart';
 import 'letter_sounds.dart';
@@ -18,35 +18,87 @@ class _AlphabetPageState extends State<AlphabetPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PageTwo(),
-                  ),
-                );
-              });
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Color.fromARGB(255, 235, 234, 243),
+        bottomNavigationBar: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 32, 6, 96),
+                Color.fromARGB(255, 57, 119, 194),
+              ],
             ),
           ),
-          actions: [
-            GestureDetector(
-              onTap: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
-                child: Icon(
-                  Icons.settings,
-                  color: Color.fromARGB(255, 235, 234, 243),
-                ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 9),
+            child: GNav(
+              gap: 15,
+              padding: const EdgeInsets.all(6),
+              backgroundColor: Colors.transparent,
+              textStyle: const TextStyle(
+                fontFamily: 'Akaya',
+                fontSize: 18,
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontWeight: FontWeight.bold,
               ),
+              tabBackgroundColor: const Color.fromARGB(161, 6, 12, 58),
+              color: const Color.fromARGB(255, 235, 234, 243),
+              activeColor: const Color.fromARGB(255, 235, 234, 243),
+              onTabChange: (index) {
+                if (index == 0) {
+                  Future.delayed(
+                    const Duration(seconds: 1),
+                    () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PageTwo(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (index == 1) {
+                  Future.delayed(
+                    const Duration(seconds: 1),
+                    () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PageTwo(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (index == 2) {
+                  setState(() {});
+                }
+              },
+              tabs: const [
+                GButton(
+                  icon: Icons.arrow_back,
+                  text: 'Back',
+                ),
+                GButton(
+                  icon: Icons.class_,
+                  text: 'Classes',
+                ),
+                GButton(
+                  icon: Icons.settings,
+                  text: 'Settings',
+                ),
+              ],
             ),
-          ],
+          ),
+        ),
+        appBar: AppBar(
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -108,12 +160,12 @@ class _AlphabetPageState extends State<AlphabetPage> {
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          SizedBox(
-                            width: 15,
+                        children: [
+                          const SizedBox(
+                            width: 10,
                             height: 70,
                           ),
-                          Text(
+                          const Text(
                             'Letter Names',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
@@ -121,8 +173,16 @@ class _AlphabetPageState extends State<AlphabetPage> {
                               fontSize: 20.0,
                             ),
                           ),
-                          SizedBox(
-                            width: 17,
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Image.asset(
+                            'images/abc.png',
+                            height: 35,
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
                             height: 20,
                           ),
                         ],
@@ -151,12 +211,12 @@ class _AlphabetPageState extends State<AlphabetPage> {
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          SizedBox(
-                            width: 15,
+                        children: [
+                          const SizedBox(
+                            width: 10,
                             height: 70,
                           ),
-                          Text(
+                          const Text(
                             'Letter Sounds',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
@@ -164,8 +224,16 @@ class _AlphabetPageState extends State<AlphabetPage> {
                               fontSize: 20.0,
                             ),
                           ),
-                          SizedBox(
-                            width: 17,
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Image.asset(
+                            'images/abc.png',
+                            height: 35,
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
                             height: 20,
                           ),
                         ],
@@ -175,18 +243,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
-                      onPressed: () {
-                        setState(
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const AlphabetQuiz(),
-                              ),
-                            );
-                          },
-                        );
-                      },
+                      onPressed: () {},
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                           Color.fromARGB(130, 35, 61, 155),

@@ -1,18 +1,17 @@
-import 'package:arabic_made_easy/numbers.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:arabic_made_easy/shapes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'second_page.dart';
 
-class NumberPronunciation extends StatefulWidget {
-  const NumberPronunciation({super.key});
+class ShapesClass extends StatefulWidget {
+  const ShapesClass({super.key});
 
   @override
-  State<NumberPronunciation> createState() => _NumberPronunciationState();
+  State<ShapesClass> createState() => _ShapesClassState();
 }
 
-class _NumberPronunciationState extends State<NumberPronunciation> {
+class _ShapesClassState extends State<ShapesClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +53,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Numbers(),
+                              builder: (context) => const Shapes(),
                             ),
                           );
                         },
@@ -113,7 +112,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
           ),
           title: const Center(
             child: Text(
-              'Numerals',
+              '2D Shapes',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -137,7 +136,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
           child: Center(
             child: SafeArea(
               child: GridView.count(
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
                 padding: const EdgeInsets.all(10),
@@ -148,20 +147,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/circle.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Zero (0)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'دائرة',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Circle',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -171,25 +186,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sifr',
+                                'Dayira',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n0.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -203,20 +213,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '١',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/triangle.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'One (1)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'مثلث',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Triangle',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -226,25 +252,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Wahid',
+                                'Muthalath',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n1.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -258,20 +279,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٢',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/square.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Two (2)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'مربع',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Square',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -281,25 +318,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Ithnan',
+                                'Murabaa',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n2.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -313,20 +345,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٣',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/rectangle.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Three (3)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'مستطيل',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Rectangle',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -336,25 +384,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Thalatha',
+                                'Mustatil',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n3.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -368,20 +411,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٤',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/pentagon.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Four (4)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'خماسي الاضلاع',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Pentagon',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -391,25 +450,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Arbaa',
+                                'Khumasiu Aladlaa',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n4.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -423,20 +477,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٥',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/hexagon.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Five (5)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'سداسي الاضلاع',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Sudasiu Aladlaa',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -446,25 +516,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Khamssa',
+                                'Dayira',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 13,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n5.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -478,20 +543,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٦',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/heptagon.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Six (6)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'سباعي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Heptagon',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -501,25 +582,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sita',
+                                'Subaei',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n6.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -533,20 +609,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٧',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/octagon.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Seven (7)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'مثمن',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Octagon',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -556,25 +648,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sabaa',
+                                'Muthaman',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n7.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -588,20 +675,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٨',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/trapezoid.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Eight (8)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'شبه منحرف',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Trapezoid',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -611,25 +714,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Thamanya',
+                                'Shibh Munharif',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 11,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n8.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -643,20 +741,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '٩',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/rhombus.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Nine (9)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'معين',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Rhombus',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -666,25 +780,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Tissaa',
+                                'Mueayan',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n9.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -698,20 +807,36 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       color: const Color.fromARGB(130, 35, 61, 155),
                       child: Column(
                         children: [
-                          const Text(
-                            '١٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/parallelogram.png',
+                              height: 45,
                             ),
                           ),
-                          const Text(
-                            'Ten (10)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'متوازي الاضلاع',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Parallelogram',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -721,25 +846,86 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Ashra',
+                                'Mutawazi Aladlaa',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n10.wav'),
-                                  );
-                                },
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      color: const Color.fromARGB(130, 35, 61, 155),
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.asset(
+                              'images/oval.png',
+                              height: 45,
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'بيضاوي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Oval',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'Baydawi',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 16,
+                                ),
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.volume_up_rounded,
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                ),
+                                onPressed: () {},
                               ),
                             ],
                           ),

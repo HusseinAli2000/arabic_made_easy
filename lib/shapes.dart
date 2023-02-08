@@ -1,17 +1,17 @@
-import 'package:arabic_made_easy/colors_class.dart';
+import 'package:arabic_made_easy/3D_shapes.dart';
+import 'package:arabic_made_easy/second_page.dart';
+import 'package:arabic_made_easy/shapes_class.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'second_page.dart';
-
-class ColorsPage extends StatefulWidget {
-  const ColorsPage({super.key});
+class Shapes extends StatefulWidget {
+  const Shapes({super.key});
 
   @override
-  State<ColorsPage> createState() => _ColorsPageState();
+  State<Shapes> createState() => _ShapesState();
 }
 
-class _ColorsPageState extends State<ColorsPage> {
+class _ShapesState extends State<Shapes> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -112,7 +112,7 @@ class _ColorsPageState extends State<ColorsPage> {
           ),
           title: const Center(
             child: Text(
-              'Colors Class',
+              'Shapes Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
@@ -146,7 +146,7 @@ class _ColorsPageState extends State<ColorsPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const ColorsClass(),
+                                builder: (context) => const ShapesClass(),
                               ),
                             );
                           },
@@ -165,7 +165,7 @@ class _ColorsPageState extends State<ColorsPage> {
                             height: 70,
                           ),
                           const Text(
-                            'Colors',
+                            '2D Shapes',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                               fontFamily: 'Pacifico',
@@ -176,7 +176,58 @@ class _ColorsPageState extends State<ColorsPage> {
                             width: 15,
                           ),
                           Image.asset(
-                            'images/colors.png',
+                            'images/shapes.png',
+                            height: 35,
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ThreeDimensions(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(
+                            width: 10,
+                            height: 70,
+                          ),
+                          const Text(
+                            '3D Shapes',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Image.asset(
+                            'images/3d.png',
                             height: 35,
                             width: 35,
                           ),

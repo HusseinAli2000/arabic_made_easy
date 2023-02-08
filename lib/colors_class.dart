@@ -1,18 +1,19 @@
-import 'package:arabic_made_easy/numbers.dart';
+import 'package:arabic_made_easy/colors.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import 'alphabet_page.dart';
 import 'second_page.dart';
 
-class NumberPronunciation extends StatefulWidget {
-  const NumberPronunciation({super.key});
+class ColorsClass extends StatefulWidget {
+  const ColorsClass({super.key});
 
   @override
-  State<NumberPronunciation> createState() => _NumberPronunciationState();
+  State<ColorsClass> createState() => _ColorsClassState();
 }
 
-class _NumberPronunciationState extends State<NumberPronunciation> {
+class _ColorsClassState extends State<ColorsClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +55,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Numbers(),
+                              builder: (context) => const ColorsPage(),
                             ),
                           );
                         },
@@ -113,7 +114,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
           ),
           title: const Center(
             child: Text(
-              'Numerals',
+              'Colors',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -145,23 +146,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.black,
                       child: Column(
                         children: [
-                          const Text(
-                            '٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أسود',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Zero (0)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Black',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -171,25 +181,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sifr',
+                                'Aswad',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n0.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -200,23 +205,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.white,
                       child: Column(
                         children: [
-                          const Text(
-                            '١',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أبيض',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'One (1)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'White',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -226,25 +240,18 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Wahid',
+                                'Abyad',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
+                                  color: Colors.black,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n1.wav'),
-                                  );
-                                },
+                                icon: const Icon(Icons.volume_up_rounded,
+                                    color: Colors.black),
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -255,23 +262,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.red,
                       child: Column(
                         children: [
-                          const Text(
-                            '٢',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أحمر',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Two (2)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Red',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -281,25 +297,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Ithnan',
+                                'Ahmar',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n2.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -310,23 +321,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.blue,
                       child: Column(
                         children: [
-                          const Text(
-                            '٣',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أزرق',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Three (3)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Blue',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -336,25 +356,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Thalatha',
+                                'Azraq',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n3.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -365,23 +380,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.green,
                       child: Column(
                         children: [
-                          const Text(
-                            '٤',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أخضر',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Four (4)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Green',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -391,25 +415,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Arbaa',
+                                'Akhdar',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n4.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -420,23 +439,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.orange,
                       child: Column(
                         children: [
-                          const Text(
-                            '٥',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'برتقالي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Five (5)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Orange',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -446,25 +474,138 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Khamssa',
+                                'Burtuqali',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 14,
+                                ),
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.volume_up_rounded,
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      color: Colors.pink,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'بمبي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Pink',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'Bambi',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 16,
+                                ),
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.volume_up_rounded,
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      color: Colors.purple,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'بنفسجي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Purple',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              const Text(
+                                'Banafsaji',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
                                   fontSize: 13,
-                                  fontFamily: 'Akaya',
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n5.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -475,23 +616,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.yellow,
                       child: Column(
                         children: [
-                          const Text(
-                            '٦',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'أصفر',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Six (6)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Yellow',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -501,25 +651,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sita',
+                                'Asfar',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
+                                  color: Colors.black,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  color: Colors.black,
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n6.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -530,23 +675,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.brown,
                       child: Column(
                         children: [
-                          const Text(
-                            '٧',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'بني',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Seven (7)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Brown',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -556,25 +710,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Sabaa',
+                                'Bunni',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n7.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -585,23 +734,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.grey,
                       child: Column(
                         children: [
-                          const Text(
-                            '٨',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'رمادي',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Eight (8)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Grey',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -611,25 +769,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Thamanya',
+                                'Ramadi',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 11,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
                                   color: Color.fromARGB(255, 235, 234, 243),
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n8.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
@@ -640,23 +793,32 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
+                      color: Colors.amber,
                       child: Column(
                         children: [
-                          const Text(
-                            '٩',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(2.0),
+                            child: Text(
+                              'عنبر',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          const Text(
-                            'Nine (9)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
+                          const Padding(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              'Amber',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Akaya',
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                           Row(
@@ -666,80 +828,20 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                                 width: 15,
                               ),
                               const Text(
-                                'Tissaa',
+                                'Anbar',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
+                                  color: Colors.black,
                                   fontFamily: 'Akaya',
+                                  fontSize: 16,
                                 ),
                               ),
                               IconButton(
-                                iconSize: 20,
                                 icon: const Icon(
                                   Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  color: Colors.black,
                                 ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n9.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '١٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Ten (10)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Ashra',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n10.wav'),
-                                  );
-                                },
+                                onPressed: () {},
                               ),
                             ],
                           ),
