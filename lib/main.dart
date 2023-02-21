@@ -1,5 +1,7 @@
+import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'main_page.dart';
 
 void main() async {
@@ -8,6 +10,9 @@ void main() async {
   await Firebase.initializeApp();
 
   runApp(
-    const MainPage(),
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => FlashCardNotifier())],
+      child: const MainPage(),
+    ),
   );
 }

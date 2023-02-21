@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/animals_class.dart';
+import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -191,7 +192,18 @@ class _AnimalsState extends State<Animals> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AnimalsQuiz(),
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                           Color.fromARGB(130, 35, 61, 155),

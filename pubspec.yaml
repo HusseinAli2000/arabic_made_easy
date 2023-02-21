@@ -27,6 +27,7 @@ dependencies:
   hooks_riverpod: ^2.1.1
   html_character_entities: ^1.0.0+1
   meta: ^1.8.0
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
