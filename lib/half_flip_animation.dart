@@ -28,7 +28,7 @@ class _HalfFlipAnimationState extends State<HalfFlipAnimation>
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 1000))
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300))
           ..addListener(() {
             if (_animationController.isCompleted) {
               widget.animationCompleted.call();
@@ -55,6 +55,7 @@ class _HalfFlipAnimationState extends State<HalfFlipAnimation>
     super.didUpdateWidget(oldWidget);
   }
 
+  @override
   Widget build(BuildContext context) {
     double rotationAdjustment = 0;
     if (widget.flipFromHalfWay) {

@@ -6,11 +6,15 @@ class SlideAnimation extends StatefulWidget {
       {required this.child,
       required this.direction,
       this.animate = true,
-      super.key});
+      super.key,
+      this.reset,
+      this.animationCompleted});
 
   final Widget child;
   final SlideDirection direction;
   final bool animate;
+  final bool? reset;
+  final VoidCallback? animationCompleted;
 
   @override
   State<SlideAnimation> createState() => _SlideAnimationState();
@@ -23,9 +27,13 @@ class _SlideAnimationState extends State<SlideAnimation>
   @override
   void initState() {
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 600),
       vsync: this,
-    );
+    )..addListener(() {
+        if (_animationController.isCompleted) {
+          widget.animationCompleted?.call();
+        }
+      });
     if (widget.animate) {
       _animationController.forward();
     }
@@ -34,6 +42,9 @@ class _SlideAnimationState extends State<SlideAnimation>
 
   @override
   void didUpdateWidget(covariant SlideAnimation oldWidget) {
+    if (widget.reset == true) {
+      _animationController.reset();
+    }
     if (widget.animate) {
       _animationController.forward();
     }
