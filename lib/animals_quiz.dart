@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'dart:math';
 import 'animals.dart';
+import 'card_display.dart';
 import 'second_page.dart';
 import 'package:provider/provider.dart';
 
@@ -192,6 +193,8 @@ class Card1 extends StatelessWidget {
             notifier.runFlipCard2();
           }),
           child: SlideAnimation(
+            animationDuration: 800,
+            animationDelay: 200,
             animationCompleted: () {
               notifier.setIgnoreTouch(ignore: false);
             },
@@ -201,10 +204,26 @@ class Card1 extends StatelessWidget {
             child: Center(
               child: SafeArea(
                 child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 32, 6, 96),
+                        Color.fromARGB(255, 57, 119, 194),
+                      ],
+                    ),
+                  ),
                   width: 300,
                   height: 400,
-                  color: Colors.blue,
-                  child: Text(notifier.word1.english),
+                  child: const CardDisplay(
+                    isCard1: true,
+                  ),
                 ),
               ),
             ),
@@ -256,17 +275,27 @@ class Card2 extends StatelessWidget {
             child: Center(
               child: SafeArea(
                 child: Container(
-                  width: 300,
-                  height: 400,
-                  color: Colors.blue,
-                  child: Transform(
-                    alignment: Alignment.center,
-                    transform: Matrix4.rotationY(pi),
-                    child: Text(
-                      notifier.word2.arabic,
-                      textDirection: TextDirection.rtl,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 32, 6, 96),
+                        Color.fromARGB(255, 57, 119, 194),
+                      ],
                     ),
                   ),
+                  width: 300,
+                  height: 400,
+                  child: Transform(
+                      alignment: Alignment.center,
+                      transform: Matrix4.rotationY(pi),
+                      child: const CardDisplay(isCard1: false)),
                 ),
               ),
             ),

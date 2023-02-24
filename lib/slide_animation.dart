@@ -8,13 +8,17 @@ class SlideAnimation extends StatefulWidget {
       this.animate = true,
       super.key,
       this.reset,
-      this.animationCompleted});
+      this.animationCompleted,
+      this.animationDuration = 600,
+      this.animationDelay = 0});
 
   final Widget child;
   final SlideDirection direction;
   final bool animate;
   final bool? reset;
   final VoidCallback? animationCompleted;
+  final int animationDuration;
+  final int animationDelay;
 
   @override
   State<SlideAnimation> createState() => _SlideAnimationState();
@@ -27,16 +31,14 @@ class _SlideAnimationState extends State<SlideAnimation>
   @override
   void initState() {
     _animationController = AnimationController(
-      duration: const Duration(milliseconds: 600),
+      duration: Duration(milliseconds: widget.animationDuration),
       vsync: this,
     )..addListener(() {
         if (_animationController.isCompleted) {
           widget.animationCompleted?.call();
         }
       });
-    if (widget.animate) {
-      _animationController.forward();
-    }
+
     super.initState();
   }
 
@@ -46,7 +48,15 @@ class _SlideAnimationState extends State<SlideAnimation>
       _animationController.reset();
     }
     if (widget.animate) {
-      _animationController.forward();
+      if (widget.animationDelay > 0) {
+        Future.delayed(Duration(milliseconds: widget.animationDelay), () {
+          if (mounted) {
+            _animationController.forward();
+          }
+        });
+      } else {
+        _animationController.forward();
+      }
     }
     super.didUpdateWidget(oldWidget);
   }

@@ -8,8 +8,10 @@ import 'words.dart';
 
 class FlashCardNotifier extends ChangeNotifier {
   String topic = "";
-  Word word1 = Word(topic: "", arabic: "", english: "", pronunciation: "");
-  Word word2 = Word(topic: "", arabic: "", english: "", pronunciation: "");
+  Word word1 =
+      Word(topic: "", arabic: "", english: "circle", pronunciation: "");
+  Word word2 =
+      Word(topic: "", arabic: "", english: "circle", pronunciation: "");
   List<Word> selectedWords = [];
 
   setTopic({required String topic}) {

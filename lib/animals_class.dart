@@ -2133,7 +2133,7 @@ class _AnimalsClassState extends State<AnimalsClass> {
                           Padding(
                             padding: const EdgeInsets.all(5.0),
                             child: Image.asset(
-                              'images/crab.png',
+                              'images/lobster.png',
                               height: 45,
                             ),
                           ),

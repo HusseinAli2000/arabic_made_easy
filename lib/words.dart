@@ -66,7 +66,7 @@ final List<Word> words = [
   Word(
       topic: "Animals",
       arabic: "فيل",
-      english: "ُElephant",
+      english: 'Elephant',
       pronunciation: "Fiil"),
   Word(
       topic: "Animals",
