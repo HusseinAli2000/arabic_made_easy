@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/half_flip_animation.dart';
+import 'package:arabic_made_easy/progress_bar.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
           Provider.of<FlashCardNotifier>(context, listen: false);
       flashCardNotifier.runSlideCard1();
       flashCardNotifier.generateAllSelectedWord();
-      flashCardNotifier.generateCurrentWord();
+      flashCardNotifier.generateCurrentWord(context: context);
     });
 
     super.initState();
@@ -72,6 +73,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                       () {
                         setState(
                           () {
+                            notifier.reset();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -88,6 +90,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                       () {
                         setState(
                           () {
+                            notifier.reset();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -159,6 +162,10 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
               ignoring: notifier.ignoreTouches,
               child: Stack(
                 children: const [
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ProgressBar(),
+                  ),
                   Card2(),
                   Card1(),
                 ],
@@ -199,7 +206,7 @@ class Card1 extends StatelessWidget {
               notifier.setIgnoreTouch(ignore: false);
             },
             reset: notifier.resetSlideCard1,
-            animate: notifier.slideCard1,
+            animate: notifier.slideCard1 && !notifier.isRoundCompleted,
             direction: SlideDirection.upIn,
             child: Center(
               child: SafeArea(
@@ -249,13 +256,13 @@ class Card2 extends StatelessWidget {
             notifier.runSwipeCard2(direction: SlideDirection.leftAway);
             notifier.runSlideCard1();
             notifier.setIgnoreTouch(ignore: true);
-            notifier.generateCurrentWord();
+            notifier.generateCurrentWord(context: context);
           }
           if (details.primaryVelocity! < -100) {
             notifier.runSwipeCard2(direction: SlideDirection.rightAway);
             notifier.runSlideCard1();
             notifier.setIgnoreTouch(ignore: false);
-            notifier.generateCurrentWord();
+            notifier.generateCurrentWord(context: context);
           }
         }),
         child: HalfFlipAnimation(

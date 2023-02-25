@@ -27,7 +27,7 @@ class CardDisplay extends StatelessWidget {
                   style: const TextStyle(
                     color: Color.fromARGB(255, 235, 234, 243),
                     fontFamily: 'Akaya',
-                    fontSize: 50,
+                    fontSize: 45,
                   ),
                 ),
               ],
@@ -62,7 +62,6 @@ class CardDisplay extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                
                 const TTSButton(),
               ],
             ),

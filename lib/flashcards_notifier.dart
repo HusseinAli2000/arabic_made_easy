@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:arabic_made_easy/results_box.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:arabic_made_easy/word.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +8,47 @@ import 'package:flutter/material.dart';
 import 'words.dart';
 
 class FlashCardNotifier extends ChangeNotifier {
+  int roundTally = 0;
+  int cardTally = 0;
+  int correctTally = 0;
+  int incorrectTally = 0;
+  int correctPercentage = 0;
+
+  calculateCorrectPercentage() {
+    final percentage = (correctTally / cardTally) * 100;
+    correctPercentage = percentage.round();
+  }
+
+  double percentComplete = 0.0;
+  calculateCompletePercent() {
+    percentComplete = (correctTally + incorrectTally) / cardTally;
+    notifyListeners();
+  }
+
+  resetProgressBar() {
+    percentComplete = 0.0;
+    notifyListeners();
+  }
+
+  List<Word> incorrectCards = [];
+
   String topic = "";
   Word word1 =
       Word(topic: "", arabic: "", english: "circle", pronunciation: "");
   Word word2 =
       Word(topic: "", arabic: "", english: "circle", pronunciation: "");
   List<Word> selectedWords = [];
+
+  bool isFirstRound = true;
+  bool isRoundCompleted = false;
+  bool isSessionCompleted = false;
+
+  reset() {
+    isFirstRound = true;
+    isRoundCompleted = false;
+    isSessionCompleted = false;
+    roundTally = 0;
+  }
 
   setTopic({required String topic}) {
     this.topic = topic;
@@ -21,25 +57,58 @@ class FlashCardNotifier extends ChangeNotifier {
 
   generateAllSelectedWord() {
     selectedWords.clear();
-    selectedWords =
-        words.where((element) => element.topic == "Animals").toList();
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      selectedWords =
+          words.where((element) => element.topic == "Animals").toList();
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
   }
 
-  generateCurrentWord() {
+  generateCurrentWord({required BuildContext context}) {
     if (selectedWords.isNotEmpty) {
       final r = Random().nextInt(selectedWords.length);
       word1 = selectedWords[r];
       selectedWords.removeAt(r);
     } else {
-      print("All words selected");
+      if (incorrectCards.isEmpty) {
+        isSessionCompleted = true;
+        print('Session Completed: $isSessionCompleted');
+      }
+      isRoundCompleted = true;
+      isFirstRound = false;
+      calculateCorrectPercentage();
+      Future.delayed(Duration(milliseconds: 500), () {
+        showDialog(context: context, builder: (context) => ResultsBox());
+      });
     }
 
     Future.delayed(
-        const Duration(
-          milliseconds: 600,
-        ), (() {
-      word2 = word1;
-    }));
+      const Duration(
+        milliseconds: 600,
+      ),
+      (() {
+        word2 = word1;
+      }),
+    );
+  }
+
+  updateCardOutcome({required Word word, required bool isCorrect}) {
+    if (!isCorrect) {
+      incorrectCards.add(word);
+      incorrectTally++;
+    } else {
+      correctTally++;
+    }
+    calculateCompletePercent();
+    notifyListeners();
   }
 
   SlideDirection swipeDirection = SlideDirection.none;
@@ -85,6 +154,8 @@ class FlashCardNotifier extends ChangeNotifier {
   }
 
   runSwipeCard2({required SlideDirection direction}) {
+    updateCardOutcome(
+        word: word2, isCorrect: direction == SlideDirection.leftAway);
     swipeDirection = direction;
     resetSwipeCard2 = false;
     swipeCard2 = true;
