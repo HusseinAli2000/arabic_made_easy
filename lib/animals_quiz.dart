@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/half_flip_animation.dart';
 import 'package:arabic_made_easy/progress_bar.dart';
+import 'package:arabic_made_easy/settings_page.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                 onTabChange: (index) {
                   if (index == 0) {
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         setState(
                           () {
@@ -86,7 +87,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                     );
                   } else if (index == 1) {
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         setState(
                           () {
@@ -102,7 +103,22 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                       },
                     );
                   } else if (index == 2) {
-                    setState(() {});
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        setState(
+                          () {
+                            notifier.reset();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SettingsPage(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
                   }
                 },
                 tabs: const [

@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/flashcards_notifier.dart';
+import 'package:arabic_made_easy/settings_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -11,7 +12,10 @@ void main() async {
 
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => FlashCardNotifier())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => FlashCardNotifier()),
+        ChangeNotifierProvider(create: (_) => SettingsNotifier()),
+      ],
       child: const MainPage(),
     ),
   );
