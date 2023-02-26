@@ -34,13 +34,14 @@ class CardDisplay extends StatelessWidget {
         return Consumer<FlashCardNotifier>(
           builder: (_, notifier, __) => isCard1
               ? Column(
+                  //card 1
                   children: [
                     if (audioOnly) ...[
                       SizedBox(
                         height: 180,
                       ),
                       TTSButton()
-                    ] else if (showPronunciation) ...[
+                    ] else if (!setEnglishFirst) ...[
                       const SizedBox(
                         height: 50,
                       ),
@@ -86,6 +87,7 @@ class CardDisplay extends StatelessWidget {
                   ],
                 )
               : Column(
+                  // card 2
                   children: [
                     if (audioOnly) ...[
                       buildImage(notifier.word2.english),
@@ -128,7 +130,7 @@ class CardDisplay extends StatelessWidget {
                         height: 10,
                       ),
                       TTSButton()
-                    ] else if (showPronunciation) ...[
+                    ] else if (!setEnglishFirst) ...[
                       SizedBox(
                         height: 15,
                       ),

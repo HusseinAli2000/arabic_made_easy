@@ -1,3 +1,4 @@
+import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:arabic_made_easy/settings.dart';
 import 'package:arabic_made_easy/settings_notifier.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Animals(),
+                                  builder: (context) => const AnimalsQuiz(),
                                 ),
                               );
                             },
