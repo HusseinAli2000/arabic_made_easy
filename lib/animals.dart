@@ -1,5 +1,6 @@
 import 'package:arabic_made_easy/animals_class.dart';
 import 'package:arabic_made_easy/animals_quiz.dart';
+import 'package:arabic_made_easy/review_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -70,7 +71,7 @@ class _AnimalsState extends State<Animals> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const PageTwo(),
+                              builder: (context) => const ReviewPage(),
                             ),
                           );
                         },
@@ -87,8 +88,8 @@ class _AnimalsState extends State<Animals> {
                   text: 'Back',
                 ),
                 GButton(
-                  icon: Icons.class_,
-                  text: 'Classes',
+                  icon: Icons.reviews,
+                  text: 'Review',
                 ),
                 GButton(
                   icon: Icons.settings,
