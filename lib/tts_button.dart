@@ -1,11 +1,13 @@
-import 'package:arabic_made_easy/flashcards_notifier.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:provider/provider.dart';
+
+import 'word.dart';
 
 class TTSButton extends StatefulWidget {
-  const TTSButton({super.key});
+  const TTSButton({super.key, required this.word, this.iconSize = 30});
+
+  final Word word;
+  final double iconSize;
 
   @override
   State<TTSButton> createState() => _TTSButtonState();
@@ -28,16 +30,14 @@ class _TTSButtonState extends State<TTSButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<FlashCardNotifier>(
-      builder: (_, notifier, __) => IconButton(
-        onPressed: () {
-          _runTts(text: notifier.word1.arabic);
-        },
-        icon: const Icon(
-          Icons.volume_up,
-          size: 30,
-          color: Color.fromARGB(255, 235, 234, 243),
-        ),
+    return IconButton(
+      onPressed: () {
+        _runTts(text: widget.word.arabic);
+      },
+      icon: Icon(
+        Icons.volume_up,
+        size: widget.iconSize,
+        color: const Color.fromARGB(255, 235, 234, 243),
       ),
     );
   }

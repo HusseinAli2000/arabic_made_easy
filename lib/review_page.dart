@@ -1,5 +1,10 @@
+import 'package:arabic_made_easy/language_button_notifier.dart';
+import 'package:arabic_made_easy/language_type.dart';
+import 'package:arabic_made_easy/settings_to_text.dart';
+import 'package:arabic_made_easy/tts_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
 import 'animals.dart';
 import 'second_page.dart';
@@ -196,7 +201,25 @@ class _ReviewPageState extends State<ReviewPage> {
                             },
                           )),
                     ),
-                  )
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: const [
+                        LanguageButton(
+                          languageType: LanguageType.image,
+                        ),
+                        LanguageButton(
+                          languageType: LanguageType.english,
+                        ),
+                        LanguageButton(
+                          languageType: LanguageType.arabic,
+                        ),
+                        LanguageButton(
+                          languageType: LanguageType.pronunciation,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -242,6 +265,56 @@ class _ReviewPageState extends State<ReviewPage> {
   }
 }
 
+class LanguageButton extends StatelessWidget {
+  const LanguageButton({
+    Key? key,
+    required this.languageType,
+  }) : super(key: key);
+
+  final LanguageType languageType;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(3),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 32, 6, 96),
+                Color.fromARGB(255, 57, 119, 194),
+              ],
+            ),
+          ),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(130, 35, 61, 155),
+              textStyle: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontFamily: 'Akaya',
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: () {
+              Provider.of<LanguageButtonNotifier>(context, listen: false)
+                  .updateShowLanguage(language: languageType);
+            },
+            child: Text(languageType.toSymbol()),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class WordTile extends StatelessWidget {
   WordTile({
     Key? key,
@@ -268,32 +341,107 @@ class WordTile extends StatelessWidget {
           .drive(index % 2 == 0 ? _tweenOffsetRight : _tweenOffsetLeft),
       child: Column(
         children: [
-          ListTile(
-            style: ListTileStyle.drawer,
-            trailing: IconButton(
-              icon: const Icon(
-                Icons.clear,
-                color: Color.fromARGB(255, 235, 234, 243),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(7, 7, 7, 7),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: const Color.fromARGB(255, 235, 234, 243),
+                ),
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(255, 32, 6, 96),
+                    Color.fromARGB(255, 57, 119, 194),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(20),
+                color: const Color.fromARGB(130, 35, 61, 155),
               ),
-              onPressed: () {
-                onPressed?.call();
-              },
-            ),
-            title: Text(
-              word.english,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 235, 234, 243),
-                fontFamily: 'Akaya',
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+              child: Consumer<LanguageButtonNotifier>(
+                builder: (_, notifier, __) => ListTile(
+                  leading: notifier.showImage
+                      ? SizedBox(
+                          width: 50,
+                          child: Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Image.asset(
+                              'images/${word.english}.png'.toLowerCase(),
+                            ),
+                          ),
+                        )
+                      : SizedBox(),
+                  trailing: SizedBox(
+                    width: 100,
+                    child: Row(
+                      children: [
+                        TTSButton(
+                          word: word,
+                          iconSize: 25,
+                        ),
+                        IconButton(
+                          icon: const Icon(
+                            Icons.clear,
+                            color: Color.fromARGB(255, 235, 234, 243),
+                          ),
+                          onPressed: () {
+                            onPressed?.call();
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  title: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        notifier.showEnglish
+                            ? Text(
+                                word.english,
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            : SizedBox(),
+                        notifier.showArabic
+                            ? Text(
+                                word.arabic,
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            : SizedBox(),
+                        notifier.showPronunciation
+                            ? Text(
+                                word.pronunciation,
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Akaya',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            : SizedBox(),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
-          const Divider(
-            height: 1,
-            thickness: 1,
-            color: Color.fromARGB(78, 0, 17, 115),
-          )
+          // const Divider(
+          //   height: 1,
+          //   thickness: 1,
+          //   color: Color.fromARGB(78, 0, 17, 115),
+          // )
         ],
       ),
     );
@@ -313,24 +461,38 @@ class HeaderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(130, 35, 61, 155),
-          textStyle: const TextStyle(
-            color: Color.fromARGB(255, 235, 234, 243),
-            fontFamily: 'Akaya',
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-          shape: RoundedRectangleBorder(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 32, 6, 96),
+                Color.fromARGB(255, 57, 119, 194),
+              ],
+            ),
+          ),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(130, 35, 61, 155),
+              textStyle: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontFamily: 'Akaya',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            onPressed: onPressed,
+            child: Text(title),
           ),
         ),
-        onPressed: onPressed,
-        child: Text(title),
       ),
-    ));
+    );
   }
 }

@@ -40,7 +40,7 @@ class CardDisplay extends StatelessWidget {
                       SizedBox(
                         height: 180,
                       ),
-                      TTSButton()
+                      TTSButton(word: notifier.word1)
                     ] else if (!setEnglishFirst) ...[
                       const SizedBox(
                         height: 50,
@@ -69,7 +69,7 @@ class CardDisplay extends StatelessWidget {
                       const SizedBox(
                         height: 35,
                       ),
-                      const TTSButton(),
+                      TTSButton(word: notifier.word1),
                     ] else ...[
                       buildImage(notifier.word1.english),
                       const SizedBox(
@@ -129,7 +129,7 @@ class CardDisplay extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      TTSButton()
+                      TTSButton(word: notifier.word1)
                     ] else if (!setEnglishFirst) ...[
                       SizedBox(
                         height: 15,
@@ -178,7 +178,7 @@ class CardDisplay extends StatelessWidget {
                               ),
                             )
                           : SizedBox(),
-                      TTSButton(),
+                      TTSButton(word: notifier.word1),
                     ]
                   ],
                 ),
