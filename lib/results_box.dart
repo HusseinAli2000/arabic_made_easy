@@ -1,12 +1,20 @@
 import 'package:arabic_made_easy/animals_quiz.dart';
+import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sqflite/sqflite.dart';
 
-class ResultsBox extends StatelessWidget {
+class ResultsBox extends StatefulWidget {
   const ResultsBox({super.key});
 
+  @override
+  State<ResultsBox> createState() => _ResultsBoxState();
+}
+
+class _ResultsBoxState extends State<ResultsBox> {
+  bool _haveSavedCards = false;
   @override
   Widget build(BuildContext context) {
     return Consumer<FlashCardNotifier>(
@@ -88,6 +96,39 @@ class ResultsBox extends StatelessWidget {
                           );
                         },
                         child: Text('Retest Incorrect Cards'),
+                      ),
+                notifier.isSessionCompleted
+                    ? SizedBox()
+                    : ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            side: BorderSide(color: Colors.white),
+                          ),
+                          backgroundColor: Color.fromARGB(161, 6, 12, 58),
+                          textStyle: const TextStyle(
+                            color: Color.fromARGB(255, 235, 234, 243),
+                            fontFamily: 'Akaya',
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: _haveSavedCards
+                            ? null
+                            : () async {
+                                for (int i = 0;
+                                    i < notifier.incorrectCards.length;
+                                    i++) {
+                                  await DatabaseManager().insertWord(
+                                      word: notifier.incorrectCards[i]);
+                                  final words =
+                                      await DatabaseManager().selectWord();
+                                  print(words.length);
+                                }
+                                _haveSavedCards = true;
+                                setState(() {});
+                              },
+                        child: Text('Save Incorrect Cards'),
                       ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(

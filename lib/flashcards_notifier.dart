@@ -44,6 +44,7 @@ class FlashCardNotifier extends ChangeNotifier {
   bool isSessionCompleted = false;
 
   reset() {
+    incorrectCards.clear();
     isFirstRound = true;
     isRoundCompleted = false;
     isSessionCompleted = false;
@@ -56,11 +57,13 @@ class FlashCardNotifier extends ChangeNotifier {
   }
 
   generateAllSelectedWord() {
-    selectedWords.clear();
     isRoundCompleted = false;
     if (isFirstRound) {
-      selectedWords =
-          words.where((element) => element.topic == "Animals").toList();
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Animals").toList();
+      }
     } else {
       selectedWords = incorrectCards.toList();
       incorrectCards.clear();

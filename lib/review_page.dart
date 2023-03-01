@@ -1,3 +1,6 @@
+import 'package:arabic_made_easy/animals_quiz.dart';
+import 'package:arabic_made_easy/database_manager.dart';
+import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/language_button_notifier.dart';
 import 'package:arabic_made_easy/language_type.dart';
 import 'package:arabic_made_easy/settings_to_text.dart';
@@ -148,76 +151,114 @@ class _ReviewPageState extends State<ReviewPage> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Row(
-                      children: [
-                        HeaderButton(
-                          title: 'Insert Cards',
-                          onPressed: () {
-                            var initialWords = [
-                              Word(
-                                  topic: "Animals",
-                                  arabic: "جمل",
-                                  english: "Camel",
-                                  pronunciation: "Jaml"),
-                              Word(
-                                  topic: "Animals",
-                                  arabic: "قطة",
-                                  english: "Cat",
-                                  pronunciation: "Qita"),
-                              Word(
-                                  topic: "Animals",
-                                  arabic: "دجاجة",
-                                  english: "Chicken",
-                                  pronunciation: "Dajaja"),
-                              Word(
-                                  topic: "Animals",
-                                  arabic: "صرصور",
-                                  english: "Cockroach",
-                                  pronunciation: "Sarsur"),
-                            ];
-                            _insertWords(word: initialWords);
-                          },
-                        ),
-                        HeaderButton(
-                          title: 'Clear Cards',
-                          onPressed: () {
-                            _clearAllWords();
-                          },
-                        ),
-                      ],
+                    child: Selector<LanguageButtonNotifier, bool>(
+                      selector: (_, review) => review.buttonsAreDisabled,
+                      builder: (_, disable, __) => Row(
+                        children: [
+                          HeaderButton(
+                            isDisabled: disable,
+                            title: 'Test All',
+                            onPressed: () {
+                              final provider = Provider.of<FlashCardNotifier>(
+                                  context,
+                                  listen: false);
+                              provider.selectedWords.clear();
+                              DatabaseManager().selectWord().then((words) {
+                                provider.selectedWords = words.toList();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => AnimalsQuiz()));
+                              });
+                            },
+                          ),
+                          HeaderButton(
+                            isDisabled: disable,
+                            title: 'Quick Test',
+                            onPressed: () {
+                              final provider = Provider.of<FlashCardNotifier>(
+                                  context,
+                                  listen: false);
+                              provider.selectedWords.clear();
+                              DatabaseManager()
+                                  .selectWord(limit: 2)
+                                  .then((words) {
+                                provider.selectedWords = words.toList();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => AnimalsQuiz()));
+                              });
+                            },
+                          ),
+                          HeaderButton(
+                            isDisabled: disable,
+                            title: 'Clear Cards',
+                            onPressed: () {
+                              _clearAllWords();
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
                     flex: 10,
-                    child: AnimatedList(
-                      key: _listKey,
-                      initialItemCount: _reviewWords.length,
-                      itemBuilder: ((context, index, animation) => WordTile(
-                            index: index,
-                            word: _reviewWords[index],
-                            animation: animation,
-                            onPressed: () {
-                              _removeWord(word: _reviewWords[index]);
-                            },
-                          )),
+                    child: FutureBuilder(
+                      future: DatabaseManager().selectWord(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          var sortList = snapshot.data as List<Word>;
+                          sortList
+                              .sort((a, b) => a.english.compareTo(b.english));
+
+                          WidgetsBinding.instance
+                              .addPostFrameCallback((timeStamp) {
+                            _insertWords(word: sortList);
+                          });
+
+                          return AnimatedList(
+                            key: _listKey,
+                            initialItemCount: _reviewWords.length,
+                            itemBuilder: (context, index, animation) =>
+                                WordTile(
+                              index: index,
+                              word: _reviewWords[index],
+                              animation: animation,
+                              onPressed: () {
+                                _removeWord(word: _reviewWords[index]);
+                              },
+                            ),
+                          );
+                        } else {
+                          return SizedBox();
+                        }
+                      },
                     ),
                   ),
                   Expanded(
-                    child: Row(
-                      children: const [
-                        LanguageButton(
-                          languageType: LanguageType.image,
-                        ),
-                        LanguageButton(
-                          languageType: LanguageType.english,
-                        ),
-                        LanguageButton(
-                          languageType: LanguageType.arabic,
-                        ),
-                        LanguageButton(
-                          languageType: LanguageType.pronunciation,
-                        ),
-                      ],
+                    child: Selector<LanguageButtonNotifier, bool>(
+                      selector: (_, review) => review.buttonsAreDisabled,
+                      builder: (_, disable, __) => Row(
+                        children: [
+                          LanguageButton(
+                            isDisabled: disable,
+                            languageType: LanguageType.image,
+                          ),
+                          LanguageButton(
+                            isDisabled: disable,
+                            languageType: LanguageType.english,
+                          ),
+                          LanguageButton(
+                            isDisabled: disable,
+                            languageType: LanguageType.arabic,
+                          ),
+                          LanguageButton(
+                            isDisabled: disable,
+                            languageType: LanguageType.pronunciation,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -236,7 +277,7 @@ class _ReviewPageState extends State<ReviewPage> {
     }
   }
 
-  _removeWord({required Word word}) {
+  _removeWord({required Word word}) async {
     var w = word;
     _listKey.currentState?.removeItem(
         _reviewWords.indexOf(w),
@@ -246,6 +287,11 @@ class _ReviewPageState extends State<ReviewPage> {
               index: _reviewWords.indexOf(w),
             ));
     _reviewWords.remove(w);
+    await DatabaseManager().removeWord(word: w);
+    if (_reviewWords.isEmpty) {
+      Provider.of<LanguageButtonNotifier>(context, listen: false)
+          .disableButtons(disable: true);
+    }
   }
 
   _clearAllWords() {
@@ -259,8 +305,11 @@ class _ReviewPageState extends State<ReviewPage> {
         ),
       );
     }
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       _reviewWords.clear();
+      await DatabaseManager().removeAllWords();
+      Provider.of<LanguageButtonNotifier>(context, listen: false)
+          .disableButtons(disable: true);
     });
   }
 }
@@ -269,9 +318,11 @@ class LanguageButton extends StatelessWidget {
   const LanguageButton({
     Key? key,
     required this.languageType,
+    this.isDisabled = false,
   }) : super(key: key);
 
   final LanguageType languageType;
+  final bool isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -303,10 +354,12 @@ class LanguageButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
-            onPressed: () {
-              Provider.of<LanguageButtonNotifier>(context, listen: false)
-                  .updateShowLanguage(language: languageType);
-            },
+            onPressed: isDisabled
+                ? null
+                : () {
+                    Provider.of<LanguageButtonNotifier>(context, listen: false)
+                        .updateShowLanguage(language: languageType);
+                  },
             child: Text(languageType.toSymbol()),
           ),
         ),
@@ -451,12 +504,14 @@ class WordTile extends StatelessWidget {
 class HeaderButton extends StatelessWidget {
   const HeaderButton({
     Key? key,
+    this.isDisabled = false,
     required this.title,
     required this.onPressed,
   }) : super(key: key);
 
   final String title;
   final VoidCallback onPressed;
+  final bool isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -488,7 +543,7 @@ class HeaderButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
-            onPressed: onPressed,
+            onPressed: isDisabled ? null : onPressed,
             child: Text(title),
           ),
         ),

@@ -5,7 +5,13 @@ class LanguageButtonNotifier extends ChangeNotifier {
   bool showImage = true,
       showEnglish = true,
       showArabic = false,
-      showPronunciation = false;
+      showPronunciation = false,
+      buttonsAreDisabled = false;
+
+  disableButtons({required bool disable}) {
+    buttonsAreDisabled = disable;
+    notifyListeners();
+  }
 
   updateShowLanguage({required LanguageType language}) {
     switch (language) {
