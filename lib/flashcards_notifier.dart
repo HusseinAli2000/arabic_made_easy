@@ -44,6 +44,8 @@ class FlashCardNotifier extends ChangeNotifier {
   bool isSessionCompleted = false;
 
   reset() {
+    resetCard1();
+    resetCard2();
     incorrectCards.clear();
     isFirstRound = true;
     isRoundCompleted = false;

@@ -4,10 +4,12 @@ import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/half_flip_animation.dart';
 import 'package:arabic_made_easy/progress_bar.dart';
 import 'package:arabic_made_easy/settings_page.dart';
+import 'package:arabic_made_easy/settings_to_text.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:math';
 import 'animals.dart';
 import 'card_display.dart';
@@ -30,6 +32,12 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
       flashCardNotifier.runSlideCard1();
       flashCardNotifier.generateAllSelectedWord();
       flashCardNotifier.generateCurrentWord(context: context);
+
+      SharedPreferences.getInstance().then((prefs) {
+        if (prefs.getBool('guidebox') == null) {
+          runGuideBox(context: context, isFirst: true);
+        }
+      });
     });
 
     super.initState();
@@ -206,6 +214,11 @@ class Card1 extends StatelessWidget {
         onDoubleTap: () {
           notifier.runFlipCard1();
           notifier.setIgnoreTouch(ignore: true);
+          SharedPreferences.getInstance().then((prefs) {
+            if (prefs.getBool('guidebox') == null) {
+              runGuideBox(context: context, isFirst: false);
+            }
+          });
         },
         child: HalfFlipAnimation(
           animate: notifier.flipCard1,

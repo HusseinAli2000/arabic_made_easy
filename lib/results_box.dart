@@ -1,6 +1,7 @@
 import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
+import 'package:arabic_made_easy/quick_box.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -126,6 +127,9 @@ class _ResultsBoxState extends State<ResultsBox> {
                                   print(words.length);
                                 }
                                 _haveSavedCards = true;
+                                runQuickBox(
+                                    context: context,
+                                    text: 'Incorrect Cards Saved!');
                                 setState(() {});
                               },
                         child: Text('Save Incorrect Cards'),
@@ -196,5 +200,16 @@ class _ResultsBoxState extends State<ResultsBox> {
         ),
       ],
     );
+  }
+
+  runQuickBox({required String text, required BuildContext context}) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) => QuickBox(text: text),
+    );
+    Future.delayed(Duration(milliseconds: 1000), () {
+      Navigator.maybePop(context);
+    });
   }
 }

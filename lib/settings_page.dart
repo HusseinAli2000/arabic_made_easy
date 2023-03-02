@@ -1,10 +1,12 @@
 import 'package:arabic_made_easy/animals_quiz.dart';
+import 'package:arabic_made_easy/quick_box.dart';
 import 'package:arabic_made_easy/settings.dart';
 import 'package:arabic_made_easy/settings_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_to_text.dart';
 
 import 'animals.dart';
@@ -187,6 +189,10 @@ class _SettingsPageState extends State<SettingsPage> {
                               ),
                             ),
                             onTap: () {
+                              runQuickBox(
+                                  text: 'App Settings Have Been Reset!',
+                                  context: context);
+                              clearPreferences();
                               notifier.resetSettings();
                             },
                           ),
@@ -231,6 +237,25 @@ class _SettingsPageState extends State<SettingsPage> {
         );
       },
     );
+  }
+
+  void clearPreferences() {
+    SharedPreferences.getInstance().then((prefs) {
+      for (var e in SettingsNotifier().displayOptions.entries) {
+        prefs.remove('guidebox');
+      }
+    });
+  }
+
+  runQuickBox({required String text, required BuildContext context}) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (context) => QuickBox(text: text),
+    );
+    Future.delayed(Duration(milliseconds: 1000), () {
+      Navigator.maybePop(context);
+    });
   }
 }
 
