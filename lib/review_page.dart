@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 
 import 'animals.dart';
 import 'second_page.dart';
+import 'settings_page.dart';
 import 'word.dart';
 
 class ReviewPage extends StatefulWidget {
@@ -26,91 +27,11 @@ class _ReviewPageState extends State<ReviewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        bottomNavigationBar: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 32, 6, 96),
-                Color.fromARGB(255, 57, 119, 194),
-              ],
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 9),
-            child: GNav(
-              gap: 15,
-              padding: const EdgeInsets.all(6),
-              backgroundColor: Colors.transparent,
-              textStyle: const TextStyle(
-                fontFamily: 'Akaya',
-                fontSize: 18,
-                color: Color.fromARGB(255, 235, 234, 243),
-                fontWeight: FontWeight.bold,
-              ),
-              tabBackgroundColor: const Color.fromARGB(161, 6, 12, 58),
-              color: const Color.fromARGB(255, 235, 234, 243),
-              activeColor: const Color.fromARGB(255, 235, 234, 243),
-              onTabChange: (index) {
-                if (index == 0) {
-                  Future.delayed(
-                    const Duration(seconds: 1),
-                    () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Animals(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  );
-                } else if (index == 1) {
-                  Future.delayed(
-                    const Duration(seconds: 1),
-                    () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PageTwo(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  );
-                } else if (index == 2) {
-                  setState(() {});
-                }
-              },
-              tabs: const [
-                GButton(
-                  icon: Icons.arrow_back,
-                  text: 'Back',
-                ),
-                GButton(
-                  icon: Icons.class_,
-                  text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
-                ),
-              ],
-            ),
-          ),
-        ),
-        appBar: AppBar(
-          flexibleSpace: Container(
+    return Consumer<FlashCardNotifier>(
+      builder: (_, notifier, __) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          bottomNavigationBar: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -121,147 +42,244 @@ class _ReviewPageState extends State<ReviewPage> {
                 ],
               ),
             ),
-          ),
-          title: const Center(
-            child: Text(
-              'Quiz Review',
-              style: TextStyle(
-                fontFamily: 'Akaya',
-                fontSize: 25,
-                color: Color.fromARGB(255, 235, 234, 243),
-                fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 9),
+              child: GNav(
+                gap: 15,
+                padding: const EdgeInsets.all(6),
+                backgroundColor: Colors.transparent,
+                textStyle: const TextStyle(
+                  fontFamily: 'Akaya',
+                  fontSize: 18,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                  fontWeight: FontWeight.bold,
+                ),
+                tabBackgroundColor: const Color.fromARGB(161, 6, 12, 58),
+                color: const Color.fromARGB(255, 235, 234, 243),
+                activeColor: const Color.fromARGB(255, 235, 234, 243),
+                onTabChange: (index) {
+                  if (index == 0) {
+                    Future.delayed(
+                      const Duration(seconds: 1),
+                      () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PageTwo(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  } else if (index == 1) {
+                    Future.delayed(
+                      const Duration(seconds: 1),
+                      () {
+                        setState(
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PageTwo(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  } else if (index == 2) {
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        setState(
+                          () {
+                            notifier.reset();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SettingsPage(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  }
+                },
+                tabs: const [
+                  GButton(
+                    icon: Icons.arrow_back,
+                    text: 'Back',
+                  ),
+                  GButton(
+                    icon: Icons.class_,
+                    text: 'Classes',
+                  ),
+                  GButton(
+                    icon: Icons.settings,
+                    text: 'Settings',
+                  ),
+                ],
               ),
             ),
           ),
-        ),
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 125, 173, 232),
-                Color.fromARGB(255, 20, 0, 70),
-              ],
+          appBar: AppBar(
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(255, 32, 6, 96),
+                    Color.fromARGB(255, 57, 119, 194),
+                  ],
+                ),
+              ),
+            ),
+            title: const Center(
+              child: Text(
+                'Quiz Review',
+                style: TextStyle(
+                  fontFamily: 'Akaya',
+                  fontSize: 25,
+                  color: Color.fromARGB(255, 235, 234, 243),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
-          child: Center(
-            child: SafeArea(
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Selector<LanguageButtonNotifier, bool>(
-                      selector: (_, review) => review.buttonsAreDisabled,
-                      builder: (_, disable, __) => Row(
-                        children: [
-                          HeaderButton(
-                            isDisabled: disable,
-                            title: 'Test All',
-                            onPressed: () {
-                              final provider = Provider.of<FlashCardNotifier>(
-                                  context,
-                                  listen: false);
-                              provider.selectedWords.clear();
-                              DatabaseManager().selectWord().then((words) {
-                                provider.selectedWords = words.toList();
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AnimalsQuiz()));
-                              });
-                            },
-                          ),
-                          HeaderButton(
-                            isDisabled: disable,
-                            title: 'Quick Test',
-                            onPressed: () {
-                              final provider = Provider.of<FlashCardNotifier>(
-                                  context,
-                                  listen: false);
-                              provider.selectedWords.clear();
-                              DatabaseManager()
-                                  .selectWord(limit: 2)
-                                  .then((words) {
-                                provider.selectedWords = words.toList();
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AnimalsQuiz()));
-                              });
-                            },
-                          ),
-                          HeaderButton(
-                            isDisabled: disable,
-                            title: 'Clear Cards',
-                            onPressed: () {
-                              _clearAllWords();
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 10,
-                    child: FutureBuilder(
-                      future: DatabaseManager().selectWord(),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          var sortList = snapshot.data as List<Word>;
-                          sortList
-                              .sort((a, b) => a.english.compareTo(b.english));
-
-                          WidgetsBinding.instance
-                              .addPostFrameCallback((timeStamp) {
-                            _insertWords(word: sortList);
-                          });
-
-                          return AnimatedList(
-                            key: _listKey,
-                            initialItemCount: _reviewWords.length,
-                            itemBuilder: (context, index, animation) =>
-                                WordTile(
-                              index: index,
-                              word: _reviewWords[index],
-                              animation: animation,
+          body: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 125, 173, 232),
+                  Color.fromARGB(255, 20, 0, 70),
+                ],
+              ),
+            ),
+            child: Center(
+              child: SafeArea(
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Selector<LanguageButtonNotifier, bool>(
+                        selector: (_, review) => review.buttonsAreDisabled,
+                        builder: (_, disable, __) => Row(
+                          children: [
+                            HeaderButton(
+                              isDisabled: disable,
+                              title: 'Test All',
                               onPressed: () {
-                                _removeWord(word: _reviewWords[index]);
+                                final provider = Provider.of<FlashCardNotifier>(
+                                    context,
+                                    listen: false);
+                                provider.selectedWords.clear();
+                                DatabaseManager().selectWord().then((words) {
+                                  provider.selectedWords = words.toList();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AnimalsQuiz()));
+                                });
                               },
                             ),
-                          );
-                        } else {
-                          return SizedBox();
-                        }
-                      },
-                    ),
-                  ),
-                  Expanded(
-                    child: Selector<LanguageButtonNotifier, bool>(
-                      selector: (_, review) => review.buttonsAreDisabled,
-                      builder: (_, disable, __) => Row(
-                        children: [
-                          LanguageButton(
-                            isDisabled: disable,
-                            languageType: LanguageType.image,
-                          ),
-                          LanguageButton(
-                            isDisabled: disable,
-                            languageType: LanguageType.english,
-                          ),
-                          LanguageButton(
-                            isDisabled: disable,
-                            languageType: LanguageType.arabic,
-                          ),
-                          LanguageButton(
-                            isDisabled: disable,
-                            languageType: LanguageType.pronunciation,
-                          ),
-                        ],
+                            HeaderButton(
+                              isDisabled: disable,
+                              title: 'Quick Test',
+                              onPressed: () {
+                                final provider = Provider.of<FlashCardNotifier>(
+                                    context,
+                                    listen: false);
+                                provider.selectedWords.clear();
+                                DatabaseManager()
+                                    .selectWord(limit: 2)
+                                    .then((words) {
+                                  provider.selectedWords = words.toList();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AnimalsQuiz()));
+                                });
+                              },
+                            ),
+                            HeaderButton(
+                              isDisabled: disable,
+                              title: 'Clear Cards',
+                              onPressed: () {
+                                _clearAllWords();
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      flex: 10,
+                      child: FutureBuilder(
+                        future: DatabaseManager().selectWord(),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            var sortList = snapshot.data as List<Word>;
+                            sortList
+                                .sort((a, b) => a.english.compareTo(b.english));
+
+                            WidgetsBinding.instance
+                                .addPostFrameCallback((timeStamp) {
+                              _insertWords(word: sortList);
+                            });
+
+                            return AnimatedList(
+                              key: _listKey,
+                              initialItemCount: _reviewWords.length,
+                              itemBuilder: (context, index, animation) =>
+                                  WordTile(
+                                index: index,
+                                word: _reviewWords[index],
+                                animation: animation,
+                                onPressed: () {
+                                  _removeWord(word: _reviewWords[index]);
+                                },
+                              ),
+                            );
+                          } else {
+                            return SizedBox();
+                          }
+                        },
+                      ),
+                    ),
+                    Expanded(
+                      child: Selector<LanguageButtonNotifier, bool>(
+                        selector: (_, review) => review.buttonsAreDisabled,
+                        builder: (_, disable, __) => Row(
+                          children: [
+                            LanguageButton(
+                              isDisabled: disable,
+                              languageType: LanguageType.image,
+                            ),
+                            LanguageButton(
+                              isDisabled: disable,
+                              languageType: LanguageType.english,
+                            ),
+                            LanguageButton(
+                              isDisabled: disable,
+                              languageType: LanguageType.arabic,
+                            ),
+                            LanguageButton(
+                              isDisabled: disable,
+                              languageType: LanguageType.pronunciation,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

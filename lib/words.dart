@@ -217,4 +217,52 @@ final List<Word> words = [
   //     arabic: "الحمار الوحشي",
   //     english: "Zebra",
   //     pronunciation: "Alhimar Alwahshy"),
+
+  Word(
+      topic: 'Colors',
+      arabic: 'أسود',
+      english: 'Black',
+      pronunciation: 'Aswad'),
+  Word(
+      topic: 'Colors',
+      arabic: 'أبيض',
+      english: 'White',
+      pronunciation: 'Abyad'),
+  Word(topic: 'Colors', arabic: 'أحمر', english: 'Red', pronunciation: 'Ahmar'),
+  Word(
+      topic: 'Colors', arabic: 'أزرق', english: 'Blue', pronunciation: 'Azraq'),
+  Word(
+      topic: 'Colors',
+      arabic: 'أخضر',
+      english: 'Green',
+      pronunciation: 'Akhdar'),
+  Word(
+      topic: 'Colors',
+      arabic: 'برتقالي',
+      english: 'Orange',
+      pronunciation: 'Burtuqali'),
+  Word(
+      topic: 'Colors', arabic: 'بمبي', english: 'Pink', pronunciation: 'Bambi'),
+  Word(
+      topic: 'Colors',
+      arabic: 'بنفسجي',
+      english: 'Purple',
+      pronunciation: 'Banafsaji'),
+  Word(
+      topic: 'Colors',
+      arabic: 'أصفر',
+      english: 'Yellow',
+      pronunciation: 'Asfar'),
+  Word(
+      topic: 'Colors', arabic: 'بني', english: 'Brown', pronunciation: 'Bunni'),
+  Word(
+      topic: 'Colors',
+      arabic: 'رمادي',
+      english: 'Grey',
+      pronunciation: 'Ramadi'),
+  Word(
+      topic: 'Colors',
+      arabic: 'عنبر',
+      english: 'Amber',
+      pronunciation: 'Anbar'),
 ];

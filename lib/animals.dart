@@ -103,7 +103,7 @@ class _AnimalsState extends State<Animals> {
                     text: 'Back',
                   ),
                   GButton(
-                    icon: Icons.reviews,
+                    icon: Icons.class_,
                     text: 'Review',
                   ),
                   GButton(

@@ -222,36 +222,54 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(
-                          signIn,
-                        );
-                      },
-                      style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(130, 35, 61, 155),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 32, 6, 96),
+                            Color.fromARGB(255, 57, 119, 194),
+                          ],
                         ),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          SizedBox(
-                            width: 30,
-                            height: 50,
-                          ),
-                          Text(
-                            'Sign In',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Pacifico',
-                              fontSize: 20.0,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(
+                            signIn,
+                          );
+                        },
+                        style: ButtonStyle(
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          SizedBox(
-                            width: 35,
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
                           ),
-                        ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            SizedBox(
+                              width: 30,
+                              height: 50,
+                            ),
+                            Text(
+                              'Sign In',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 35,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(

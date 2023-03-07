@@ -1,7 +1,11 @@
 import 'package:arabic_made_easy/colors_class.dart';
+import 'package:arabic_made_easy/colors_quiz.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
+import 'animals_quiz.dart';
+import 'flashcards_notifier.dart';
 import 'second_page.dart';
 
 class ColorsPage extends StatefulWidget {
@@ -191,7 +195,21 @@ class _ColorsPageState extends State<ColorsPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(
+                          () {
+                            Provider.of<FlashCardNotifier>(context,
+                                    listen: false)
+                                .setTopic(topic: 'Colors');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ColorsQuiz(),
+                              ),
+                            );
+                          },
+                        );
+                      },
                       style: const ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                           Color.fromARGB(130, 35, 61, 155),

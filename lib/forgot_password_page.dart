@@ -199,36 +199,54 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     const SizedBox(
                       height: 15,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          passwordReset();
-                        });
-                      },
-                      style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
-                          Color.fromARGB(130, 35, 61, 155),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 32, 6, 96),
+                            Color.fromARGB(255, 57, 119, 194),
+                          ],
                         ),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          SizedBox(
-                            width: 10,
-                            height: 50,
-                          ),
-                          Text(
-                            'Reset Password',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Pacifico',
-                              fontSize: 17.0,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            passwordReset();
+                          });
+                        },
+                        style: ButtonStyle(
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          SizedBox(
-                            width: 10,
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
                           ),
-                        ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            SizedBox(
+                              width: 10,
+                              height: 50,
+                            ),
+                            Text(
+                              'Reset Password',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 17.0,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

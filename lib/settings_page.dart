@@ -67,7 +67,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AnimalsQuiz(),
+                                  builder: (context) => const PageTwo(),
                                 ),
                               );
                             },
@@ -79,26 +79,13 @@ class _SettingsPageState extends State<SettingsPage> {
                         const Duration(seconds: 1),
                         () {
                           setState(
-                            () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const PageTwo(),
-                                ),
-                              );
-                            },
+                            () {},
                           );
                         },
                       );
-                    } else if (index == 2) {
-                      setState(() {});
                     }
                   },
                   tabs: const [
-                    GButton(
-                      icon: Icons.arrow_back,
-                      text: 'Back',
-                    ),
                     GButton(
                       icon: Icons.class_,
                       text: 'Classes',
