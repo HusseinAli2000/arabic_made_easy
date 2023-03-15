@@ -266,3 +266,5 @@ final List<Word> words = [
       english: 'Amber',
       pronunciation: 'Anbar'),
 ];
+
+const List<String> AnimalWords = ['نملة', 'تمساح', 'خفاش', 'دب', 'نحلة'];
