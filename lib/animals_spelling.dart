@@ -1,8 +1,12 @@
 import 'dart:math';
 
 import 'package:arabic_made_easy/fly_in_animation.dart';
+import 'package:arabic_made_easy/spelling_progress_bar.dart';
+import 'package:arabic_made_easy/tts_button.dart';
+import 'package:arabic_made_easy/tts_button_two.dart';
 import 'package:arabic_made_easy/words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -12,9 +16,9 @@ import 'spelling_controller.dart';
 import 'word.dart';
 
 class AnimalsSpelling extends StatefulWidget {
-  const AnimalsSpelling({super.key, required this.wordCompleted});
-
-  final bool wordCompleted;
+  const AnimalsSpelling({
+    super.key,
+  });
 
   @override
   State<AnimalsSpelling> createState() => _AnimalsSpellingState();
@@ -22,13 +26,17 @@ class AnimalsSpelling extends StatefulWidget {
 
 class _AnimalsSpellingState extends State<AnimalsSpelling> {
   List<String> _words = AnimalWords.toList();
-  String _word = '', _dropWord = '';
+  // ..shuffle
+  // ..take(5);
+
+  late String _word, _dropWord, wordComplete;
 
   _generateWord() {
     final r = Random().nextInt(_words.length);
     _word = _words[r];
     _words.removeAt(r);
     _dropWord = _word.toString().split('').reversed.join();
+    wordComplete = _dropWord.toString().split('').reversed.join();
     final s = _word.characters.toList()..shuffle();
     _word = s.join();
 
@@ -171,146 +179,79 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
               ),
               child: Center(
                 child: SafeArea(
-                  child: widget.wordCompleted
-                      ? Column(
-                          children: [
-                            if (widget.wordCompleted)
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  color: Colors.red,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        _dropWord
-                                            .toString()
-                                            .split('')
-                                            .reversed
-                                            .join(),
-                                        style: const TextStyle(
-                                            color: Color.fromARGB(
-                                                255, 235, 234, 243),
-                                            fontSize: 30,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ],
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              TTSButtonTwo(
+                                word: wordComplete,
+                                iconSize: 40,
+                              )
+                            ]),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: _dropWord.characters
+                                .map(
+                                  (e) => FlyInAnimation(
+                                    animate: true,
+                                    child: Drop(
+                                      letter: e,
+                                    ),
                                   ),
-                                ),
-                              ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: _dropWord.characters
-                                      .map(
-                                        (e) => FlyInAnimation(
-                                          animate: true,
-                                          child: Drop(
-                                            letter: e,
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: FlyInAnimation(
-                                    animate: true,
-                                    child: Image.asset(
-                                        'images/${_dropWord.toString().split('').reversed.join()}.png')),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: _word.characters
-                                      .map(
-                                        (e) => FlyInAnimation(
-                                            animate: true,
-                                            child: Drag(letter: e)),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                color: Colors.lime,
-                              ),
-                            ),
-                          ],
-                        )
-                      : Column(
-                          children: [
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                color: Colors.red,
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: _dropWord.characters
-                                      .map(
-                                        (e) => FlyInAnimation(
-                                          animate: true,
-                                          child: Drop(
-                                            letter: e,
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: FlyInAnimation(
-                                    animate: true,
-                                    child: Image.asset(
-                                        'images/${_dropWord.toString().split('').reversed.join()}.png')),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: _word.characters
-                                      .map(
-                                        (e) => FlyInAnimation(
-                                            animate: true,
-                                            child: Drag(letter: e)),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                color: Colors.lime,
-                              ),
-                            ),
-                          ],
+                                )
+                                .toList(),
+                          ),
                         ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                          child: FlyInAnimation(
+                              animate: true,
+                              child: Image.asset(
+                                'images/${_dropWord.toString().split('').reversed.join()}.png',
+                                height: 300,
+                                width: 300,
+                                fit: BoxFit.contain,
+                              )),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: _word.characters
+                                  .map(
+                                    (e) => FlyInAnimation(
+                                        animate: true, child: Drag(letter: e)),
+                                  )
+                                  .toList(),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: const SpellingProgressBar(),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -340,10 +281,8 @@ class Drop extends StatelessWidget {
         child: DragTarget(
           onWillAccept: (data) {
             if (data == letter) {
-              print('Accepted');
               return true;
             } else {
-              print('Rejected');
               return false;
             }
           },
@@ -356,12 +295,15 @@ class Drop extends StatelessWidget {
                 letter,
                 style: const TextStyle(
                     color: Color.fromARGB(255, 235, 234, 243),
-                    fontSize: 30,
+                    fontSize: 35,
                     fontWeight: FontWeight.bold),
               );
             } else {
               return Container(
-                color: Colors.amber,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(255, 35, 61, 155),
+                ),
                 height: 50,
                 width: 50,
               );
@@ -418,7 +360,7 @@ class _DragState extends State<Drag> {
                         widget.letter,
                         style: TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
-                            fontSize: 30,
+                            fontSize: 40,
                             fontWeight: FontWeight.bold,
                             shadows: [
                               Shadow(
@@ -432,7 +374,7 @@ class _DragState extends State<Drag> {
                         widget.letter,
                         style: const TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
-                            fontSize: 30,
+                            fontSize: 35,
                             fontWeight: FontWeight.bold),
                       ),
                     ),

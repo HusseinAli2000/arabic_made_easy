@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import 'animals_memory_cards.dart';
 import 'animals_spelling.dart';
 import 'second_page.dart';
+import 'spelling_controller.dart';
 
 class Animals extends StatefulWidget {
   const Animals({super.key});
@@ -319,12 +320,12 @@ class _AnimalsState extends State<Animals> {
                         onPressed: () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AnimalsSpelling(
-                                    wordCompleted: false,
-                                  ),
+                                  builder: (context) => const AnimalsSpelling(),
                                 ),
                               );
                             },

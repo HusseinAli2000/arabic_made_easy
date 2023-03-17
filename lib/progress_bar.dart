@@ -19,7 +19,7 @@ class _ProgressBarState extends State<ProgressBar>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this);
+        duration: const Duration(milliseconds: 800), vsync: this);
   }
 
   @override
@@ -38,7 +38,7 @@ class _ProgressBarState extends State<ProgressBar>
           beginValue = 0;
         }
         var animation = Tween<double>(begin: beginValue, end: endValue).animate(
-          CurvedAnimation(parent: _controller, curve: Curves.easeInOutCirc),
+          CurvedAnimation(parent: _controller, curve: Curves.elasticInOut),
         );
         _controller.reset();
         _controller.forward();
