@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
-import 'animals_quiz.dart';
 import 'flashcards_notifier.dart';
 import 'second_page.dart';
 

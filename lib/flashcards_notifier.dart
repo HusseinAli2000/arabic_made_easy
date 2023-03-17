@@ -104,13 +104,12 @@ class FlashCardNotifier extends ChangeNotifier {
     } else {
       if (incorrectCards.isEmpty) {
         isSessionCompleted = true;
-        print('Session Completed: $isSessionCompleted');
       }
       isRoundCompleted = true;
       isFirstRound = false;
       calculateCorrectPercentage();
-      Future.delayed(Duration(milliseconds: 500), () {
-        showDialog(context: context, builder: (context) => ResultsBox());
+      Future.delayed(const Duration(milliseconds: 500), () {
+        showDialog(context: context, builder: (context) => const ResultsBox());
       });
     }
 

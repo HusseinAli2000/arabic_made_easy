@@ -42,11 +42,11 @@ class MessageBox extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 20),
                 child: Text(
                   content,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'Akaya',
                     fontSize: 18,
                     color: Color.fromARGB(255, 235, 234, 243),
@@ -65,13 +65,13 @@ class MessageBox extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 7),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 7),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.only(left: 50, right: 50),
+                        padding: const EdgeInsets.only(left: 50, right: 50),
                         backgroundColor: const Color.fromARGB(130, 35, 61, 155),
                         textStyle: const TextStyle(
                           color: Color.fromARGB(255, 235, 234, 243),

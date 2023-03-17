@@ -9,7 +9,7 @@ class QuickBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      titlePadding: EdgeInsets.all(0),
+      titlePadding: const EdgeInsets.all(0),
       title: Container(
         width: 150,
         height: 75,

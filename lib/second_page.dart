@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

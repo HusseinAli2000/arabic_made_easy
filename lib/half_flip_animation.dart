@@ -27,13 +27,13 @@ class _HalfFlipAnimationState extends State<HalfFlipAnimation>
 
   @override
   void initState() {
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300))
-          ..addListener(() {
-            if (_animationController.isCompleted) {
-              widget.animationCompleted.call();
-            }
-          });
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 300))
+      ..addListener(() {
+        if (_animationController.isCompleted) {
+          widget.animationCompleted.call();
+        }
+      });
     super.initState();
   }
 

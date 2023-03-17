@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-import 'word.dart';
-
 class TTSButtonTwo extends StatefulWidget {
   const TTSButtonTwo({super.key, required this.word, this.iconSize = 30});
 
@@ -14,7 +12,7 @@ class TTSButtonTwo extends StatefulWidget {
 }
 
 class _TTSButtonTwoState extends State<TTSButtonTwo> {
-  FlutterTts _tts = FlutterTts();
+  final FlutterTts _tts = FlutterTts();
 
   @override
   void initState() {

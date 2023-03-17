@@ -37,7 +37,7 @@ class CardDisplay extends StatelessWidget {
                   //card 1
                   children: [
                     if (audioOnly) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 180,
                       ),
                       TTSButton(word: notifier.word1)
@@ -65,7 +65,7 @@ class CardDisplay extends StatelessWidget {
                                 fontSize: 35,
                               ),
                             )
-                          : SizedBox(),
+                          : const SizedBox(),
                       const SizedBox(
                         height: 35,
                       ),
@@ -125,13 +125,13 @@ class CardDisplay extends StatelessWidget {
                                 fontSize: 20,
                               ),
                             )
-                          : SizedBox(),
-                      SizedBox(
+                          : const SizedBox(),
+                      const SizedBox(
                         height: 10,
                       ),
                       TTSButton(word: notifier.word1)
                     ] else if (!setEnglishFirst) ...[
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       buildImage(notifier.word2.english),
@@ -177,7 +177,7 @@ class CardDisplay extends StatelessWidget {
                                 fontSize: 25,
                               ),
                             )
-                          : SizedBox(),
+                          : const SizedBox(),
                       TTSButton(word: notifier.word1),
                     ]
                   ],

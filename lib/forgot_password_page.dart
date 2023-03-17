@@ -223,7 +223,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          backgroundColor: MaterialStatePropertyAll(
+                          backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(130, 35, 61, 155),
                           ),
                         ),

@@ -1,9 +1,8 @@
 import 'package:arabic_made_easy/colors.dart';
-import 'package:audioplayers/audioplayers.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'alphabet_page.dart';
 import 'second_page.dart';
 
 class ColorsClass extends StatefulWidget {

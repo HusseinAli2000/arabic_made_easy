@@ -280,7 +280,6 @@ class Card2 extends StatelessWidget {
     return Consumer<FlashCardNotifier>(
       builder: (_, notifier, __) => GestureDetector(
         onHorizontalDragEnd: ((details) {
-          print(details.primaryVelocity);
           if (details.primaryVelocity! > 100) {
             notifier.runSwipeCard2(direction: SlideDirection.leftAway);
             notifier.runSlideCard1();

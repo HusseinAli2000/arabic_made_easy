@@ -1,8 +1,8 @@
 import 'package:arabic_made_easy/guide_box.dart';
 import 'package:arabic_made_easy/language_type.dart';
-import 'package:arabic_made_easy/settings_notifier.dart';
+
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'settings.dart';
@@ -40,7 +40,7 @@ runGuideBox({required BuildContext context, required bool isFirst}) {
     SharedPreferences.getInstance().then((prefs) {
       prefs.setBool('guidebox', true);
     });
-  Future.delayed(Duration(milliseconds: 1200), () {
+  Future.delayed(const Duration(milliseconds: 1200), () {
     showDialog(
         context: context,
         builder: (context) => GuideBox(

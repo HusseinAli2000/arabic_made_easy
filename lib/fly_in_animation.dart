@@ -16,8 +16,8 @@ class _FlyInAnimationState extends State<FlyInAnimation>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 700));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 700));
     super.initState();
   }
 

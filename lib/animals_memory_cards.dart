@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animals.dart';
-
 class AnimalsMemoryCards extends StatefulWidget {
   const AnimalsMemoryCards({super.key});
 
@@ -33,6 +31,7 @@ class _AnimalsMemoryCardsState extends State<AnimalsMemoryCards> {
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final widthPadding = size.width * 0.10;

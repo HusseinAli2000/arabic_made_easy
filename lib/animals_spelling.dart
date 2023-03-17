@@ -2,18 +2,17 @@ import 'dart:math';
 
 import 'package:arabic_made_easy/fly_in_animation.dart';
 import 'package:arabic_made_easy/spelling_progress_bar.dart';
-import 'package:arabic_made_easy/tts_button.dart';
+
 import 'package:arabic_made_easy/tts_button_two.dart';
 import 'package:arabic_made_easy/words.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'animals.dart';
 import 'second_page.dart';
 import 'spelling_controller.dart';
-import 'word.dart';
 
 class AnimalsSpelling extends StatefulWidget {
   const AnimalsSpelling({
@@ -25,7 +24,7 @@ class AnimalsSpelling extends StatefulWidget {
 }
 
 class _AnimalsSpellingState extends State<AnimalsSpelling> {
-  List<String> _words = AnimalWords.toList();
+  final List<String> _words = AnimalWords.toList();
   // ..shuffle
   // ..take(5);
 
@@ -181,7 +180,7 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
                 child: SafeArea(
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Expanded(
@@ -216,39 +215,33 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
                       ),
                       Expanded(
                         flex: 3,
-                        child: Container(
-                          child: FlyInAnimation(
-                              animate: true,
-                              child: Image.asset(
-                                'images/${_dropWord.toString().split('').reversed.join()}.png',
-                                height: 300,
-                                width: 300,
-                                fit: BoxFit.contain,
-                              )),
-                        ),
+                        child: FlyInAnimation(
+                            animate: true,
+                            child: Image.asset(
+                              'images/${_dropWord.toString().split('').reversed.join()}.png',
+                              height: 300,
+                              width: 300,
+                              fit: BoxFit.contain,
+                            )),
                       ),
                       Expanded(
                         flex: 3,
-                        child: Container(
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: _word.characters
-                                  .map(
-                                    (e) => FlyInAnimation(
-                                        animate: true, child: Drag(letter: e)),
-                                  )
-                                  .toList(),
-                            ),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: _word.characters
+                                .map(
+                                  (e) => FlyInAnimation(
+                                      animate: true, child: Drag(letter: e)),
+                                )
+                                .toList(),
                           ),
                         ),
                       ),
-                      Expanded(
+                      const Expanded(
                         flex: 1,
-                        child: Container(
-                          child: const SpellingProgressBar(),
-                        ),
+                        child: SpellingProgressBar(),
                       ),
                     ],
                   ),
@@ -343,7 +336,7 @@ class _DragState extends State<Drag> {
             width: size.width * 0.15,
             height: size.height * 0.15,
             child: _accepted
-                ? SizedBox()
+                ? const SizedBox()
                 : Center(
                     child: Draggable(
                       data: widget.letter,
@@ -355,16 +348,16 @@ class _DragState extends State<Drag> {
                               .incrementLetters(context: context);
                         }
                       },
-                      childWhenDragging: SizedBox(),
+                      childWhenDragging: const SizedBox(),
                       feedback: Text(
                         widget.letter,
                         style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
+                            color: const Color.fromARGB(255, 235, 234, 243),
                             fontSize: 40,
                             fontWeight: FontWeight.bold,
                             shadows: [
                               Shadow(
-                                offset: Offset(3, 3),
+                                offset: const Offset(3, 3),
                                 color: Colors.black.withOpacity(0.40),
                                 blurRadius: 5,
                               ),

@@ -48,13 +48,13 @@ class GuideBox extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 7),
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 7),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.only(left: 50, right: 50),
+                          padding: const EdgeInsets.only(left: 50, right: 50),
                           backgroundColor:
                               const Color.fromARGB(130, 35, 61, 155),
                           textStyle: const TextStyle(
@@ -70,7 +70,7 @@ class GuideBox extends StatelessWidget {
                         onPressed: () {
                           Navigator.maybePop(context);
                         },
-                        child: Text('Got It!'),
+                        child: const Text('Got It!'),
                       ),
                     ],
                   ),
@@ -78,8 +78,8 @@ class GuideBox extends StatelessWidget {
               ] else ...[
                 Column(
                   children: [
-                    Container(
-                      height: 235,
+                    SizedBox(
+                      height: 190,
                       width: 500,
                       child: Row(
                         children: const [
@@ -92,33 +92,30 @@ class GuideBox extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.only(left: 50, right: 50),
-                              backgroundColor:
-                                  const Color.fromARGB(130, 35, 61, 155),
-                              textStyle: const TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.only(left: 50, right: 50),
+                            backgroundColor:
+                                const Color.fromARGB(130, 35, 61, 155),
+                            textStyle: const TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Akaya',
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
                             ),
-                            onPressed: () {
-                              Navigator.maybePop(context);
-                            },
-                            child: Text('Got It!'),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                           ),
-                        ],
-                      ),
+                          onPressed: () {
+                            Navigator.maybePop(context);
+                          },
+                          child: const Text('Got It!'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -143,6 +140,7 @@ class GuideSwipe extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         isLeft
             ? const Padding(
@@ -152,7 +150,7 @@ class GuideSwipe extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'Akaya',
-                    fontSize: 18,
+                    fontSize: 15,
                     color: Color.fromARGB(255, 235, 234, 243),
                     fontWeight: FontWeight.bold,
                   ),
@@ -165,7 +163,7 @@ class GuideSwipe extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'Akaya',
-                    fontSize: 18,
+                    fontSize: 15,
                     color: Color.fromARGB(255, 235, 234, 243),
                     fontWeight: FontWeight.bold,
                   ),
@@ -173,7 +171,7 @@ class GuideSwipe extends StatelessWidget {
               ),
         Expanded(
           child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(15.0),
               child: isLeft
                   ? Image.asset('images/GuideLeftSwipe.png')
                   : Image.asset('images/GuideRightSwipe.png')),

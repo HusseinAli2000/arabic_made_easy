@@ -19,8 +19,8 @@ class _SpellingProgressBarState extends State<SpellingProgressBar>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 800));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 800));
     _animation = Tween<double>(begin: begin, end: end).animate(
         CurvedAnimation(parent: _controller, curve: Curves.elasticInOut));
     super.initState();

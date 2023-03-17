@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
-import 'animals.dart';
 import 'second_page.dart';
 import 'settings_page.dart';
 import 'word.dart';
@@ -185,7 +184,8 @@ class _ReviewPageState extends State<ReviewPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => AnimalsQuiz()));
+                                          builder: (context) =>
+                                              const AnimalsQuiz()));
                                 });
                               },
                             ),
@@ -204,13 +204,14 @@ class _ReviewPageState extends State<ReviewPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => AnimalsQuiz()));
+                                          builder: (context) =>
+                                              const AnimalsQuiz()));
                                 });
                               },
                             ),
                             HeaderButton(
                               isDisabled: disable,
-                              title: 'Clear Cards',
+                              title: 'Clear All',
                               onPressed: () {
                                 _clearAllWords();
                               },
@@ -248,7 +249,7 @@ class _ReviewPageState extends State<ReviewPage> {
                               ),
                             );
                           } else {
-                            return SizedBox();
+                            return const SizedBox();
                           }
                         },
                       ),
@@ -442,7 +443,7 @@ class WordTile extends StatelessWidget {
                             ),
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                   trailing: SizedBox(
                     width: 100,
                     child: Row(
@@ -478,7 +479,7 @@ class WordTile extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                         notifier.showArabic
                             ? Text(
                                 word.arabic,
@@ -489,7 +490,7 @@ class WordTile extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                         notifier.showPronunciation
                             ? Text(
                                 word.pronunciation,
@@ -500,7 +501,7 @@ class WordTile extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ],
                     ),
                   ),

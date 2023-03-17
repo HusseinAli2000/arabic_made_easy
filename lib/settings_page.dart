@@ -1,4 +1,3 @@
-import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:arabic_made_easy/quick_box.dart';
 import 'package:arabic_made_easy/settings.dart';
 import 'package:arabic_made_easy/settings_notifier.dart';
@@ -9,7 +8,6 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'settings_to_text.dart';
 
-import 'animals.dart';
 import 'second_page.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -240,7 +238,7 @@ class _SettingsPageState extends State<SettingsPage> {
       context: context,
       builder: (context) => QuickBox(text: text),
     );
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.maybePop(context);
     });
   }

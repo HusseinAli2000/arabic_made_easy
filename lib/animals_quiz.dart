@@ -10,7 +10,7 @@ import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:math';
+
 import 'animals.dart';
 import 'card_display.dart';
 import 'second_page.dart';
@@ -280,7 +280,6 @@ class Card2 extends StatelessWidget {
     return Consumer<FlashCardNotifier>(
       builder: (_, notifier, __) => GestureDetector(
         onHorizontalDragEnd: ((details) {
-          print(details.primaryVelocity);
           if (details.primaryVelocity! > 100) {
             notifier.runSwipeCard2(direction: SlideDirection.leftAway);
             notifier.runSlideCard1();

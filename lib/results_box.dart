@@ -5,7 +5,6 @@ import 'package:arabic_made_easy/quick_box.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sqflite/sqflite.dart';
 
 class ResultsBox extends StatefulWidget {
   const ResultsBox({super.key});
@@ -23,7 +22,7 @@ class _ResultsBoxState extends State<ResultsBox> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        backgroundColor: Color.fromARGB(130, 35, 61, 155),
+        backgroundColor: const Color.fromARGB(130, 35, 61, 155),
         title: notifier.isSessionCompleted
             ? const Text(
                 'Session completed!',
@@ -47,7 +46,7 @@ class _ResultsBoxState extends State<ResultsBox> {
               ),
         actions: [
           Table(
-            columnWidths: {
+            columnWidths: const {
               0: FlexColumnWidth(3),
               1: FlexColumnWidth(1),
             },
@@ -73,14 +72,14 @@ class _ResultsBoxState extends State<ResultsBox> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 notifier.isSessionCompleted
-                    ? SizedBox()
+                    ? const SizedBox()
                     : ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(color: Colors.white),
+                            side: const BorderSide(color: Colors.white),
                           ),
-                          backgroundColor: Color.fromARGB(161, 6, 12, 58),
+                          backgroundColor: const Color.fromARGB(161, 6, 12, 58),
                           textStyle: const TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Akaya',
@@ -92,21 +91,21 @@ class _ResultsBoxState extends State<ResultsBox> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AnimalsQuiz(),
+                              builder: (context) => const AnimalsQuiz(),
                             ),
                           );
                         },
-                        child: Text('Retest Incorrect Cards'),
+                        child: const Text('Retest Incorrect Cards'),
                       ),
                 notifier.isSessionCompleted
-                    ? SizedBox()
+                    ? const SizedBox()
                     : ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(color: Colors.white),
+                            side: const BorderSide(color: Colors.white),
                           ),
-                          backgroundColor: Color.fromARGB(161, 6, 12, 58),
+                          backgroundColor: const Color.fromARGB(161, 6, 12, 58),
                           textStyle: const TextStyle(
                             color: Color.fromARGB(255, 235, 234, 243),
                             fontFamily: 'Akaya',
@@ -124,7 +123,6 @@ class _ResultsBoxState extends State<ResultsBox> {
                                       word: notifier.incorrectCards[i]);
                                   final words =
                                       await DatabaseManager().selectWord();
-                                  print(words.length);
                                 }
                                 _haveSavedCards = true;
                                 runQuickBox(
@@ -132,14 +130,14 @@ class _ResultsBoxState extends State<ResultsBox> {
                                     text: 'Incorrect Cards Saved!');
                                 setState(() {});
                               },
-                        child: Text('Save Incorrect Cards'),
+                        child: const Text('Save Incorrect Cards'),
                       ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: Colors.white)),
-                    backgroundColor: Color.fromARGB(161, 6, 12, 58),
+                        side: const BorderSide(color: Colors.white)),
+                    backgroundColor: const Color.fromARGB(161, 6, 12, 58),
                     textStyle: const TextStyle(
                       color: Color.fromARGB(255, 235, 234, 243),
                       fontFamily: 'Akaya',
@@ -152,11 +150,11 @@ class _ResultsBoxState extends State<ResultsBox> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PageTwo(),
+                        builder: (context) => const PageTwo(),
                       ),
                     );
                   },
-                  child: Text('Back to Classes'),
+                  child: const Text('Back to Classes'),
                 ),
               ],
             ),
@@ -208,7 +206,7 @@ class _ResultsBoxState extends State<ResultsBox> {
       context: context,
       builder: (context) => QuickBox(text: text),
     );
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.maybePop(context);
     });
   }
