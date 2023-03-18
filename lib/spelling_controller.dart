@@ -17,7 +17,7 @@ class Controller extends ChangeNotifier {
     notifyListeners();
   }
 
-  incrementLetters({
+  incrementLettersAllAnimals({
     required BuildContext context,
   }) {
     lettersAnswered++;
@@ -29,6 +29,35 @@ class Controller extends ChangeNotifier {
       wordsAnswered++;
       percentCompleted = wordsAnswered / AnimalWords.length;
       if (wordsAnswered == AnimalWords.length) {
+        sessionCompleted = true;
+      }
+
+      showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (_) => MessageBox(
+                sessionCompleted: sessionCompleted,
+              ));
+    } else {
+      AudioPlayer().play(
+        AssetSource('spelling/1.mp3'),
+      );
+    }
+    notifyListeners();
+  }
+
+  incrementLettersAllColors({
+    required BuildContext context,
+  }) {
+    lettersAnswered++;
+    if (lettersAnswered == totalLetters) {
+      AudioPlayer().play(
+        AssetSource('spelling/2.mp3'),
+      );
+
+      wordsAnswered++;
+      percentCompleted = wordsAnswered / ColorWords.length;
+      if (wordsAnswered == ColorWords.length) {
         sessionCompleted = true;
       }
 

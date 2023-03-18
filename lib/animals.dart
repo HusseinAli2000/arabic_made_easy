@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/animals_class.dart';
+import 'package:arabic_made_easy/animals_multi_choice.dart';
 import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
@@ -345,6 +346,57 @@ class _AnimalsState extends State<Animals> {
                             ),
                             const Text(
                               'Writing Quiz',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Image.asset(
+                              'images/quiz.png',
+                              height: 35,
+                              width: 35,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AnimalsMulti(),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(
+                              width: 13,
+                              height: 70,
+                            ),
+                            const Text(
+                              'Multiple Choice Quiz',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 235, 234, 243),
                                 fontFamily: 'Pacifico',

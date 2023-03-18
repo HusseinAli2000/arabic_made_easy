@@ -1,11 +1,14 @@
 import 'package:arabic_made_easy/colors_class.dart';
 import 'package:arabic_made_easy/colors_quiz.dart';
+import 'package:arabic_made_easy/colors_spelling.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
+import 'animals_spelling.dart';
 import 'flashcards_notifier.dart';
 import 'second_page.dart';
+import 'spelling_controller.dart';
 
 class ColorsPage extends StatefulWidget {
   const ColorsPage({super.key});
@@ -223,6 +226,59 @@ class _ColorsPageState extends State<ColorsPage> {
                           ),
                           const Text(
                             'Quiz',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Image.asset(
+                            'images/quiz.png',
+                            height: 35,
+                            width: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                            height: 20,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(
+                          () {
+                            Provider.of<Controller>(context, listen: false)
+                                .reset();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ColorsSpelling(),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(
+                            width: 13,
+                            height: 70,
+                          ),
+                          const Text(
+                            'Writing Quiz',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                               fontFamily: 'Pacifico',

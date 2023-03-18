@@ -1,33 +1,26 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/fly_in_animation.dart';
-import 'package:arabic_made_easy/spelling_progress_bar.dart';
-
-import 'package:arabic_made_easy/tts_button_two.dart';
-import 'package:arabic_made_easy/words.dart';
+import 'package:arabic_made_easy/colors.dart';
+import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
-
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
-import 'animals.dart';
-import 'second_page.dart';
+import 'fly_in_animation.dart';
 import 'spelling_controller.dart';
+import 'spelling_progress_bar.dart';
+import 'tts_button_two.dart';
+import 'words.dart';
 
-class AnimalsSpelling extends StatefulWidget {
-  const AnimalsSpelling({
-    super.key,
-  });
+class ColorsSpelling extends StatefulWidget {
+  const ColorsSpelling({super.key});
 
   @override
-  State<AnimalsSpelling> createState() => _AnimalsSpellingState();
+  State<ColorsSpelling> createState() => _ColorsSpellingState();
 }
 
-class _AnimalsSpellingState extends State<AnimalsSpelling> {
-  final List<String> _words = AnimalWords.toList();
-  // ..shuffle
-  // ..take(5);
-
+class _ColorsSpellingState extends State<ColorsSpelling> {
+  final List<String> _words = ColorWords.toList();
   late String _word, _dropWord, wordComplete;
 
   _generateWord() {
@@ -96,7 +89,7 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const Animals(),
+                                  builder: (context) => const ColorsPage(),
                                 ),
                               );
                             },
@@ -155,7 +148,7 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
               ),
               title: const Center(
                 child: Text(
-                  'Animals Writing Quiz',
+                  'Colors Writing Quiz',
                   style: TextStyle(
                     fontFamily: 'Akaya',
                     fontSize: 25,
@@ -345,7 +338,7 @@ class _DragState extends State<Drag> {
                           _accepted = true;
                           setState(() {});
                           Provider.of<Controller>(context, listen: false)
-                              .incrementLettersAllAnimals(context: context);
+                              .incrementLettersAllColors(context: context);
                         }
                       },
                       childWhenDragging: const SizedBox(),

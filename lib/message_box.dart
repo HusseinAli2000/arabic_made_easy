@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/animals_spelling.dart';
+import 'package:arabic_made_easy/second_page.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MessageBox extends StatelessWidget {
     String content = 'Word Completed';
     String image = 'images/welldone.png';
     if (sessionCompleted) {
-      buttonText = 'Replay';
+      buttonText = 'Back to classes';
       content = 'All Words Completed!';
       image = 'images/completed.png';
     }
@@ -90,7 +91,7 @@ class MessageBox extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const AnimalsSpelling(),
+                              builder: (context) => const PageTwo(),
                             ),
                           );
                         } else {

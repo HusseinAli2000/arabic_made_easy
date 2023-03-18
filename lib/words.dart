@@ -266,7 +266,7 @@ final List<Word> words = [
       english: 'Amber',
       pronunciation: 'Anbar'),
 ];
-
+const List<String> ColorWords = ['بنفسجي', 'أحمر', 'أصفر'];
 const List<String> AnimalWords = [
   // 'نملة',
   // 'تمساح',

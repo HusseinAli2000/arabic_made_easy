@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:arabic_made_easy/colors.dart';
 import 'package:arabic_made_easy/colors_class.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
@@ -86,7 +87,7 @@ class _ColorsQuizState extends State<ColorsQuiz> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const ColorsClass(),
+                                builder: (context) => const ColorsPage(),
                               ),
                             );
                           },
