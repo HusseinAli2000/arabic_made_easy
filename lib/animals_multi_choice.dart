@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'animals.dart';
+import 'second_page.dart';
 import 'tts_button_two.dart';
 import 'words.dart';
 
@@ -17,15 +18,26 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
   late String _word;
   late List<String> _options;
   final _random = Random();
+  int _score = 0;
+  int _questionIndex = 0;
+  bool _gameOver = false;
 
   @override
   void initState() {
     super.initState();
+    _words.shuffle(); // Shuffle the list of words.
     _generateQuestion();
   }
 
   void _generateQuestion() {
-    _word = _words[_random.nextInt(_words.length)];
+    if (_questionIndex == 5) {
+      // If all 5 questions have been generated, set the _gameOver flag to true
+      // so that the game does not continue to generate new questions.
+      _gameOver = true;
+      _showResultsDialog();
+      return;
+    }
+    _word = _words[_questionIndex];
     _options = [_word];
     while (_options.length < 4) {
       String randomWord = _words[_random.nextInt(_words.length)];
@@ -34,43 +46,51 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
       }
     }
     _options.shuffle();
+    _questionIndex++;
   }
 
   void _onOptionSelected(String option) {
-    // Check if the selected option is correct
-    if (option == _word) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Correct!'),
-          content: Text('You got it right.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-                _generateQuestion();
-                setState(() {});
-              },
-              child: Text('Next question'),
-            ),
-          ],
-        ),
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Incorrect'),
-          content: Text('Sorry, that was not the correct answer.'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Try again'),
-            ),
-          ],
-        ),
-      );
+    if (_gameOver) {
+      // If the game is over, do not allow any more answers to be submitted.
+      return;
     }
+    if (option == _word) {
+      _score++;
+    }
+    _generateQuestion();
+    setState(() {});
+  }
+
+  void _showResultsDialog() {
+    double percentage = (_score / _questionIndex) * 100;
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Game over!'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('You got $_score out of $_questionIndex correct.'),
+            SizedBox(height: 16),
+            Text('Percentage correct: ${percentage.toStringAsFixed(2)}%'),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _score = 0;
+              _questionIndex = 0;
+              _gameOver = false;
+              _words.shuffle(); // Shuffle the list of words.
+              _generateQuestion();
+              setState(() {});
+            },
+            child: Text('New game'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -78,10 +98,111 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // Navigation bar code omitted for brevity
-        appBar: AppBar(
-            // AppBar code omitted for brevity
+        bottomNavigationBar: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 32, 6, 96),
+                Color.fromARGB(255, 57, 119, 194),
+              ],
             ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 9),
+            child: GNav(
+              gap: 15,
+              padding: const EdgeInsets.all(6),
+              backgroundColor: Colors.transparent,
+              textStyle: const TextStyle(
+                fontFamily: 'Akaya',
+                fontSize: 18,
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontWeight: FontWeight.bold,
+              ),
+              tabBackgroundColor: const Color.fromARGB(161, 6, 12, 58),
+              color: const Color.fromARGB(255, 235, 234, 243),
+              activeColor: const Color.fromARGB(255, 235, 234, 243),
+              onTabChange: (index) {
+                if (index == 0) {
+                  Future.delayed(
+                    const Duration(seconds: 1),
+                    () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Animals(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (index == 1) {
+                  Future.delayed(
+                    const Duration(seconds: 1),
+                    () {
+                      setState(
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PageTwo(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (index == 2) {
+                  setState(() {});
+                }
+              },
+              tabs: const [
+                GButton(
+                  icon: Icons.arrow_back,
+                  text: 'Back',
+                ),
+                GButton(
+                  icon: Icons.class_,
+                  text: 'Classes',
+                ),
+                GButton(
+                  icon: Icons.settings,
+                  text: 'Settings',
+                ),
+              ],
+            ),
+          ),
+        ),
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 32, 6, 96),
+                  Color.fromARGB(255, 57, 119, 194),
+                ],
+              ),
+            ),
+          ),
+          title: const Center(
+            child: Text(
+              'Animals Multiple Choice Quiz',
+              style: TextStyle(
+                fontFamily: 'Akaya',
+                fontSize: 25,
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -96,22 +217,24 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
           child: Center(
             child: SafeArea(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TTSButtonTwo(word: _word),
-                        SizedBox(height: 32),
-                        // Generate buttons for each option
-                        for (String option in _options)
-                          ElevatedButton(
-                            onPressed: () => _onOptionSelected(option),
-                            child: Text(option),
-                          ),
-                      ],
+                    child: Image.asset(
+                      'images/$_word.png',
+                      fit: BoxFit.fill,
                     ),
                   ),
+                  Expanded(child: TTSButtonTwo(word: _word)),
+
+                  // Generate buttons for each option
+                  for (String option in _options)
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () => _onOptionSelected(option),
+                        child: Text(option),
+                      ),
+                    ),
                 ],
               ),
             ),
