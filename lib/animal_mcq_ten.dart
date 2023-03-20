@@ -1,20 +1,22 @@
 import 'dart:math';
+
+import 'package:arabic_made_easy/second_page.dart';
+import 'package:arabic_made_easy/tts_button_two.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'animals.dart';
-import 'second_page.dart';
-import 'tts_button_two.dart';
+
+import 'animal_mcq.dart';
 import 'words.dart';
 
-class AnimalsMulti extends StatefulWidget {
-  const AnimalsMulti({Key? key}) : super(key: key);
+class AnimalMCQTen extends StatefulWidget {
+  const AnimalMCQTen({super.key});
 
   @override
-  State<AnimalsMulti> createState() => _AnimalsMultiState();
+  State<AnimalMCQTen> createState() => _AnimalMCQTenState();
 }
 
-class _AnimalsMultiState extends State<AnimalsMulti> {
+class _AnimalMCQTenState extends State<AnimalMCQTen> {
   final List<String> _words = AnimalWordsMulti.toList();
   late String _word;
   late List<String> _options;
@@ -34,8 +36,8 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
   }
 
   void _generateQuestion() {
-    if (_questionIndex == 5) {
-      // If all 5 questions have been generated, set the _gameOver flag to true
+    if (_questionIndex == 10) {
+      // If all 10 questions have been generated, set the _gameOver flag to true
       // so that the game does not continue to generate new questions.
       _gameOver = true;
       _showResultsDialog();
@@ -83,7 +85,7 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
     _generateQuestion();
 
     setState(() {
-      _progress += 0.2;
+      _progress += 0.1;
     });
   }
 
@@ -216,14 +218,14 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
               onTabChange: (index) {
                 if (index == 0) {
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Animals(),
+                              builder: (context) => const AnimalMCQ(),
                             ),
                           );
                         },
@@ -282,7 +284,7 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
           ),
           title: const Center(
             child: Text(
-              'Animals Multiple Choice Quiz',
+              '10 Animals Multiple Choice Quiz',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
@@ -310,7 +312,7 @@ class _AnimalsMultiState extends State<AnimalsMulti> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 50),
+                      padding: const EdgeInsets.only(top: 30),
                       child: Image.asset(
                         'images/${_word.replaceAll(' ', '')}.png',
                         fit: BoxFit.fill,

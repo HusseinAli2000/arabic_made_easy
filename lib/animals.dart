@@ -1,5 +1,6 @@
+import 'package:arabic_made_easy/animal_mcq.dart';
 import 'package:arabic_made_easy/animals_class.dart';
-import 'package:arabic_made_easy/animals_multi_choice.dart';
+import 'package:arabic_made_easy/animal_mcq_five.dart';
 import 'package:arabic_made_easy/animals_quiz.dart';
 import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
@@ -377,7 +378,7 @@ class _AnimalsState extends State<Animals> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const AnimalsMulti(),
+                                  builder: (context) => const AnimalMCQ(),
                                 ),
                               );
                             },

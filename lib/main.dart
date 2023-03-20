@@ -10,9 +10,9 @@ import 'main_page.dart';
 import 'word_memory.dart';
 
 List<WordMemory> sourceWords = [];
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
 
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
   runApp(
@@ -23,7 +23,35 @@ void main() async {
         ChangeNotifierProvider(create: (_) => LanguageButtonNotifier()),
         ChangeNotifierProvider(create: (_) => Controller()),
       ],
-      child: const MainPage(),
+      child: MaterialApp(
+        home: Scaffold(
+          body: FutureBuilder(
+            future: populateSourceWords(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Center(
+                  child: Material(
+                    child: Text(
+                      'Error, Check Your Connection',
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                );
+              }
+
+              if (snapshot.hasData) {
+                print('Sucess! There are ${sourceWords.length} source words');
+                return MainPage();
+              } else {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          ),
+        ),
+      ),
     ),
   );
 }
