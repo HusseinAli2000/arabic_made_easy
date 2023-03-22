@@ -285,7 +285,7 @@ class WordTile extends StatelessWidget {
             }
           },
           child: FlipAnimation(
-            delay: notifier.reverseFlip ? 1500 : 0,
+            delay: notifier.reverseFlip ? 500 : 0,
             animate: animate,
             reverse: notifier.reverseFlip,
             animationDone: (isForward) {

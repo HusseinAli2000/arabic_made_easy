@@ -10,6 +10,7 @@ import 'package:arabic_made_easy/language_button_notifier.dart';
 import 'package:arabic_made_easy/review_page.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +27,15 @@ class Animals extends StatefulWidget {
 }
 
 class _AnimalsState extends State<Animals> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<FlashCardNotifier>(

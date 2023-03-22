@@ -1,3 +1,4 @@
+import 'package:arabic_made_easy/auth_service.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,8 @@ import 'forgot_password_page.dart';
 
 class LoginScreen extends StatefulWidget {
   final VoidCallback showRegisterPage;
-  const LoginScreen({super.key, required this.showRegisterPage});
+  final Function()? onTap;
+  const LoginScreen({super.key, required this.showRegisterPage, this.onTap});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -252,12 +254,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: const [
-                            SizedBox(
+                          children: [
+                            const SizedBox(
                               width: 30,
                               height: 50,
                             ),
-                            Text(
+                            const Text(
                               'Sign In',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 235, 234, 243),
@@ -265,7 +267,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontSize: 20.0,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 35,
                             ),
                           ],
@@ -273,6 +275,26 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     const SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () => AuthService().signInWithGoogle(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color.fromARGB(255, 235, 234, 243),
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Image.asset(
+                            'images/google.png',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
                       height: 10,
                     ),
                     Row(

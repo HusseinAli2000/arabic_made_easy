@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'auth_service.dart';
 import 'main_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -305,6 +306,26 @@ class _RegisterPageState extends State<RegisterPage> {
                               width: 35,
                             ),
                           ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () => AuthService().signInWithGoogle(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color.fromARGB(255, 235, 234, 243),
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Image.asset(
+                            'images/google.png',
+                          ),
                         ),
                       ),
                     ),

@@ -34,7 +34,7 @@ class _AnimalMemoryCardsPageState extends State<AnimalMemoryCardsPage> {
             );
           }
 
-          if (snapshot.hasData && sourceWords.isNotEmpty) {
+          if (snapshot.hasData) {
             print('Success! There are ${sourceWords.length} source words');
             return const AnimalsMemoryCards();
           } else {
