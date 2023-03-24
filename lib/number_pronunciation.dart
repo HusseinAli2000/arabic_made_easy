@@ -1,5 +1,7 @@
 import 'package:arabic_made_easy/numbers.dart';
-import 'package:audioplayers/audioplayers.dart';
+
+import 'package:arabic_made_easy/tts_button_two.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -137,621 +139,277 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
           child: Center(
             child: SafeArea(
               child: GridView.count(
-                crossAxisCount: 3,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
+                crossAxisCount: 2,
+                mainAxisSpacing: 25,
+                crossAxisSpacing: 25,
                 padding: const EdgeInsets.all(10),
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Zero (0)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Sifr',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n0.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                children: const [
+                  gridTile(
+                    arabic: '٠',
+                    pronunciation: 'Sifr',
+                    english: 'Zero',
+                    TTSvalue: '0',
+                    arabicWriting: 'صفر',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '١',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'One (1)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Wahid',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n1.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '١',
+                    pronunciation: 'Wahid',
+                    english: 'One',
+                    TTSvalue: '1',
+                    arabicWriting: 'واحد',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٢',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Two (2)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Ithnan',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n2.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٢',
+                    pronunciation: 'Ithnan',
+                    english: 'Two',
+                    TTSvalue: '2',
+                    arabicWriting: 'اثنان',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٣',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Three (3)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Thalatha',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n3.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٣',
+                    pronunciation: 'Thalatha',
+                    english: 'Three',
+                    TTSvalue: '3',
+                    arabicWriting: 'ثلاثة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٤',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Four (4)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Arbaa',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n4.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٤',
+                    pronunciation: 'Arbaa',
+                    english: 'Four',
+                    TTSvalue: '4',
+                    arabicWriting: 'أربعة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٥',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Five (5)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Khamssa',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 13,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n5.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٥',
+                    pronunciation: 'Khamsa',
+                    english: 'Five',
+                    TTSvalue: '5',
+                    arabicWriting: 'خمسة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٦',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Six (6)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Sita',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n6.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٦',
+                    pronunciation: 'Sitta',
+                    english: 'Six',
+                    TTSvalue: '6',
+                    arabicWriting: 'ستة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٧',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Seven (7)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Sabaa',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n7.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٧',
+                    pronunciation: 'Sabaa',
+                    english: 'Seven',
+                    TTSvalue: '7',
+                    arabicWriting: 'سبعة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٨',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Eight (8)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Thamanya',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 11,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n8.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٨',
+                    pronunciation: 'Thamania',
+                    english: 'Eight',
+                    TTSvalue: '8',
+                    arabicWriting: 'ثمانية',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '٩',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Nine (9)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Tissaa',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n9.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '٩',
+                    pronunciation: 'Tissaa',
+                    english: 'Nine',
+                    TTSvalue: '9',
+                    arabicWriting: 'تسعة',
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: const Color.fromARGB(130, 35, 61, 155),
-                      child: Column(
-                        children: [
-                          const Text(
-                            '١٠',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 30,
-                            ),
-                          ),
-                          const Text(
-                            'Ten (10)',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 235, 234, 243),
-                              fontSize: 13,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Ashra',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontSize: 15,
-                                  fontFamily: 'Akaya',
-                                ),
-                              ),
-                              IconButton(
-                                iconSize: 20,
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {
-                                  AudioPlayer().play(
-                                    AssetSource('numbers/n10.wav'),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    arabic: '١٠',
+                    pronunciation: 'Ashara',
+                    english: 'Ten',
+                    TTSvalue: '10',
+                    arabicWriting: 'عشرة',
+                  ),
+                  gridTile(
+                    arabic: '٢٠',
+                    pronunciation: 'Ashrun',
+                    english: 'Twenty',
+                    TTSvalue: '20',
+                    arabicWriting: 'عشرون',
+                  ),
+                  gridTile(
+                    arabic: '٣٠',
+                    pronunciation: 'Thalathun',
+                    english: 'Thirty',
+                    TTSvalue: '30',
+                    arabicWriting: 'ثلاثون',
+                  ),
+                  gridTile(
+                    arabic: '٤٠',
+                    pronunciation: 'Arbaaun',
+                    english: 'Fourty',
+                    TTSvalue: '40',
+                    arabicWriting: 'أربعون',
+                  ),
+                  gridTile(
+                    arabic: '٥٠',
+                    pronunciation: 'Khamsun',
+                    english: 'Fifty',
+                    TTSvalue: '50',
+                    arabicWriting: 'خمسون',
+                  ),
+                  gridTile(
+                    arabic: '٦٠',
+                    pronunciation: 'Sittun',
+                    english: 'Sixty',
+                    TTSvalue: '60',
+                    arabicWriting: 'ستون',
+                  ),
+                  gridTile(
+                    arabic: '٧٠',
+                    pronunciation: 'Sabun',
+                    english: 'Seventy',
+                    TTSvalue: '70',
+                    arabicWriting: 'سبعون',
+                  ),
+                  gridTile(
+                    arabic: '٨٠',
+                    pronunciation: 'Thamanun',
+                    english: 'Eighty',
+                    TTSvalue: '80',
+                    arabicWriting: 'ثمانون',
+                  ),
+                  gridTile(
+                    arabic: '٩٠',
+                    pronunciation: 'Tisun',
+                    english: 'Ninety',
+                    TTSvalue: '90',
+                    arabicWriting: 'تسعون',
+                  ),
+                  gridTile(
+                    arabic: '١٠٠',
+                    pronunciation: 'miaa',
+                    english: 'A Hundred',
+                    TTSvalue: '100',
+                    arabicWriting: 'مئة',
+                  ),
+                  gridTile(
+                    arabic: '١٠٠٠',
+                    pronunciation: 'alf',
+                    english: 'A Thousand',
+                    TTSvalue: '1000',
+                    arabicWriting: 'ألف',
+                  ),
+                  gridTile(
+                    arabic: '١٠٬٠٠٠',
+                    pronunciation: 'Ashra Alaf',
+                    english: 'Ten Thousand',
+                    TTSvalue: '10000',
+                    arabicWriting: 'عشرة ألاف',
+                  ),
+                  gridTile(
+                    arabic: '١٠٠٬٠٠٠',
+                    pronunciation: 'Miaa Alf',
+                    english: 'A Hundred Thousand',
+                    TTSvalue: '100,000',
+                    arabicWriting: 'مئة ألف',
+                  ),
+                  gridTile(
+                    arabic: '١٬٠٠٠٬٠٠٠',
+                    pronunciation: 'Milyoon',
+                    english: 'A Million',
+                    TTSvalue: '1,000,000',
+                    arabicWriting: 'مليون',
                   ),
                 ],
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class gridTile extends StatelessWidget {
+  const gridTile({
+    Key? key,
+    required this.arabic,
+    required this.pronunciation,
+    required this.english,
+    required this.TTSvalue,
+    required this.arabicWriting,
+  }) : super(key: key);
+
+  final String arabic;
+  final String arabicWriting;
+  final String pronunciation;
+  final String english;
+  final String TTSvalue;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color.fromARGB(255, 32, 6, 96),
+            Color.fromARGB(255, 57, 119, 194),
+          ],
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            arabic,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Color.fromARGB(255, 235, 234, 243),
+              fontSize: 30,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4),
+            child: Text(
+              arabicWriting,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(3),
+            child: Text(
+              english,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontSize: 14,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(3),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  pronunciation,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 235, 234, 243),
+                    fontSize: 16,
+                    fontFamily: 'Akaya',
+                  ),
+                ),
+                TTSButtonTwo(
+                  word: TTSvalue,
+                  iconSize: 25,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

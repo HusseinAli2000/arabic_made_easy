@@ -1,18 +1,19 @@
-import 'package:arabic_made_easy/shapes.dart';
+import 'package:arabic_made_easy/body_parts.dart';
+
 import 'package:arabic_made_easy/tts_button_two.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'second_page.dart';
 
-class ShapesClass extends StatefulWidget {
-  const ShapesClass({super.key});
+class BodyPartsClass extends StatefulWidget {
+  const BodyPartsClass({super.key});
 
   @override
-  State<ShapesClass> createState() => _ShapesClassState();
+  State<BodyPartsClass> createState() => _BodyPartsClassState();
 }
 
-class _ShapesClassState extends State<ShapesClass> {
+class _BodyPartsClassState extends State<BodyPartsClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +55,7 @@ class _ShapesClassState extends State<ShapesClass> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Shapes(),
+                              builder: (context) => const BodyParts(),
                             ),
                           );
                         },
@@ -113,7 +114,7 @@ class _ShapesClassState extends State<ShapesClass> {
           ),
           title: const Center(
             child: Text(
-              'Shapes',
+              'Body Parts',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -143,73 +144,55 @@ class _ShapesClassState extends State<ShapesClass> {
                 padding: const EdgeInsets.all(10),
                 children: const [
                   gridTiles(
-                      arabic: 'دائرة',
-                      english: 'Circle',
-                      pronunciation: 'Dayira'),
+                      arabic: 'رأس', english: 'Head', pronunciation: 'Raass'),
                   gridTiles(
-                      arabic: 'مثلث',
-                      english: 'Triangle',
-                      pronunciation: 'Muthalath'),
+                      arabic: 'عين', english: 'Eye', pronunciation: 'Ayn'),
                   gridTiles(
-                      arabic: 'مربع',
-                      english: 'Square',
-                      pronunciation: 'Murabaa'),
+                      arabic: 'أذن', english: 'Ear', pronunciation: 'Udhun'),
                   gridTiles(
-                      arabic: 'مستطيل',
-                      english: 'Rectangle',
-                      pronunciation: 'Mustatil'),
+                      arabic: 'أنف', english: 'Nose', pronunciation: 'Anf'),
                   gridTiles(
-                      arabic: 'خماسي الاضلاع',
-                      english: 'Pentagon',
-                      pronunciation: 'Khumasi Aladhla'),
+                      arabic: 'فم', english: 'Mouth', pronunciation: 'Fam'),
                   gridTiles(
-                      arabic: 'سداسي الاضلاع',
-                      english: 'Hexagon',
-                      pronunciation: 'Sudasi Aladhla'),
+                      arabic: 'شفة', english: 'Lips', pronunciation: 'Shafa'),
                   gridTiles(
-                      arabic: 'سباعي',
-                      english: 'Heptagon',
-                      pronunciation: 'Subaei'),
+                      arabic: 'لسان',
+                      english: 'Tongue',
+                      pronunciation: 'Lisan'),
                   gridTiles(
-                      arabic: 'مثمن',
-                      english: 'Octagon',
-                      pronunciation: 'Muthaman'),
+                      arabic: 'أسنان ',
+                      english: 'Teeth',
+                      pronunciation: 'Asnan'),
                   gridTiles(
-                      arabic: 'شبه منحرف',
-                      english: 'Trapezoid',
-                      pronunciation: 'Shibh Munharif'),
+                      arabic: 'رقبة', english: 'Neck', pronunciation: 'Raqaba'),
                   gridTiles(
-                      arabic: 'معين',
-                      english: 'Rhombus',
-                      pronunciation: 'Mueayan'),
+                      arabic: 'كتف',
+                      english: 'Shoulder',
+                      pronunciation: 'Katif'),
                   gridTiles(
-                      arabic: 'متوازي الاضلاع',
-                      english: 'Parallelogram',
-                      pronunciation: 'Mutwazi Aladhla'),
+                      arabic: 'صدر', english: 'Chest', pronunciation: 'Sadr'),
                   gridTiles(
-                      arabic: 'بيضاوي',
-                      english: 'Oval',
-                      pronunciation: 'Baydhawi'),
+                      arabic: 'بطن', english: 'Stomach', pronunciation: 'Batn'),
                   gridTiles(
-                      arabic: 'مكور',
-                      english: 'Sphere',
-                      pronunciation: 'Mukawar'),
+                      arabic: 'ظهر', english: 'Back', pronunciation: 'Dhahr'),
                   gridTiles(
-                      arabic: 'مكعب', english: 'Cube', pronunciation: 'Mukaeb'),
+                      arabic: 'ذراع', english: 'Arm', pronunciation: 'Dhiraa'),
                   gridTiles(
-                      arabic: 'مكعباني',
-                      english: 'Cuboid',
-                      pronunciation: 'Mukabaniun'),
+                      arabic: 'يد', english: 'Hand', pronunciation: 'Yad'),
                   gridTiles(
-                      arabic: 'اسطوانة',
-                      english: 'Cylinder',
-                      pronunciation: 'Makhroot'),
+                      arabic: 'إصبع',
+                      english: 'Finger',
+                      pronunciation: 'Issbaa'),
                   gridTiles(
-                      arabic: 'مخروط',
-                      english: 'Cone',
-                      pronunciation: 'Baydhawi'),
+                      arabic: 'ساق', english: 'Leg', pronunciation: 'Saaq'),
                   gridTiles(
-                      arabic: 'هرم', english: 'Pyramid', pronunciation: 'Harm'),
+                      arabic: 'ركبة', english: 'Knee', pronunciation: 'Rukba'),
+                  gridTiles(
+                      arabic: 'قدم ', english: 'Foot', pronunciation: 'Qadam'),
+                  gridTiles(
+                      arabic: 'أصبع القدم',
+                      english: 'Toe',
+                      pronunciation: 'Issbaa Al-Qadam'),
                 ],
               ),
             ),

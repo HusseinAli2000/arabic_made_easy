@@ -29,16 +29,16 @@ class _FlipAnimationState extends State<FlipAnimation>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(duration: Duration(milliseconds: 800), vsync: this)
-          ..addStatusListener((status) {
-            if (status == AnimationStatus.completed) {
-              widget.animationDone.call(true);
-            }
-            if (status == AnimationStatus.dismissed) {
-              widget.animationDone.call(false);
-            }
-          });
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 800), vsync: this)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          widget.animationDone.call(true);
+        }
+        if (status == AnimationStatus.dismissed) {
+          widget.animationDone.call(false);
+        }
+      });
 
     _animation = Tween<double>(begin: 0, end: 1).animate(
         CurvedAnimation(parent: _controller, curve: Curves.bounceInOut));
@@ -80,19 +80,19 @@ class _FlipAnimationState extends State<FlipAnimation>
         child: _controller.value >= 0.5
             ? widget.word
             : Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: const LinearGradient(
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.topRight,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
-                      Color.fromARGB(255, 66, 18, 186),
-                      Color.fromARGB(255, 72, 134, 209),
+                      Color.fromARGB(255, 32, 6, 96),
+                      Color.fromARGB(255, 57, 119, 194),
                     ],
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.question_mark,
                   size: 50,
                   color: Color.fromARGB(255, 235, 234, 243),

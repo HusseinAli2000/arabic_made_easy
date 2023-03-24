@@ -79,7 +79,11 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
       _optionsColor[_options.indexOf(_word)] = Colors.green;
     }
     setState(() {});
-    await Future.delayed(Duration(seconds: 1)); // Wait for 1 second.
+
+    // Wait for 2 seconds before generating the next question and highlighting
+    // the correct option.
+    await Future.delayed(const Duration(seconds: 3));
+
     _optionsColor = List<Color>.filled(4, Colors.grey);
     _generateQuestion();
 

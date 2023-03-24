@@ -216,7 +216,7 @@ final List<Word> words = [
   //     topic: "Animals",
   //     arabic: "حمار وحشي",
   //     english: "Zebra",
-  //     pronunciation: "Alhimar Alwahshy"),
+  //     pronunciation: "Himar Wahshi"),
 
   Word(
       topic: 'Colors',

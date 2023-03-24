@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/colors.dart';
+import 'package:arabic_made_easy/tts_button_two.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -137,722 +138,219 @@ class _ColorsClassState extends State<ColorsClass> {
           child: Center(
             child: SafeArea(
               child: GridView.count(
-                crossAxisCount: 3,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
+                crossAxisCount: 2,
+                mainAxisSpacing: 25,
+                crossAxisSpacing: 25,
                 padding: const EdgeInsets.all(10),
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.black,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أسود',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Black',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Aswad',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                children: const [
+                  gridTile(
+                    color: Colors.black,
+                    arabic: 'أسود',
+                    english: 'Black',
+                    pronunciation: 'Aswad',
+                    TTS: 'أسود',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أبيض',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'White',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Abyad',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.volume_up_rounded,
-                                    color: Colors.black),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.white,
+                    arabic: 'أبيض',
+                    english: 'ًWhite',
+                    pronunciation: 'Abyad',
+                    TTS: 'أبيض',
+                    content1: Colors.black,
+                    content2: Colors.black,
+                    content3: Colors.black,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.red,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أحمر',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Red',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Ahmar',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.red,
+                    arabic: 'أحمر',
+                    english: 'Red',
+                    pronunciation: 'Ahmar',
+                    TTS: 'أحمر',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.blue,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أزرق',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Blue',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Azraq',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.blue,
+                    arabic: 'أزرق',
+                    english: 'Blue',
+                    pronunciation: 'Azraq',
+                    TTS: 'أزرق',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.green,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أخضر',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Green',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Akhdar',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.green,
+                    arabic: 'أخضر',
+                    english: 'Green',
+                    pronunciation: 'Akhdar',
+                    TTS: 'أخضر',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.orange,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'برتقالي',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Orange',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Burtuqali',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 14,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.orange,
+                    arabic: 'برتقالي',
+                    english: 'Orange',
+                    pronunciation: 'Burtuqali',
+                    TTS: 'برتقالي',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.pink,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'بمبي',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Pink',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Bambi',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.pink,
+                    arabic: 'بمبي',
+                    english: 'Pink',
+                    pronunciation: 'Bambi',
+                    TTS: 'بمبي',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.purple,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'بنفسجي',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Purple',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Banafsaji',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 13,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.purple,
+                    arabic: 'بنفسجي',
+                    english: 'Purple',
+                    pronunciation: 'Banafsaji',
+                    TTS: 'بنفسجي',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.yellow,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'أصفر',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Yellow',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Asfar',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Colors.black,
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.yellow,
+                    arabic: 'أصفر',
+                    english: 'Yellow',
+                    pronunciation: 'Asfar',
+                    TTS: 'أصفر',
+                    content1: Colors.black,
+                    content2: Colors.black,
+                    content3: Colors.black,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.brown,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'بني',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Brown',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Bunni',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.brown,
+                    arabic: 'بني',
+                    english: 'Brown',
+                    pronunciation: 'Bunni',
+                    TTS: 'بني',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.grey,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'رمادي',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Grey',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Ramadi',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.grey,
+                    arabic: 'رمادي',
+                    english: 'Grey',
+                    pronunciation: 'Ramadi',
+                    TTS: 'رمادي',
+                    content1: Colors.white,
+                    content2: Colors.white,
+                    content3: Colors.white,
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      color: Colors.amber,
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.all(2.0),
-                            child: Text(
-                              'عنبر',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                            child: Text(
-                              'Amber',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Akaya',
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Text(
-                                'Anbar',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Akaya',
-                                  fontSize: 16,
-                                ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.volume_up_rounded,
-                                  color: Colors.black,
-                                ),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  gridTile(
+                    color: Colors.amber,
+                    arabic: 'عنبر',
+                    english: 'Amber',
+                    pronunciation: 'Anbar',
+                    TTS: 'عنبر',
+                    content1: Colors.black,
+                    content2: Colors.black,
+                    content3: Colors.black,
                   ),
                 ],
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class gridTile extends StatelessWidget {
+  const gridTile({
+    Key? key,
+    required this.color,
+    required this.arabic,
+    required this.english,
+    required this.pronunciation,
+    required this.TTS,
+    required this.content1,
+    required this.content2,
+    required this.content3,
+  }) : super(key: key);
+
+  final Color color;
+  final String arabic;
+  final String english;
+  final String pronunciation;
+  final String TTS;
+  final Color content1;
+  final Color content2;
+  final Color content3;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: color,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text(
+              arabic,
+              style: TextStyle(
+                color: content1,
+                fontFamily: 'Akaya',
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              english,
+              style: TextStyle(
+                color: content2,
+                fontFamily: 'Akaya',
+                fontSize: 16,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  width: 15,
+                ),
+                Text(
+                  pronunciation,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: content3,
+                    fontFamily: 'Akaya',
+                    fontSize: 16,
+                  ),
+                ),
+                TTSButtonTwo(
+                  word: TTS,
+                  iconSize: 25,
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

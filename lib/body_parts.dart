@@ -1,16 +1,17 @@
-import 'package:arabic_made_easy/number_pronunciation.dart';
+import 'package:arabic_made_easy/body_parts_class.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'second_page.dart';
+import 'package:arabic_made_easy/second_page.dart';
 
-class Numbers extends StatefulWidget {
-  const Numbers({super.key});
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+class BodyParts extends StatefulWidget {
+  const BodyParts({super.key});
 
   @override
-  State<Numbers> createState() => _NumbersState();
+  State<BodyParts> createState() => _BodyPartsState();
 }
 
-class _NumbersState extends State<Numbers> {
+class _BodyPartsState extends State<BodyParts> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -111,7 +112,7 @@ class _NumbersState extends State<Numbers> {
           ),
           title: const Center(
             child: Text(
-              'Numbers Class',
+              'Body Parts Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
@@ -140,16 +141,11 @@ class _NumbersState extends State<Numbers> {
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
                       onPressed: () {
-                        setState(
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    const NumberPronunciation(),
-                              ),
-                            );
-                          },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const BodyPartsClass(),
+                          ),
                         );
                       },
                       style: const ButtonStyle(
@@ -165,7 +161,7 @@ class _NumbersState extends State<Numbers> {
                             height: 70,
                           ),
                           const Text(
-                            'Numerals',
+                            'Body Parts',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                               fontFamily: 'Pacifico',
@@ -176,7 +172,7 @@ class _NumbersState extends State<Numbers> {
                             width: 15,
                           ),
                           Image.asset(
-                            'images/number-blocks.png',
+                            'images/human-body.png',
                             height: 35,
                             width: 35,
                           ),

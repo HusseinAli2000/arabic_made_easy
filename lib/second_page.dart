@@ -1,6 +1,8 @@
+import 'package:arabic_made_easy/body_parts.dart';
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'alphabet_page.dart';
@@ -25,6 +27,15 @@ class PageTwo extends StatefulWidget {
 }
 
 class _PageTwoState extends State<PageTwo> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<FlashCardNotifier>(
@@ -536,7 +547,14 @@ class _PageTwoState extends State<PageTwo> {
                           ),
                         ),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const BodyParts(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(

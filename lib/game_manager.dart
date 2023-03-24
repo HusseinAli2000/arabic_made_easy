@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/word_memory.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class GameManager extends ChangeNotifier {
@@ -28,13 +29,23 @@ class GameManager extends ChangeNotifier {
             tappedWords.entries.elementAt(1).value.text) {
           answeredWords.addAll(tappedWords.keys);
           if (answeredWords.length == 6) {
+            AudioPlayer().play(
+              AssetSource('spelling/round_complete.mp3'),
+            );
             roundCompleted = true;
+          } else {
+            AudioPlayer().play(
+              AssetSource('spelling/correct.mp3'),
+            );
           }
           tappedWords.clear();
           canFlip = true;
           ignoreTaps = false;
         } else {
           reverseFlip = true;
+          AudioPlayer().play(
+            AssetSource('spelling/incorrect.mp3'),
+          );
         }
       } else {
         reverseFlip = false;
