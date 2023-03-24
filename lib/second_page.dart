@@ -1,5 +1,8 @@
 import 'package:arabic_made_easy/body_parts.dart';
+import 'package:arabic_made_easy/cuw.dart';
 import 'package:arabic_made_easy/shapes.dart';
+import 'package:arabic_made_easy/transport.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,8 +15,7 @@ import 'flashcards_notifier.dart';
 import 'language_button_notifier.dart';
 import 'main_page.dart';
 import 'numbers.dart';
-import 'key_verbs.dart';
-import 'fuv.dart';
+
 import 'basic_sentences.dart';
 import 'colors.dart';
 import 'review_page.dart';
@@ -203,15 +205,11 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AlphabetPage(),
-                                  ),
-                                );
-                              },
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AlphabetPage(),
+                              ),
                             );
                           },
                           style: ButtonStyle(
@@ -612,7 +610,14 @@ class _PageTwoState extends State<PageTwo> {
                           ),
                         ),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Transport(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
@@ -643,75 +648,6 @@ class _PageTwoState extends State<PageTwo> {
                               ),
                               Image.asset(
                                 'images/transportation.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Color.fromARGB(255, 32, 6, 96),
-                              Color.fromARGB(255, 57, 119, 194),
-                            ],
-                          ),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const KeyVerbs(),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: ButtonStyle(
-                            shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                            backgroundColor: const MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 10,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Key Verbs',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Image.asset(
-                                'images/verbs.png',
                                 height: 35,
                                 width: 35,
                               ),
@@ -810,15 +746,11 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const FUV(),
-                                  ),
-                                );
-                              },
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CommonlyUsedWords(),
+                              ),
                             );
                           },
                           style: ButtonStyle(

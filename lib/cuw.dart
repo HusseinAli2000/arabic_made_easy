@@ -1,18 +1,17 @@
+import 'package:arabic_made_easy/cuw_class.dart';
 import 'package:flutter/material.dart';
+import 'package:arabic_made_easy/second_page.dart';
+
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'letter_names.dart';
-
-import 'second_page.dart';
-
-class AlphabetPage extends StatefulWidget {
-  const AlphabetPage({super.key});
+class CommonlyUsedWords extends StatefulWidget {
+  const CommonlyUsedWords({super.key});
 
   @override
-  State<AlphabetPage> createState() => _AlphabetPageState();
+  State<CommonlyUsedWords> createState() => _CommonlyUsedWordsState();
 }
 
-class _AlphabetPageState extends State<AlphabetPage> {
+class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -113,7 +112,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
           ),
           title: const Center(
             child: Text(
-              'Alphabet Class',
+              'Commonly Used Words Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
@@ -142,15 +141,12 @@ class _AlphabetPageState extends State<AlphabetPage> {
                     padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                     child: ElevatedButton(
                       onPressed: () {
-                        setState(
-                          () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Alphabet(),
-                              ),
-                            );
-                          },
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const CommonlyUsedWordsClass(),
+                          ),
                         );
                       },
                       style: const ButtonStyle(
@@ -166,7 +162,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
                             height: 70,
                           ),
                           const Text(
-                            'Alphabet',
+                            'Commonly Used Words',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                               fontFamily: 'Pacifico',
@@ -177,7 +173,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
                             width: 15,
                           ),
                           Image.asset(
-                            'images/abc.png',
+                            'images/words.png',
                             height: 35,
                             width: 35,
                           ),

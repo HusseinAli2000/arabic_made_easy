@@ -49,9 +49,6 @@ flutter:
 
 
   assets:
-    - assets/letter_names/
-    - assets/letter_sounds/
-    - assets/numbers/
     - assets/spelling/
     - images/
 

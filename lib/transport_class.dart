@@ -1,18 +1,18 @@
+import 'package:arabic_made_easy/transport.dart';
 import 'package:arabic_made_easy/tts_button_two.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'alphabet_page.dart';
+
 import 'second_page.dart';
 
-class Alphabet extends StatefulWidget {
-  const Alphabet({super.key});
+class TransportClass extends StatefulWidget {
+  const TransportClass({super.key});
 
   @override
-  State<Alphabet> createState() => _AlphabetState();
+  State<TransportClass> createState() => _TransportClassState();
 }
 
-class _AlphabetState extends State<Alphabet> {
+class _TransportClassState extends State<TransportClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +54,7 @@ class _AlphabetState extends State<Alphabet> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const AlphabetPage(),
+                              builder: (context) => const Transport(),
                             ),
                           );
                         },
@@ -113,7 +113,7 @@ class _AlphabetState extends State<Alphabet> {
           ),
           title: const Center(
             child: Text(
-              'Alphabet Class',
+              'Transport',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -137,39 +137,57 @@ class _AlphabetState extends State<Alphabet> {
           child: Center(
             child: SafeArea(
               child: GridView.count(
-                crossAxisCount: 3,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
+                crossAxisCount: 2,
+                mainAxisSpacing: 25,
+                crossAxisSpacing: 25,
                 padding: const EdgeInsets.all(10),
                 children: const [
-                  gridTiles(image: 'aa', tts: 'أ', pronunciation: 'Alif'),
-                  gridTiles(image: '2', tts: 'ب', pronunciation: 'Baa'),
-                  gridTiles(image: '3', tts: 'ت', pronunciation: 'Taa'),
-                  gridTiles(image: '4', tts: 'ث', pronunciation: 'Thaa'),
-                  gridTiles(image: '5', tts: 'ج', pronunciation: 'Jeem'),
-                  gridTiles(image: '6', tts: 'ح', pronunciation: 'Haa'),
-                  gridTiles(image: '7', tts: 'خ', pronunciation: 'Khaa'),
-                  gridTiles(image: '8', tts: 'د', pronunciation: 'Daal'),
-                  gridTiles(image: '9', tts: 'ذ', pronunciation: 'Thaal'),
-                  gridTiles(image: '10', tts: 'ر', pronunciation: 'Raa'),
-                  gridTiles(image: '11', tts: 'ز', pronunciation: 'Zaa'),
-                  gridTiles(image: '12', tts: 'س', pronunciation: 'Seen'),
-                  gridTiles(image: '13', tts: 'ش', pronunciation: 'Sheen'),
-                  gridTiles(image: '14', tts: 'ص', pronunciation: 'Saad'),
-                  gridTiles(image: '15', tts: 'ض', pronunciation: 'Dhaad'),
-                  gridTiles(image: '16', tts: 'ط', pronunciation: 'Taa'),
-                  gridTiles(image: '17', tts: 'ظ', pronunciation: 'Dhaa'),
-                  gridTiles(image: '18', tts: 'ع', pronunciation: 'Ayn'),
-                  gridTiles(image: '19', tts: 'غ', pronunciation: 'Ghayn'),
-                  gridTiles(image: '20', tts: 'ف', pronunciation: 'Faa'),
-                  gridTiles(image: '21', tts: 'ق', pronunciation: 'Qaaf'),
-                  gridTiles(image: '22', tts: 'ك', pronunciation: 'Kaaf'),
-                  gridTiles(image: '23', tts: 'ل', pronunciation: 'Laam'),
-                  gridTiles(image: '24', tts: 'م', pronunciation: 'Meem'),
-                  gridTiles(image: '25', tts: 'ن', pronunciation: 'Noon'),
-                  gridTiles(image: '26', tts: 'ه', pronunciation: 'Haa'),
-                  gridTiles(image: '27', tts: 'و', pronunciation: 'Waaw'),
-                  gridTiles(image: '28', tts: 'ي', pronunciation: 'Yaa'),
+                  gridTiles(
+                      arabic: 'سيارة',
+                      english: 'Car',
+                      pronunciation: 'Sayyara'),
+                  gridTiles(
+                      arabic: 'حافلة', english: 'Bus', pronunciation: 'Hafila'),
+                  gridTiles(
+                      arabic: 'تكسي', english: 'Taxi', pronunciation: 'Taxi'),
+                  gridTiles(
+                      arabic: 'قطار', english: 'Train', pronunciation: 'Qitar'),
+                  gridTiles(
+                      arabic: 'طائرة',
+                      english: 'Airplane',
+                      pronunciation: 'Tayira'),
+                  gridTiles(
+                      arabic: 'دراجة نارية',
+                      english: 'Motorcycle',
+                      pronunciation: 'Daraja Nariya'),
+                  gridTiles(
+                      arabic: 'دراجة',
+                      english: 'Bicycle',
+                      pronunciation: 'Daraja'),
+                  gridTiles(
+                      arabic: 'سفينة',
+                      english: 'Ship',
+                      pronunciation: 'Safina'),
+                  gridTiles(
+                      arabic: 'قارب', english: 'Boat', pronunciation: 'Qarib'),
+                  gridTiles(
+                      arabic: 'شاحنة',
+                      english: 'Truck',
+                      pronunciation: 'Shahina'),
+                  gridTiles(
+                      arabic: 'مطار',
+                      english: 'Airport',
+                      pronunciation: 'Matar'),
+                  gridTiles(
+                      arabic: 'ميناء', english: 'Port', pronunciation: 'Minaa'),
+                  gridTiles(
+                      arabic: 'طريق', english: 'Road', pronunciation: 'Tariq'),
+                  gridTiles(
+                      arabic: 'جسر', english: 'Bridge', pronunciation: 'Jisr'),
+                  gridTiles(
+                      arabic: 'تقاطع',
+                      english: 'Intersection',
+                      pronunciation: 'Taqatuu'),
                 ],
               ),
             ),
@@ -183,13 +201,13 @@ class _AlphabetState extends State<Alphabet> {
 class gridTiles extends StatelessWidget {
   const gridTiles({
     Key? key,
-    required this.image,
-    required this.tts,
+    required this.arabic,
+    required this.english,
     required this.pronunciation,
   }) : super(key: key);
 
-  final String image;
-  final String tts;
+  final String arabic;
+  final String english;
   final String pronunciation;
 
   @override
@@ -208,15 +226,36 @@ class gridTiles extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(4.0),
             child: Image.asset(
-              'images/${image.toLowerCase()}.png',
-              color: const Color.fromARGB(255, 235, 234, 243),
-              height: 37,
+              'images/${english.toLowerCase()}.png',
+              height: 45,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Text(
+              arabic,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontFamily: 'Akaya',
+                fontSize: 16,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Text(
+              english,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 235, 234, 243),
+                fontFamily: 'Akaya',
+                fontSize: 16,
+              ),
             ),
           ),
           Row(
@@ -231,11 +270,11 @@ class gridTiles extends StatelessWidget {
                 style: const TextStyle(
                   color: Color.fromARGB(255, 235, 234, 243),
                   fontFamily: 'Akaya',
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               TTSButtonTwo(
-                word: tts,
+                word: arabic,
                 iconSize: 25,
               ),
             ],
