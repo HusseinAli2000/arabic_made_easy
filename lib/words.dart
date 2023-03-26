@@ -2,6 +2,97 @@ import 'word.dart';
 
 final List<Word> words = [
   Word(
+      topic: 'Shapes',
+      arabic: 'دائرة',
+      english: 'Circle',
+      pronunciation: 'Dayira'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مثلث',
+      english: 'Triangle',
+      pronunciation: 'Muthalath'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مربع',
+      english: 'Square',
+      pronunciation: 'Murabaa'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مستطيل',
+      english: 'Rectangle',
+      pronunciation: 'Mustatil'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'خماسي الاضلاع',
+      english: 'Pentagon',
+      pronunciation: 'Khumasi Aladhla'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'سداسي الاضلاع',
+      english: 'Hexagon',
+      pronunciation: 'Sudasi Aladhla'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'سباعي',
+      english: 'Heptagon',
+      pronunciation: 'Subaei'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مثمن',
+      english: 'Octagon',
+      pronunciation: 'Muthaman'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'شبه منحرف',
+      english: 'Trapezoid',
+      pronunciation: 'Shibh Munharif'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'معين',
+      english: 'Rhombus',
+      pronunciation: 'Mueayan'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'متوازي الاضلاع',
+      english: 'Parallelogram',
+      pronunciation: 'Mutwazi Aladhla'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'بيضاوي',
+      english: 'Oval',
+      pronunciation: 'Baydhawi'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مكور',
+      english: 'Sphere',
+      pronunciation: 'Mukawar'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مكعب',
+      english: 'Cube',
+      pronunciation: 'Mukaeb'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مكعباني',
+      english: 'Cuboid',
+      pronunciation: 'Mukabaniun'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'اسطوانة',
+      english: 'Cylinder',
+      pronunciation: 'Makhroot'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'مخروط',
+      english: 'Cone',
+      pronunciation: 'Baydhawi'),
+  Word(
+      topic: 'Shapes',
+      arabic: 'هرم',
+      english: 'Pyramid',
+      pronunciation: 'Harm'),
+
+  Word(
       topic: "Animals",
       arabic: "تمساح",
       english: "Alligator",
@@ -267,6 +358,14 @@ final List<Word> words = [
       pronunciation: 'Anbar'),
 ];
 const List<String> ColorWords = ['بنفسجي', 'أحمر', 'أصفر'];
+const List<String> ShapesWords = ['دائرة', 'مثلث', 'مربع'];
+const List<String> ShapesWordsMulti = [
+  'مثلث',
+  'مربع',
+  'دائرة',
+  'متوازي الاضلاع',
+  'مكور'
+];
 const List<String> AnimalWordsMulti = [
   'نملة',
   'تمساح',

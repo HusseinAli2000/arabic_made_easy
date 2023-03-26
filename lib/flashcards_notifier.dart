@@ -96,6 +96,25 @@ class FlashCardNotifier extends ChangeNotifier {
     resetProgressBar();
   }
 
+  generateAllShapesWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Shapes").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
   generateCurrentWord({required BuildContext context}) {
     if (selectedWords.isNotEmpty) {
       final r = Random().nextInt(selectedWords.length);

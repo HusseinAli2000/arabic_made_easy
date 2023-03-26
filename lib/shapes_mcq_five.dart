@@ -1,5 +1,6 @@
 import 'dart:math';
-import 'package:arabic_made_easy/animal_mcq.dart';
+
+import 'package:arabic_made_easy/shapes.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -8,15 +9,15 @@ import 'second_page.dart';
 import 'tts_button_two.dart';
 import 'words.dart';
 
-class AnimalsMCQFive extends StatefulWidget {
-  const AnimalsMCQFive({Key? key}) : super(key: key);
+class ShapesMcqFive extends StatefulWidget {
+  const ShapesMcqFive({super.key});
 
   @override
-  State<AnimalsMCQFive> createState() => _AnimalsMCQFiveState();
+  State<ShapesMcqFive> createState() => _ShapesMcqFiveState();
 }
 
-class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
-  final List<String> _words = AnimalWordsMulti.toList();
+class _ShapesMcqFiveState extends State<ShapesMcqFive> {
+  final List<String> _words = ShapesWordsMulti.toList();
   late String _word;
   late List<String> _options;
   late List<Color> _optionsColor;
@@ -222,7 +223,7 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const AnimalMCQ(),
+                              builder: (context) => const Shapes(),
                             ),
                           );
                         },
@@ -281,7 +282,7 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
           ),
           title: const Center(
             child: Text(
-              '5 Animals Multiple Choice Quiz',
+              '5 Shapes Multiple Choice Quiz',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
