@@ -144,7 +144,7 @@ class _AlphabetState extends State<Alphabet> {
                 children: const [
                   gridTiles(image: 'aa', tts: 'أ', pronunciation: 'Alif'),
                   gridTiles(image: '2', tts: 'ب', pronunciation: 'Baa'),
-                  gridTiles(image: '3', tts: 'ت', pronunciation: 'Taa'),
+                  gridTiles(image: '3', tts: 'ت', pronunciation: 'Ta'),
                   gridTiles(image: '4', tts: 'ث', pronunciation: 'Thaa'),
                   gridTiles(image: '5', tts: 'ج', pronunciation: 'Jeem'),
                   gridTiles(image: '6', tts: 'ح', pronunciation: 'Haa'),
@@ -167,7 +167,7 @@ class _AlphabetState extends State<Alphabet> {
                   gridTiles(image: '23', tts: 'ل', pronunciation: 'Laam'),
                   gridTiles(image: '24', tts: 'م', pronunciation: 'Meem'),
                   gridTiles(image: '25', tts: 'ن', pronunciation: 'Noon'),
-                  gridTiles(image: '26', tts: 'ه', pronunciation: 'Haa'),
+                  gridTiles(image: '26', tts: 'ه', pronunciation: 'Ha'),
                   gridTiles(image: '27', tts: 'و', pronunciation: 'Waaw'),
                   gridTiles(image: '28', tts: 'ي', pronunciation: 'Yaa'),
                 ],
