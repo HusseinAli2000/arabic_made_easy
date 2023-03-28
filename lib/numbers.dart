@@ -1,10 +1,12 @@
 import 'package:arabic_made_easy/colors_memory_option.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/number_pronunciation.dart';
+import 'package:arabic_made_easy/numbers_flashcards.dart';
 import 'package:arabic_made_easy/numbers_memory_option.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+import 'flashcards_notifier.dart';
 import 'second_page.dart';
 
 class Numbers extends StatefulWidget {
@@ -196,7 +198,22 @@ class _NumbersState extends State<Numbers> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(
+                            () {
+                              Provider.of<FlashCardNotifier>(context,
+                                      listen: false)
+                                  .setTopic(topic: 'Numbers');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const NumbersFlashcards(),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
                             Color.fromARGB(130, 35, 61, 155),

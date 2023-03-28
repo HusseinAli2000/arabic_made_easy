@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/cuw_class.dart';
+import 'package:arabic_made_easy/cuw_flashcards.dart';
 import 'package:arabic_made_easy/cuw_memory_option.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,9 @@ import 'package:arabic_made_easy/second_page.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+
+import 'flashcards_notifier.dart';
+import 'shapes_flashcards.dart';
 
 class CommonlyUsedWords extends StatefulWidget {
   const CommonlyUsedWords({super.key});
@@ -192,7 +196,21 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(
+                            () {
+                              Provider.of<FlashCardNotifier>(context,
+                                      listen: false)
+                                  .setTopic(topic: 'Cuw');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CuwFlashcards(),
+                                ),
+                              );
+                            },
+                          );
+                        },
                         style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(
                             Color.fromARGB(130, 35, 61, 155),

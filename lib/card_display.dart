@@ -194,7 +194,7 @@ class CardDisplay extends StatelessWidget {
           height: 40,
         ),
         Image.asset(
-          'images/${image.toLowerCase()}.png',
+          'images/${image.toLowerCase().replaceAll(' ', '')}.png',
           width: 150,
           height: 150,
           fit: BoxFit.contain,

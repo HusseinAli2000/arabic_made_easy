@@ -77,6 +77,25 @@ class FlashCardNotifier extends ChangeNotifier {
     resetProgressBar();
   }
 
+  generateAllNumberWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Numbers").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
   generateAllColorsWords() {
     isRoundCompleted = false;
     if (isFirstRound) {
@@ -103,6 +122,82 @@ class FlashCardNotifier extends ChangeNotifier {
         selectedWords.clear();
         selectedWords =
             words.where((element) => element.topic == "Shapes").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
+  generateAllBodypartsWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Body Parts").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
+  generateAllTransportWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Transport").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
+  generateAllCuwWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Cuw").toList();
+      }
+    } else {
+      selectedWords = incorrectCards.toList();
+      incorrectCards.clear();
+    }
+    roundTally++;
+    cardTally = selectedWords.length;
+    correctTally = 0;
+    incorrectTally = 0;
+    resetProgressBar();
+  }
+
+  generateAllAlphabetWords() {
+    isRoundCompleted = false;
+    if (isFirstRound) {
+      if (topic != 'Review') {
+        selectedWords.clear();
+        selectedWords =
+            words.where((element) => element.topic == "Alphabet").toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
