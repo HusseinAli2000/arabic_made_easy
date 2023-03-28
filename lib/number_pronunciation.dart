@@ -279,14 +279,14 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                   ),
                   gridTile(
                     arabic: '١٠٠',
-                    pronunciation: 'miaa',
+                    pronunciation: 'Miaa',
                     english: 'A Hundred',
                     TTSvalue: '100',
                     arabicWriting: 'مئة',
                   ),
                   gridTile(
                     arabic: '١٠٠٠',
-                    pronunciation: 'alf',
+                    pronunciation: 'Alf',
                     english: 'A Thousand',
                     TTSvalue: '1000',
                     arabicWriting: 'ألف',
