@@ -47,7 +47,7 @@ class _AnimalMemoryCardsPageState extends State<AnimalMemoryCardsPage> {
 
   Future<int> populateSourceWords() async {
     sourceWords.clear();
-    final ref = FirebaseStorage.instance.ref();
+    final ref = FirebaseStorage.instance.ref('animals');
     final all = await ref.listAll();
 
     for (var item in all.items) {

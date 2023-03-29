@@ -21,8 +21,12 @@ class ShapesSpelling extends StatefulWidget {
 }
 
 class _ShapesSpellingState extends State<ShapesSpelling> {
-  final List<String> _words = ShapesWords.toList();
+  late List<String> _words;
   late String _word, _dropWord, wordComplete;
+  _generateWords() {
+    _words = ShapesWords.toList()..shuffle();
+    _words = _words.take(10).toList();
+  }
 
   _generateWord() {
     final r = Random().nextInt(_words.length);
@@ -43,6 +47,7 @@ class _ShapesSpellingState extends State<ShapesSpelling> {
 
   @override
   Widget build(BuildContext context) {
+    _generateWords();
     return Selector<Controller, bool>(
       selector: (_, controller) => controller.generateWord,
       builder: (_, generate, __) {
@@ -339,7 +344,7 @@ class _DragState extends State<Drag> {
                           _accepted = true;
                           setState(() {});
                           Provider.of<Controller>(context, listen: false)
-                              .incrementLettersAllColors(context: context);
+                              .incrementLettersAllAnimals(context: context);
                         }
                       },
                       childWhenDragging: const SizedBox(),

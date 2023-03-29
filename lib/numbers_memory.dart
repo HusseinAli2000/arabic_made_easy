@@ -148,8 +148,6 @@ class _NumbersMemoryState extends State<NumbersMemory> {
                                 );
                               },
                             );
-                          } else if (index == 2) {
-                            setState(() {});
                           }
                         },
                         tabs: const [
@@ -160,10 +158,6 @@ class _NumbersMemoryState extends State<NumbersMemory> {
                           GButton(
                             icon: Icons.class_,
                             text: 'Classes',
-                          ),
-                          GButton(
-                            icon: Icons.settings,
-                            text: 'Settings',
                           ),
                         ],
                       ),

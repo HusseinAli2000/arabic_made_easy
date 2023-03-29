@@ -1,7 +1,9 @@
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/transport_class.dart';
 import 'package:arabic_made_easy/transport_flashcards.dart';
+import 'package:arabic_made_easy/transport_mcq.dart';
 import 'package:arabic_made_easy/transport_memory_option.dart';
+import 'package:arabic_made_easy/transport_spelling.dart';
 import 'package:flutter/material.dart';
 import 'package:arabic_made_easy/second_page.dart';
 
@@ -10,6 +12,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'flashcards_notifier.dart';
+import 'spelling_controller.dart';
 
 class Transport extends StatefulWidget {
   const Transport({super.key});
@@ -310,6 +313,111 @@ class _TransportState extends State<Transport> {
                               ),
                             ],
                           ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(
+                            () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const TransportSpelling(),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(
+                              width: 13,
+                              height: 70,
+                            ),
+                            const Text(
+                              'Writing Quiz',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Image.asset(
+                              'images/quiz.png',
+                              height: 35,
+                              width: 35,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(
+                            () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const TransportMcq(),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(
+                              width: 13,
+                              height: 70,
+                            ),
+                            const Text(
+                              'Multiple Choice Quiz',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Image.asset(
+                              'images/quiz.png',
+                              height: 35,
+                              width: 35,
+                            ),
+                            const SizedBox(
+                              width: 10,
+                              height: 20,
+                            ),
+                          ],
                         ),
                       ),
                     ),

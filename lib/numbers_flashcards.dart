@@ -115,23 +115,6 @@ class _NumbersFlashcardsState extends State<NumbersFlashcards> {
                         );
                       },
                     );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
                   }
                 },
                 tabs: const [
@@ -142,10 +125,6 @@ class _NumbersFlashcardsState extends State<NumbersFlashcards> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -166,7 +145,7 @@ class _NumbersFlashcardsState extends State<NumbersFlashcards> {
             ),
             title: const Center(
               child: Text(
-                'Numbers Flashcards',
+                'Flashcards Quiz',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,

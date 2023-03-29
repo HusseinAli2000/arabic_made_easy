@@ -252,8 +252,6 @@ class _AnimalMCQTenState extends State<AnimalMCQTen> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -264,10 +262,6 @@ class _AnimalMCQTenState extends State<AnimalMCQTen> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

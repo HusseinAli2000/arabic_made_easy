@@ -110,23 +110,6 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                         );
                       },
                     );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
                   }
                 },
                 tabs: const [
@@ -137,10 +120,6 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -161,7 +140,7 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
             ),
             title: const Center(
               child: Text(
-                'Animals Quiz',
+                'Flashcards Quiz',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,

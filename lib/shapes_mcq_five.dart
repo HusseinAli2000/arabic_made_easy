@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:arabic_made_easy/shapes.dart';
+import 'package:arabic_made_easy/shapes_mcq.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -223,7 +224,7 @@ class _ShapesMcqFiveState extends State<ShapesMcqFive> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Shapes(),
+                              builder: (context) => const ShapesMcq(),
                             ),
                           );
                         },

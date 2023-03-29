@@ -253,8 +253,6 @@ class _AnimalMCQTwentyState extends State<AnimalMCQTwenty> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -265,10 +263,6 @@ class _AnimalMCQTwentyState extends State<AnimalMCQTwenty> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

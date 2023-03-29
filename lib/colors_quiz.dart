@@ -111,23 +111,6 @@ class _ColorsQuizState extends State<ColorsQuiz> {
                         );
                       },
                     );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
                   }
                 },
                 tabs: const [
@@ -138,10 +121,6 @@ class _ColorsQuizState extends State<ColorsQuiz> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -162,7 +141,7 @@ class _ColorsQuizState extends State<ColorsQuiz> {
             ),
             title: const Center(
               child: Text(
-                'Colors Quiz',
+                'Flashcards Quiz',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,

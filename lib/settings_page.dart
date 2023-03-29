@@ -111,7 +111,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               title: const Center(
                 child: Text(
-                  'Settings',
+                  'Flashcards Quiz Settings',
                   style: TextStyle(
                     fontFamily: 'Akaya',
                     fontSize: 25,

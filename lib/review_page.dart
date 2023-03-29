@@ -140,7 +140,7 @@ class _ReviewPageState extends State<ReviewPage> {
             ),
             title: const Center(
               child: Text(
-                'Quiz Review',
+                'Flashcards Quiz Review',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,
@@ -191,14 +191,14 @@ class _ReviewPageState extends State<ReviewPage> {
                             ),
                             HeaderButton(
                               isDisabled: disable,
-                              title: 'Quick Test',
+                              title: 'Test 3',
                               onPressed: () {
                                 final provider = Provider.of<FlashCardNotifier>(
                                     context,
                                     listen: false);
                                 provider.selectedWords.clear();
                                 DatabaseManager()
-                                    .selectWord(limit: 2)
+                                    .selectWord(limit: 3)
                                     .then((words) {
                                   provider.selectedWords = words.toList();
                                   Navigator.push(

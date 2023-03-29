@@ -110,8 +110,6 @@ class _AnimalsState extends State<Animals> {
                         });
                       },
                     );
-                  } else if (index == 2) {
-                    setState(() {});
                   }
                 },
                 tabs: const [
@@ -122,10 +120,6 @@ class _AnimalsState extends State<Animals> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Review',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -174,259 +168,351 @@ class _AnimalsState extends State<Animals> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AnimalsClass(),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 6, 96),
+                                Color.fromARGB(255, 57, 119, 194),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 10,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Animals',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(
+                                () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AnimalsClass(),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
+                              backgroundColor: const MaterialStatePropertyAll(
+                                Color.fromARGB(130, 35, 61, 155),
                               ),
-                              Image.asset(
-                                'images/animals.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  width: 10,
+                                  height: 70,
+                                ),
+                                const Text(
+                                  'Animals',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 235, 234, 243),
+                                    fontFamily: 'Pacifico',
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Image.asset(
+                                  'images/animals.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(
-                              () {
-                                Provider.of<FlashCardNotifier>(context,
-                                        listen: false)
-                                    .setTopic(topic: 'Animals');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AnimalsQuiz(),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 6, 96),
+                                Color.fromARGB(255, 57, 119, 194),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 13,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Flashcards Quiz',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(
+                                () {
+                                  Provider.of<FlashCardNotifier>(context,
+                                          listen: false)
+                                      .setTopic(topic: 'Animals');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const AnimalsQuiz(),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
+                              backgroundColor: const MaterialStatePropertyAll(
+                                Color.fromARGB(130, 35, 61, 155),
                               ),
-                              Image.asset(
-                                'images/quiz.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  width: 13,
+                                  height: 70,
+                                ),
+                                const Text(
+                                  'Flashcards Quiz',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 235, 234, 243),
+                                    fontFamily: 'Pacifico',
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Image.asset(
+                                  'images/quiz.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            notifier.reset();
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                PageRouteBuilder(
-                                    pageBuilder: (_, __, ___) =>
-                                        AnimalMemoryCardsPage()),
-                                (route) => false);
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 6, 96),
+                                Color.fromARGB(255, 57, 119, 194),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 13,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Memory Card Game',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              notifier.reset();
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  PageRouteBuilder(
+                                      pageBuilder: (_, __, ___) =>
+                                          AnimalMemoryCardsPage()),
+                                  (route) => false);
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
+                              backgroundColor: const MaterialStatePropertyAll(
+                                Color.fromARGB(130, 35, 61, 155),
                               ),
-                              Image.asset(
-                                'images/quiz.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  width: 13,
+                                  height: 70,
+                                ),
+                                const Text(
+                                  'Memory Card Game',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 235, 234, 243),
+                                    fontFamily: 'Pacifico',
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Image.asset(
+                                  'images/quiz.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(
-                              () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const AnimalsSpelling(),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 6, 96),
+                                Color.fromARGB(255, 57, 119, 194),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 13,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Writing Quiz',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(
+                                () {
+                                  Provider.of<Controller>(context,
+                                          listen: false)
+                                      .reset();
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const AnimalsSpelling(),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
+                              backgroundColor: const MaterialStatePropertyAll(
+                                Color.fromARGB(130, 35, 61, 155),
                               ),
-                              Image.asset(
-                                'images/quiz.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  width: 13,
+                                  height: 70,
+                                ),
+                                const Text(
+                                  'Writing Quiz',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 235, 234, 243),
+                                    fontFamily: 'Pacifico',
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Image.asset(
+                                  'images/quiz.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AnimalMCQ(),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: const ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(130, 35, 61, 155),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color.fromARGB(255, 32, 6, 96),
+                                Color.fromARGB(255, 57, 119, 194),
+                              ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const SizedBox(
-                                width: 13,
-                                height: 70,
-                              ),
-                              const Text(
-                                'Multiple Choice Quiz',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 235, 234, 243),
-                                  fontFamily: 'Pacifico',
-                                  fontSize: 20.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              setState(
+                                () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const AnimalMCQ(),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 15,
+                              backgroundColor: const MaterialStatePropertyAll(
+                                Color.fromARGB(130, 35, 61, 155),
                               ),
-                              Image.asset(
-                                'images/quiz.png',
-                                height: 35,
-                                width: 35,
-                              ),
-                              const SizedBox(
-                                width: 10,
-                                height: 20,
-                              ),
-                            ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  width: 13,
+                                  height: 70,
+                                ),
+                                const Text(
+                                  'Multiple Choice Quiz',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 235, 234, 243),
+                                    fontFamily: 'Pacifico',
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                Image.asset(
+                                  'images/quiz.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

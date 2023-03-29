@@ -2,6 +2,7 @@ import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/shapes_class.dart';
 import 'package:arabic_made_easy/shapes_flashcards.dart';
+import 'package:arabic_made_easy/shapes_mcq.dart';
 import 'package:arabic_made_easy/shapes_mcq_five.dart';
 import 'package:arabic_made_easy/shapes_memory_option.dart';
 import 'package:arabic_made_easy/shapes_spelling.dart';
@@ -316,7 +317,7 @@ class _ShapesState extends State<Shapes> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const ShapesMcqFive(),
+                                  builder: (context) => const ShapesMcq(),
                                 ),
                               );
                             },

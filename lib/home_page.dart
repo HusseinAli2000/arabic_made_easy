@@ -18,35 +18,6 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MainPage(),
-                  ),
-                );
-              });
-            },
-            icon: const Icon(
-              Icons.logout,
-              color: Color.fromARGB(255, 235, 234, 243),
-            ),
-          ),
-          actions: [
-            GestureDetector(
-              onTap: () {},
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
-                child: Icon(
-                  Icons.settings,
-                  color: Color.fromARGB(255, 235, 234, 243),
-                ),
-              ),
-            ),
-          ],
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -108,49 +79,106 @@ class _HomePageState extends State<HomePage> {
                       color: Color.fromARGB(255, 235, 234, 243),
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageTwo(),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 32, 6, 96),
+                            Color.fromARGB(255, 57, 119, 194),
+                          ],
+                        ),
+                      ),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PageTwo(),
+                              ),
+                            );
+                          });
+                        },
+                        style: ButtonStyle(
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                           ),
-                        );
-                      });
-                    },
-                    style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(130, 35, 61, 155),
+                          backgroundColor: const MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            SizedBox(
+                              width: 30,
+                              height: 50,
+                            ),
+                            Text(
+                              'Get Started',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Icon(
+                              Icons.start,
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              size: 24.0,
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        SizedBox(
-                          width: 30,
-                          height: 50,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 32, 6, 96),
+                            Color.fromARGB(255, 57, 119, 194),
+                          ],
                         ),
-                        Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontFamily: 'Pacifico',
-                            fontSize: 20.0,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Icon(
-                          Icons.start,
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          setState(() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const MainPage(),
+                              ),
+                            );
+                          });
+                        },
+                        icon: const Icon(
+                          Icons.logout,
                           color: Color.fromARGB(255, 235, 234, 243),
-                          size: 24.0,
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ],

@@ -114,23 +114,6 @@ class _AlphabetFlashcardsState extends State<AlphabetFlashcards> {
                         );
                       },
                     );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
                   }
                 },
                 tabs: const [
@@ -141,10 +124,6 @@ class _AlphabetFlashcardsState extends State<AlphabetFlashcards> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -165,7 +144,7 @@ class _AlphabetFlashcardsState extends State<AlphabetFlashcards> {
             ),
             title: const Center(
               child: Text(
-                'Alphabet Flashcards',
+                'Flashcards Quiz',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,

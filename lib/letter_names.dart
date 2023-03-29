@@ -77,8 +77,6 @@ class _AlphabetState extends State<Alphabet> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -89,10 +87,6 @@ class _AlphabetState extends State<Alphabet> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

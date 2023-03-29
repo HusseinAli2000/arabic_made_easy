@@ -78,8 +78,6 @@ class _ColorsClassState extends State<ColorsClass> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -90,10 +88,6 @@ class _ColorsClassState extends State<ColorsClass> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

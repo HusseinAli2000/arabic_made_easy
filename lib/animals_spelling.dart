@@ -24,11 +24,14 @@ class AnimalsSpelling extends StatefulWidget {
 }
 
 class _AnimalsSpellingState extends State<AnimalsSpelling> {
-  final List<String> _words = AnimalWords.toList();
-  // ..shuffle
-  // ..take(5);
+  late List<String> _words;
 
   late String _word, _dropWord, wordComplete;
+
+  _generateWords() {
+    _words = AnimalWords.toList()..shuffle();
+    _words = _words.take(10).toList();
+  }
 
   _generateWord() {
     final r = Random().nextInt(_words.length);
@@ -49,12 +52,14 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
 
   @override
   Widget build(BuildContext context) {
+    _generateWords();
     return Selector<Controller, bool>(
       selector: (_, controller) => controller.generateWord,
       builder: (_, generate, __) {
         if (generate) {
           if (_words.isNotEmpty) {
             _generateWord();
+            print('word length: ${_words.length}');
           }
         }
         return MaterialApp(
@@ -119,8 +124,6 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
                           );
                         },
                       );
-                    } else if (index == 2) {
-                      setState(() {});
                     }
                   },
                   tabs: const [
@@ -131,10 +134,6 @@ class _AnimalsSpellingState extends State<AnimalsSpelling> {
                     GButton(
                       icon: Icons.class_,
                       text: 'Classes',
-                    ),
-                    GButton(
-                      icon: Icons.settings,
-                      text: 'Settings',
                     ),
                   ],
                 ),

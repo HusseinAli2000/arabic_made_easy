@@ -79,8 +79,6 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -91,10 +89,6 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

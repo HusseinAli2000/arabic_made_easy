@@ -20,8 +20,12 @@ class ColorsSpelling extends StatefulWidget {
 }
 
 class _ColorsSpellingState extends State<ColorsSpelling> {
-  final List<String> _words = ColorWords.toList();
+  late List<String> _words;
   late String _word, _dropWord, wordComplete;
+  _generateWords() {
+    _words = ColorWords.toList()..shuffle();
+    _words = _words.take(10).toList();
+  }
 
   _generateWord() {
     final r = Random().nextInt(_words.length);
@@ -42,6 +46,7 @@ class _ColorsSpellingState extends State<ColorsSpelling> {
 
   @override
   Widget build(BuildContext context) {
+    _generateWords();
     return Selector<Controller, bool>(
       selector: (_, controller) => controller.generateWord,
       builder: (_, generate, __) {
@@ -112,8 +117,6 @@ class _ColorsSpellingState extends State<ColorsSpelling> {
                           );
                         },
                       );
-                    } else if (index == 2) {
-                      setState(() {});
                     }
                   },
                   tabs: const [
@@ -124,10 +127,6 @@ class _ColorsSpellingState extends State<ColorsSpelling> {
                     GButton(
                       icon: Icons.class_,
                       text: 'Classes',
-                    ),
-                    GButton(
-                      icon: Icons.settings,
-                      text: 'Settings',
                     ),
                   ],
                 ),
@@ -338,7 +337,7 @@ class _DragState extends State<Drag> {
                           _accepted = true;
                           setState(() {});
                           Provider.of<Controller>(context, listen: false)
-                              .incrementLettersAllColors(context: context);
+                              .incrementLettersAllAnimals(context: context);
                         }
                       },
                       childWhenDragging: const SizedBox(),

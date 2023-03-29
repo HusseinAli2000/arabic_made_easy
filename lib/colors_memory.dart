@@ -155,10 +155,6 @@ class _ColorsMemoryState extends State<ColorsMemory> {
                             icon: Icons.class_,
                             text: 'Classes',
                           ),
-                          GButton(
-                            icon: Icons.settings,
-                            text: 'Settings',
-                          ),
                         ],
                       ),
                     ),
