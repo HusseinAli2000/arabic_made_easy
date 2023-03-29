@@ -1,4 +1,3 @@
-import 'package:arabic_made_easy/alphabet_mcq.dart';
 import 'package:arabic_made_easy/cuw_mcq.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -9,7 +8,6 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animal_mcq.dart';
 import 'words.dart';
 
 class CuwMcqTwenty extends StatefulWidget {
@@ -175,7 +173,7 @@ class _CuwMcqTwentyState extends State<CuwMcqTwenty> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),
@@ -255,8 +253,6 @@ class _CuwMcqTwentyState extends State<CuwMcqTwenty> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -267,10 +263,6 @@ class _CuwMcqTwentyState extends State<CuwMcqTwenty> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

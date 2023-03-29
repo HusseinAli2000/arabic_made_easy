@@ -55,7 +55,7 @@ class _BodyPartsMemoryState extends State<BodyPartsMemory> {
       future: _cacheImages(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          Center(
+          const Center(
             child: Text(
               'Error, Check Your Connection',
               textAlign: TextAlign.center,
@@ -70,7 +70,7 @@ class _BodyPartsMemoryState extends State<BodyPartsMemory> {
                   showDialog(
                       barrierDismissible: false,
                       context: context,
-                      builder: (context) => MemoryPopupBodyparts());
+                      builder: (context) => const MemoryPopupBodyparts());
                 }
               });
 
@@ -138,8 +138,6 @@ class _BodyPartsMemoryState extends State<BodyPartsMemory> {
                                 );
                               },
                             );
-                          } else if (index == 2) {
-                            setState(() {});
                           }
                         },
                         tabs: const [
@@ -150,10 +148,6 @@ class _BodyPartsMemoryState extends State<BodyPartsMemory> {
                           GButton(
                             icon: Icons.class_,
                             text: 'Classes',
-                          ),
-                          GButton(
-                            icon: Icons.settings,
-                            text: 'Settings',
                           ),
                         ],
                       ),
@@ -220,7 +214,7 @@ class _BodyPartsMemoryState extends State<BodyPartsMemory> {
             },
           );
         } else {
-          return Center(
+          return const Center(
               child:
                   CircularProgressIndicator()); // display main content when data is ready
         }
@@ -292,7 +286,7 @@ class WordTile extends StatelessWidget {
               animate: notifier.answeredWords.contains(index),
               numberWordsAnswered: notifier.answeredWords.length,
               child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -303,7 +297,7 @@ class WordTile extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             word.text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                             ),
                           ),

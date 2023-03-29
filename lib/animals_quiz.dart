@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/half_flip_animation.dart';
 import 'package:arabic_made_easy/progress_bar.dart';
-import 'package:arabic_made_easy/settings_page.dart';
 import 'package:arabic_made_easy/settings_to_text.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';

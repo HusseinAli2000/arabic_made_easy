@@ -8,7 +8,6 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animal_mcq.dart';
 import 'words.dart';
 
 class AlphabetMcqTwenty extends StatefulWidget {
@@ -174,7 +173,7 @@ class _AlphabetMcqTwentyState extends State<AlphabetMcqTwenty> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

@@ -34,7 +34,6 @@ class _ColorsMemoryOptionState extends State<ColorsMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const ColorsMemory();
           } else {
             return const Center(

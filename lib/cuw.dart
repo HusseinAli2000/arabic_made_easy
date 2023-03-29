@@ -6,12 +6,12 @@ import 'package:arabic_made_easy/cuw_spelling.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:flutter/services.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'flashcards_notifier.dart';
-import 'shapes_flashcards.dart';
 import 'spelling_controller.dart';
 
 class CommonlyUsedWords extends StatefulWidget {
@@ -22,6 +22,15 @@ class CommonlyUsedWords extends StatefulWidget {
 }
 
 class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -86,8 +95,6 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -98,10 +105,6 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),
@@ -150,103 +153,139 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  const CommonlyUsedWordsClass(),
-                            ),
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 10,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Commonly Used Words',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const CommonlyUsedWordsClass(),
+                              ),
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/words.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Commonly Used Words',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/words.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Provider.of<FlashCardNotifier>(context,
-                                      listen: false)
-                                  .setTopic(topic: 'Cuw');
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const CuwFlashcards(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Provider.of<FlashCardNotifier>(context,
+                                        listen: false)
+                                    .setTopic(topic: 'Cuw');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CuwFlashcards(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Flashcards Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -271,7 +310,7 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                                 context,
                                 PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        CuwMemoryOption()),
+                                        const CuwMemoryOption()),
                                 (route) => false);
                           },
                           style: ButtonStyle(
@@ -318,105 +357,141 @@ class _CommonlyUsedWordsState extends State<CommonlyUsedWords> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Provider.of<Controller>(context, listen: false)
-                                  .reset();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const CuwSpelling(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Writing Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Provider.of<Controller>(context, listen: false)
+                                    .reset();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CuwSpelling(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Writing Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const CuwMcq(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Multiple Choice Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CuwMcq(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Multiple Choice Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

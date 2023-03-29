@@ -109,7 +109,7 @@ class _NumberPronunciationState extends State<NumberPronunciation> {
           ),
           title: const Center(
             child: Text(
-              'Numerals',
+              'Numbers',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 30,
@@ -354,7 +354,7 @@ class gridTile extends StatelessWidget {
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: Color.fromARGB(255, 235, 234, 243),
-              fontSize: 30,
+              fontSize: 20,
             ),
           ),
           Padding(

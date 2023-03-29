@@ -1,6 +1,4 @@
 import 'dart:math';
-import 'package:arabic_made_easy/alphabet_mcq.dart';
-import 'package:arabic_made_easy/animal_mcq.dart';
 import 'package:arabic_made_easy/numbers_mcq.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -167,7 +165,7 @@ class _NumbersMcqFiveState extends State<NumbersMcqFive> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

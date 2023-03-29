@@ -1,6 +1,5 @@
 import 'dart:math';
-import 'package:arabic_made_easy/alphabet_mcq.dart';
-import 'package:arabic_made_easy/animal_mcq.dart';
+
 import 'package:arabic_made_easy/cuw_mcq.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -167,7 +166,7 @@ class _CuwMcqFiveState extends State<CuwMcqFive> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),
@@ -247,8 +246,6 @@ class _CuwMcqFiveState extends State<CuwMcqFive> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -259,10 +256,6 @@ class _CuwMcqFiveState extends State<CuwMcqFive> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

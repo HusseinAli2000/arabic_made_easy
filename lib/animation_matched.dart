@@ -20,15 +20,15 @@ class _AnimationMatchedState extends State<AnimationMatched>
   late AnimationController _controller;
   late Animation<double> _shake;
   late Animation<double> _scale;
-  Color _defaultColor = Color.fromARGB(255, 62, 62, 62);
-  Color _correctColor = Color.fromARGB(255, 17, 47, 153);
+  Color _defaultColor = const Color.fromARGB(255, 62, 62, 62);
+  Color _correctColor = const Color.fromARGB(255, 17, 47, 153);
   bool _correctColorSet = false;
 
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 600));
 
     _shake = TweenSequence<double>([
       TweenSequenceItem(tween: Tween<double>(begin: 0, end: 0.1), weight: 4),
@@ -52,10 +52,10 @@ class _AnimationMatchedState extends State<AnimationMatched>
     if (widget.animate) {
       if (!_correctColorSet) {
         if (widget.numberWordsAnswered == 4) {
-          _correctColor = Color.fromARGB(255, 13, 32, 100);
+          _correctColor = const Color.fromARGB(255, 13, 32, 100);
         }
         if (widget.numberWordsAnswered == 6) {
-          _correctColor = Color.fromARGB(255, 5, 21, 79);
+          _correctColor = const Color.fromARGB(255, 5, 21, 79);
         }
       }
       _correctColorSet = true;

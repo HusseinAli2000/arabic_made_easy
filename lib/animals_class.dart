@@ -336,35 +336,32 @@ class gridTile extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const SizedBox(
-            height: 5,
-          ),
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: Image.asset(
               'images/${english.toLowerCase()}.png',
-              height: 45,
+              height: 40,
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(2.0),
+            padding: const EdgeInsets.all(2.0),
             child: Text(
               arabic,
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontFamily: 'Akaya',
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: Text(
               english,
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontFamily: 'Akaya',
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
           ),
@@ -380,12 +377,12 @@ class gridTile extends StatelessWidget {
                 style: const TextStyle(
                   color: Color.fromARGB(255, 235, 234, 243),
                   fontFamily: 'Akaya',
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
               TTSButtonTwo(
                 word: arabic,
-                iconSize: 25,
+                iconSize: 20,
               ),
             ],
           ),

@@ -1,15 +1,12 @@
 import 'package:arabic_made_easy/alphabet_mcq_ten.dart';
 import 'package:arabic_made_easy/alphabet_page.dart';
-import 'package:arabic_made_easy/animal_mcq_five.dart';
+
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'alphabet_mcq_five.dart';
 import 'alphabet_mcq_twenty.dart';
-import 'animal_mcq_ten.dart';
-import 'animal_mcq_twenty.dart';
-import 'animals.dart';
 
 class AlphabetMcq extends StatefulWidget {
   const AlphabetMcq({super.key});

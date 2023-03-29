@@ -1,11 +1,6 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/alphabet_page.dart';
-import 'package:arabic_made_easy/colors.dart';
-import 'package:arabic_made_easy/colors_class.dart';
-import 'package:arabic_made_easy/cuw.dart';
 import 'package:arabic_made_easy/numbers.dart';
-import 'package:arabic_made_easy/shapes.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +13,6 @@ import 'flashcards_notifier.dart';
 import 'half_flip_animation.dart';
 import 'progress_bar.dart';
 import 'second_page.dart';
-import 'settings_page.dart';
 import 'settings_to_text.dart';
 
 class NumbersFlashcards extends StatefulWidget {

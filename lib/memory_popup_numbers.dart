@@ -2,7 +2,6 @@ import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/numbers_memory_option.dart';
 
 import 'package:arabic_made_easy/second_page.dart';
-import 'package:arabic_made_easy/transport_memory_option.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -89,10 +88,10 @@ class _MemoryPopupNumbersState extends State<MemoryPopupNumbers> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    NumbersMemoryOption()),
+                                    const NumbersMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -120,7 +119,7 @@ class _MemoryPopupNumbersState extends State<MemoryPopupNumbers> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

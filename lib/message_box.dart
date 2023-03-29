@@ -1,4 +1,3 @@
-import 'package:arabic_made_easy/animals_spelling.dart';
 import 'package:arabic_made_easy/second_page.dart';
 
 import 'package:flutter/material.dart';

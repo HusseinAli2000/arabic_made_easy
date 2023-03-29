@@ -1,13 +1,8 @@
 import 'package:arabic_made_easy/alphabet_memory_option.dart';
-import 'package:arabic_made_easy/animals_memory_cards.dart';
 import 'package:arabic_made_easy/game_manager.dart';
-import 'package:arabic_made_easy/main_page.dart';
 import 'package:arabic_made_easy/second_page.dart';
-import 'package:arabic_made_easy/shapes_memory_option.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'animals_memory_cards_options.dart';
 
 class MemoryPopupAlphabet extends StatefulWidget {
   const MemoryPopupAlphabet({super.key});
@@ -91,10 +86,10 @@ class _MemoryPopupAlphabetState extends State<MemoryPopupAlphabet> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    AlphabetMemoryOption()),
+                                    const AlphabetMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -122,7 +117,7 @@ class _MemoryPopupAlphabetState extends State<MemoryPopupAlphabet> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

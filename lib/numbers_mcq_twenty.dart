@@ -1,4 +1,3 @@
-import 'package:arabic_made_easy/alphabet_mcq.dart';
 import 'package:arabic_made_easy/numbers_mcq.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -9,7 +8,6 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animal_mcq.dart';
 import 'words.dart';
 
 class NumbersMcqTwenty extends StatefulWidget {
@@ -175,7 +173,7 @@ class _NumbersMcqTwentyState extends State<NumbersMcqTwenty> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

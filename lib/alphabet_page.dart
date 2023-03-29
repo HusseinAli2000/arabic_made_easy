@@ -312,7 +312,7 @@ class _AlphabetPageState extends State<AlphabetPage> {
                                 context,
                                 PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        AlphabetMemoryOption()),
+                                        const AlphabetMemoryOption()),
                                 (route) => false);
                           },
                           style: ButtonStyle(

@@ -1,12 +1,8 @@
-import 'package:arabic_made_easy/animals_memory_cards.dart';
 import 'package:arabic_made_easy/game_manager.dart';
-import 'package:arabic_made_easy/main_page.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/shapes_memory_option.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'animals_memory_cards_options.dart';
 
 class MemoryPopupShapes extends StatefulWidget {
   const MemoryPopupShapes({super.key});
@@ -90,10 +86,10 @@ class _MemoryPopupShapesState extends State<MemoryPopupShapes> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    ShapesMemoryOption()),
+                                    const ShapesMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -121,7 +117,7 @@ class _MemoryPopupShapesState extends State<MemoryPopupShapes> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

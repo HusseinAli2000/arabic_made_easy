@@ -305,7 +305,7 @@ class gridTile extends StatelessWidget {
               style: TextStyle(
                 color: content1,
                 fontFamily: 'Akaya',
-                fontSize: 20,
+                fontSize: 16,
               ),
             ),
           ),

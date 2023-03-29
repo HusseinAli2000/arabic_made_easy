@@ -173,7 +173,7 @@ class _AnimalMCQTwentyState extends State<AnimalMCQTwenty> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

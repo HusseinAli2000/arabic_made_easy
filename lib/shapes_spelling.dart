@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/colors.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:flutter/material.dart';
@@ -118,8 +117,6 @@ class _ShapesSpellingState extends State<ShapesSpelling> {
                           );
                         },
                       );
-                    } else if (index == 2) {
-                      setState(() {});
                     }
                   },
                   tabs: const [
@@ -130,10 +127,6 @@ class _ShapesSpellingState extends State<ShapesSpelling> {
                     GButton(
                       icon: Icons.class_,
                       text: 'Classes',
-                    ),
-                    GButton(
-                      icon: Icons.settings,
-                      text: 'Settings',
                     ),
                   ],
                 ),

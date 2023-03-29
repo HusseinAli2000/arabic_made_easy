@@ -88,10 +88,10 @@ class _MemoryPopupTransportState extends State<MemoryPopupTransport> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    TransportMemoryOption()),
+                                    const TransportMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -119,7 +119,7 @@ class _MemoryPopupTransportState extends State<MemoryPopupTransport> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

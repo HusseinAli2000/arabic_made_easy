@@ -1,20 +1,14 @@
 import 'dart:math';
 
 import 'package:arabic_made_easy/animation_matched.dart';
-import 'package:arabic_made_easy/body_parts.dart';
-import 'package:arabic_made_easy/bodyparts_memory_option.dart';
-import 'package:arabic_made_easy/colors.dart';
-import 'package:arabic_made_easy/colors_memory_option.dart';
+
 import 'package:arabic_made_easy/flip_animation.dart';
 import 'package:arabic_made_easy/game_manager.dart';
-import 'package:arabic_made_easy/memory_popup_bodyparts.dart';
-import 'package:arabic_made_easy/memory_popup_colors.dart';
-import 'package:arabic_made_easy/memory_popup_transport.dart';
+
 import 'package:arabic_made_easy/numbers.dart';
 import 'package:arabic_made_easy/numbers_memory_option.dart';
 import 'package:arabic_made_easy/second_page.dart';
-import 'package:arabic_made_easy/transport.dart';
-import 'package:arabic_made_easy/transport_memory_option.dart';
+
 import 'package:arabic_made_easy/word_memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,7 +59,7 @@ class _NumbersMemoryState extends State<NumbersMemory> {
       future: _cacheImages(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          Center(
+          const Center(
             child: Text(
               'Error, Check Your Connection',
               textAlign: TextAlign.center,
@@ -80,7 +74,7 @@ class _NumbersMemoryState extends State<NumbersMemory> {
                   showDialog(
                       barrierDismissible: false,
                       context: context,
-                      builder: (context) => MemoryPopupNumbers());
+                      builder: (context) => const MemoryPopupNumbers());
                 }
               });
 
@@ -224,7 +218,7 @@ class _NumbersMemoryState extends State<NumbersMemory> {
             },
           );
         } else {
-          return Center(
+          return const Center(
               child:
                   CircularProgressIndicator()); // display main content when data is ready
         }
@@ -296,7 +290,7 @@ class WordTile extends StatelessWidget {
               animate: notifier.answeredWords.contains(index),
               numberWordsAnswered: notifier.answeredWords.length,
               child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -307,7 +301,7 @@ class WordTile extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             word.text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                             ),
                           ),

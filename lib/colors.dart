@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
-import 'animals_spelling.dart';
 import 'flashcards_notifier.dart';
 import 'second_page.dart';
 import 'spelling_controller.dart';
@@ -313,7 +312,7 @@ class _ColorsPageState extends State<ColorsPage> {
                                 context,
                                 PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        ColorsMemoryOption()),
+                                        const ColorsMemoryOption()),
                                 (route) => false);
                           },
                           style: ButtonStyle(

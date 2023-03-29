@@ -88,10 +88,10 @@ class _MemoryPopupBodypartsState extends State<MemoryPopupBodyparts> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    BodyPartsMemoryOption()),
+                                    const BodyPartsMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -119,7 +119,7 @@ class _MemoryPopupBodypartsState extends State<MemoryPopupBodyparts> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

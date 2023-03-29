@@ -2,7 +2,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import 'cuw_memory.dart';
-import 'transport_memory.dart';
 import 'word_memory.dart';
 
 class CuwMemoryOption extends StatefulWidget {
@@ -36,7 +35,6 @@ class _CuwMemoryOptionState extends State<CuwMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const CuwMemory();
           } else {
             return const Center(

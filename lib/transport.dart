@@ -6,6 +6,7 @@ import 'package:arabic_made_easy/transport_memory_option.dart';
 import 'package:arabic_made_easy/transport_spelling.dart';
 import 'package:flutter/material.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:flutter/services.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -22,6 +23,15 @@ class Transport extends StatefulWidget {
 }
 
 class _TransportState extends State<Transport> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -99,10 +109,6 @@ class _TransportState extends State<Transport> {
                   icon: Icons.class_,
                   text: 'Classes',
                 ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
-                ),
               ],
             ),
           ),
@@ -150,103 +156,139 @@ class _TransportState extends State<Transport> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const TransportClass(),
-                            ),
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 10,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Transport',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const TransportClass(),
+                              ),
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/transportation.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Transport',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/transportation.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Provider.of<FlashCardNotifier>(context,
-                                      listen: false)
-                                  .setTopic(topic: 'Transport');
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const TransportFlashcards(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Provider.of<FlashCardNotifier>(context,
+                                        listen: false)
+                                    .setTopic(topic: 'Transport');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const TransportFlashcards(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Flashcards Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -271,7 +313,7 @@ class _TransportState extends State<Transport> {
                                 context,
                                 PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        TransportMemoryOption()),
+                                        const TransportMemoryOption()),
                                 (route) => false);
                           },
                           style: ButtonStyle(
@@ -318,106 +360,142 @@ class _TransportState extends State<Transport> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Provider.of<Controller>(context, listen: false)
-                                  .reset();
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const TransportSpelling(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Writing Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Provider.of<Controller>(context, listen: false)
+                                    .reset();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const TransportSpelling(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Writing Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(3, 8, 3, 0),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          setState(
-                            () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const TransportMcq(),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 32, 6, 96),
+                              Color.fromARGB(255, 57, 119, 194),
+                            ],
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              width: 13,
-                              height: 70,
-                            ),
-                            const Text(
-                              'Multiple Choice Quiz',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(
+                              () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const TransportMcq(),
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          style: ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
-                            const SizedBox(
-                              width: 15,
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color.fromARGB(130, 35, 61, 155),
                             ),
-                            Image.asset(
-                              'images/quiz.png',
-                              height: 35,
-                              width: 35,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                              height: 20,
-                            ),
-                          ],
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                width: 13,
+                                height: 70,
+                              ),
+                              const Text(
+                                'Multiple Choice Quiz',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 235, 234, 243),
+                                  fontFamily: 'Pacifico',
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Image.asset(
+                                'images/quiz.png',
+                                height: 35,
+                                width: 35,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                                height: 20,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

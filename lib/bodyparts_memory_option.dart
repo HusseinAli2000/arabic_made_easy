@@ -35,7 +35,6 @@ class _BodyPartsMemoryOptionState extends State<BodyPartsMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const BodyPartsMemory();
           } else {
             return const Center(

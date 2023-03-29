@@ -35,7 +35,6 @@ class _TransportMemoryOptionState extends State<TransportMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const TransportMemory();
           } else {
             return const Center(

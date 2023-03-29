@@ -165,7 +165,7 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

@@ -2,7 +2,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import 'numbers_memory.dart';
-import 'transport_memory.dart';
 import 'word_memory.dart';
 
 class NumbersMemoryOption extends StatefulWidget {
@@ -36,7 +35,6 @@ class _NumbersMemoryOptionState extends State<NumbersMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const NumbersMemory();
           } else {
             return const Center(

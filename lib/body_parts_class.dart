@@ -78,8 +78,6 @@ class _BodyPartsClassState extends State<BodyPartsClass> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -90,10 +88,6 @@ class _BodyPartsClassState extends State<BodyPartsClass> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),
@@ -231,14 +225,11 @@ class gridTiles extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(
-            height: 5,
-          ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Image.asset(
               'images/${english.toLowerCase()}.png',
-              height: 45,
+              height: 40,
             ),
           ),
           Padding(
@@ -248,7 +239,7 @@ class gridTiles extends StatelessWidget {
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontFamily: 'Akaya',
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
           ),
@@ -259,7 +250,7 @@ class gridTiles extends StatelessWidget {
               style: const TextStyle(
                 color: Color.fromARGB(255, 235, 234, 243),
                 fontFamily: 'Akaya',
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
           ),
@@ -267,7 +258,7 @@ class gridTiles extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                width: 15,
+                width: 12,
               ),
               Text(
                 pronunciation,
@@ -275,12 +266,12 @@ class gridTiles extends StatelessWidget {
                 style: const TextStyle(
                   color: Color.fromARGB(255, 235, 234, 243),
                   fontFamily: 'Akaya',
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
               TTSButtonTwo(
                 word: arabic,
-                iconSize: 25,
+                iconSize: 20,
               ),
             ],
           ),

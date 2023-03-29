@@ -1,9 +1,6 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/colors.dart';
-import 'package:arabic_made_easy/colors_class.dart';
 import 'package:arabic_made_easy/cuw.dart';
-import 'package:arabic_made_easy/shapes.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +13,6 @@ import 'flashcards_notifier.dart';
 import 'half_flip_animation.dart';
 import 'progress_bar.dart';
 import 'second_page.dart';
-import 'settings_page.dart';
 import 'settings_to_text.dart';
 
 class CuwFlashcards extends StatefulWidget {
@@ -113,23 +109,6 @@ class _CuwFlashcardsState extends State<CuwFlashcards> {
                         );
                       },
                     );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
                   }
                 },
                 tabs: const [
@@ -140,10 +119,6 @@ class _CuwFlashcardsState extends State<CuwFlashcards> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -164,7 +139,7 @@ class _CuwFlashcardsState extends State<CuwFlashcards> {
             ),
             title: const Center(
               child: Text(
-                'Commonly Used Words Flashcards',
+                'Flashcards Quiz',
                 style: TextStyle(
                   fontFamily: 'Akaya',
                   fontSize: 25,

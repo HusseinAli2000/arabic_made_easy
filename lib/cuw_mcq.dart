@@ -1,16 +1,8 @@
-import 'package:arabic_made_easy/alphabet_mcq_ten.dart';
-import 'package:arabic_made_easy/alphabet_page.dart';
-import 'package:arabic_made_easy/animal_mcq_five.dart';
 import 'package:arabic_made_easy/cuw.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'alphabet_mcq_five.dart';
-import 'alphabet_mcq_twenty.dart';
-import 'animal_mcq_ten.dart';
-import 'animal_mcq_twenty.dart';
-import 'animals.dart';
 import 'cuw_mcq_five.dart';
 import 'cuw_mcq_ten.dart';
 import 'cuw_mcq_twnety.dart';
@@ -87,8 +79,6 @@ class _CuwMcqState extends State<CuwMcq> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -99,10 +89,6 @@ class _CuwMcqState extends State<CuwMcq> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

@@ -1,5 +1,4 @@
 import 'package:arabic_made_easy/tts_button_two.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'alphabet_page.dart';
@@ -217,7 +216,7 @@ class gridTiles extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                width: 15,
+                width: 10,
               ),
               Text(
                 pronunciation,
@@ -225,12 +224,12 @@ class gridTiles extends StatelessWidget {
                 style: const TextStyle(
                   color: Color.fromARGB(255, 235, 234, 243),
                   fontFamily: 'Akaya',
-                  fontSize: 18,
+                  fontSize: 16,
                 ),
               ),
               TTSButtonTwo(
                 word: tts,
-                iconSize: 25,
+                iconSize: 20,
               ),
             ],
           ),

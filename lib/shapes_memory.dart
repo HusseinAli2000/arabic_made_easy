@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/animals.dart';
 import 'package:arabic_made_easy/animation_matched.dart';
 import 'package:arabic_made_easy/flip_animation.dart';
 import 'package:arabic_made_easy/game_manager.dart';
@@ -15,7 +14,6 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'package:provider/provider.dart';
 
-import 'memory_popup.dart';
 import 'shapes_memory_option.dart';
 
 class ShapesMemory extends StatefulWidget {
@@ -59,7 +57,7 @@ class _ShapesMemoryState extends State<ShapesMemory> {
       future: _cacheImages(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          Center(
+          const Center(
             child: Text(
               'Error, Check Your Connection',
               textAlign: TextAlign.center,
@@ -74,7 +72,7 @@ class _ShapesMemoryState extends State<ShapesMemory> {
                   showDialog(
                       barrierDismissible: false,
                       context: context,
-                      builder: (context) => MemoryPopupShapes());
+                      builder: (context) => const MemoryPopupShapes());
                 }
               });
 
@@ -142,8 +140,6 @@ class _ShapesMemoryState extends State<ShapesMemory> {
                                 );
                               },
                             );
-                          } else if (index == 2) {
-                            setState(() {});
                           }
                         },
                         tabs: const [
@@ -154,10 +150,6 @@ class _ShapesMemoryState extends State<ShapesMemory> {
                           GButton(
                             icon: Icons.class_,
                             text: 'Classes',
-                          ),
-                          GButton(
-                            icon: Icons.settings,
-                            text: 'Settings',
                           ),
                         ],
                       ),
@@ -224,7 +216,7 @@ class _ShapesMemoryState extends State<ShapesMemory> {
             },
           );
         } else {
-          return Center(
+          return const Center(
               child:
                   CircularProgressIndicator()); // display main content when data is ready
         }
@@ -296,7 +288,7 @@ class WordTile extends StatelessWidget {
               animate: notifier.answeredWords.contains(index),
               numberWordsAnswered: notifier.answeredWords.length,
               child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -307,7 +299,7 @@ class WordTile extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             word.text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                             ),
                           ),

@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/alphabet_mcq.dart';
 import 'package:arabic_made_easy/body_parts_mcq.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/tts_button_two.dart';
@@ -8,7 +7,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animal_mcq.dart';
 import 'words.dart';
 
 class BodyPartsMcqTen extends StatefulWidget {
@@ -174,7 +172,7 @@ class _BodyPartsMcqTenState extends State<BodyPartsMcqTen> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),
@@ -254,8 +252,6 @@ class _BodyPartsMcqTenState extends State<BodyPartsMcqTen> {
                       );
                     },
                   );
-                } else if (index == 2) {
-                  setState(() {});
                 }
               },
               tabs: const [
@@ -266,10 +262,6 @@ class _BodyPartsMcqTenState extends State<BodyPartsMcqTen> {
                 GButton(
                   icon: Icons.class_,
                   text: 'Classes',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
                 ),
               ],
             ),

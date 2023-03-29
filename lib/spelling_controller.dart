@@ -1,5 +1,4 @@
 import 'package:arabic_made_easy/message_box.dart';
-import 'package:arabic_made_easy/words.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 

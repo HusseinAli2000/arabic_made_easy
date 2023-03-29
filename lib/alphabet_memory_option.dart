@@ -35,7 +35,6 @@ class _AlphabetMemoryOptionState extends State<AlphabetMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const AlphabetMemory();
           } else {
             return const Center(

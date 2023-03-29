@@ -2,7 +2,6 @@ import 'package:arabic_made_easy/body_parts.dart';
 import 'package:arabic_made_easy/cuw.dart';
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:arabic_made_easy/transport.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,20 +1,15 @@
 import 'package:arabic_made_easy/animal_mcq.dart';
 import 'package:arabic_made_easy/animals_class.dart';
-import 'package:arabic_made_easy/animal_mcq_five.dart';
 import 'package:arabic_made_easy/animals_memory_cards_options.dart';
 import 'package:arabic_made_easy/animals_quiz.dart';
-import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/game_manager.dart';
-import 'package:arabic_made_easy/language_button_notifier.dart';
-import 'package:arabic_made_easy/review_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
-import 'animals_memory_cards.dart';
 import 'animals_spelling.dart';
 import 'second_page.dart';
 import 'spelling_controller.dart';
@@ -89,25 +84,12 @@ class _AnimalsState extends State<Animals> {
                     Future.delayed(
                       const Duration(seconds: 1),
                       () {
-                        Provider.of<FlashCardNotifier>(context, listen: false)
-                            .setTopic(topic: 'Review');
-                        notifier.reset();
-                        DatabaseManager().selectWord().then((words) {
-                          final reviewNotifier =
-                              Provider.of<LanguageButtonNotifier>(context,
-                                  listen: false);
-                          if (words.isEmpty) {
-                            reviewNotifier.disableButtons(disable: true);
-                          } else {
-                            reviewNotifier.disableButtons(disable: false);
-                          }
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ReviewPage(),
-                            ),
-                          );
-                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PageTwo(),
+                          ),
+                        );
                       },
                     );
                   }
@@ -119,7 +101,7 @@ class _AnimalsState extends State<Animals> {
                   ),
                   GButton(
                     icon: Icons.class_,
-                    text: 'Review',
+                    text: 'Classes',
                   ),
                 ],
               ),
@@ -329,7 +311,7 @@ class _AnimalsState extends State<Animals> {
                                   context,
                                   PageRouteBuilder(
                                       pageBuilder: (_, __, ___) =>
-                                          AnimalMemoryCardsPage()),
+                                          const AnimalMemoryCardsPage()),
                                   (route) => false);
                             },
                             style: ButtonStyle(

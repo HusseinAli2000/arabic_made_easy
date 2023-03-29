@@ -88,10 +88,10 @@ class _MemoryPopupColorsState extends State<MemoryPopupColors> {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    ColorsMemoryOption()),
+                                    const ColorsMemoryOption()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -119,7 +119,7 @@ class _MemoryPopupColorsState extends State<MemoryPopupColors> {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

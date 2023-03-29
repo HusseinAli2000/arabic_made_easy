@@ -1,6 +1,4 @@
-import 'package:arabic_made_easy/animals_memory_cards.dart';
 import 'package:arabic_made_easy/game_manager.dart';
-import 'package:arabic_made_easy/main_page.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -84,10 +82,10 @@ class MemoryPopup extends StatelessWidget {
                             context,
                             PageRouteBuilder(
                                 pageBuilder: (_, __, ___) =>
-                                    AnimalMemoryCardsPage()),
+                                    const AnimalMemoryCardsPage()),
                             (route) => false);
                       },
-                      child: Text('Replay'),
+                      child: const Text('Replay'),
                     ),
                   ),
                   Padding(
@@ -115,7 +113,7 @@ class MemoryPopup extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text('Exit'),
+                      child: const Text('Exit'),
                     ),
                   ),
                 ],

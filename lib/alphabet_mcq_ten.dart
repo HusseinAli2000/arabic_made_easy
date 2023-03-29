@@ -7,7 +7,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'animal_mcq.dart';
 import 'words.dart';
 
 class AlphabetMcqTen extends StatefulWidget {
@@ -173,7 +172,7 @@ class _AlphabetMcqTenState extends State<AlphabetMcqTen> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

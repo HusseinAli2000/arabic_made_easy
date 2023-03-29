@@ -34,7 +34,6 @@ class _ShapesMemoryOptionState extends State<ShapesMemoryOption> {
           }
 
           if (snapshot.hasData) {
-            print('Success! There are ${sourceWords.length} source words');
             return const ShapesMemory();
           } else {
             return const Center(

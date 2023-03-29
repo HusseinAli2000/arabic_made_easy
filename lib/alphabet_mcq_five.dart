@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:arabic_made_easy/alphabet_mcq.dart';
-import 'package:arabic_made_easy/animal_mcq.dart';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -166,7 +166,7 @@ class _AlphabetMcqFiveState extends State<AlphabetMcqFive> {
                         _generateQuestion();
                         setState(() {});
                       },
-                      child: Text('New Quiz'),
+                      child: const Text('New Quiz'),
                     ),
                   ],
                 ),

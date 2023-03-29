@@ -1,4 +1,3 @@
-import 'package:arabic_made_easy/colors_memory_option.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/number_pronunciation.dart';
 import 'package:arabic_made_easy/numbers_flashcards.dart';
@@ -314,7 +313,7 @@ class _NumbersState extends State<Numbers> {
                                 context,
                                 PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        NumbersMemoryOption()),
+                                        const NumbersMemoryOption()),
                                 (route) => false);
                           },
                           style: ButtonStyle(

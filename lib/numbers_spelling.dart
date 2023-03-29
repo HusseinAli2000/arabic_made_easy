@@ -1,9 +1,7 @@
 import 'dart:math';
 
-import 'package:arabic_made_easy/colors.dart';
 import 'package:arabic_made_easy/numbers.dart';
 import 'package:arabic_made_easy/second_page.dart';
-import 'package:arabic_made_easy/shapes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
