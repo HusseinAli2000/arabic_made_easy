@@ -5,6 +5,7 @@ import 'package:arabic_made_easy/shapes_flashcards.dart';
 import 'package:arabic_made_easy/shapes_mcq.dart';
 import 'package:arabic_made_easy/shapes_memory_option.dart';
 import 'package:arabic_made_easy/shapes_spelling.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -63,8 +64,11 @@ class _ShapesState extends State<Shapes> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -79,8 +83,11 @@ class _ShapesState extends State<Shapes> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -166,7 +173,11 @@ class _ShapesState extends State<Shapes> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,
@@ -235,17 +246,25 @@ class _ShapesState extends State<Shapes> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<FlashCardNotifier>(context,
-                                        listen: false)
-                                    .setTopic(topic: 'Colors');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ShapesFlashcards(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<FlashCardNotifier>(context,
+                                            listen: false)
+                                        .setTopic(topic: 'Colors');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ShapesFlashcards(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -308,13 +327,21 @@ class _ShapesState extends State<Shapes> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            notifier.reset();
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                PageRouteBuilder(
-                                    pageBuilder: (_, __, ___) =>
-                                        const ShapesMemoryOption()),
-                                (route) => false);
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                notifier.reset();
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    PageRouteBuilder(
+                                        pageBuilder: (_, __, ___) =>
+                                            const ShapesMemoryOption()),
+                                    (route) => false);
+                              },
+                            );
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -374,16 +401,25 @@ class _ShapesState extends State<Shapes> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ShapesSpelling(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<Controller>(context,
+                                            listen: false)
+                                        .reset();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ShapesSpelling(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -446,10 +482,12 @@ class _ShapesState extends State<Shapes> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

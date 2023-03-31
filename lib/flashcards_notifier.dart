@@ -63,8 +63,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Animals").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Animals")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -82,8 +86,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Numbers").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Numbers")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -101,8 +109,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Colors").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Colors")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -120,8 +132,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Shapes").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Shapes")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -139,8 +155,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Body Parts").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Body Parts")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -158,8 +178,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Transport").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Transport")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -177,8 +201,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Cuw").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Cuw")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();
@@ -196,8 +224,12 @@ class FlashCardNotifier extends ChangeNotifier {
     if (isFirstRound) {
       if (topic != 'Review') {
         selectedWords.clear();
-        selectedWords =
-            words.where((element) => element.topic == "Alphabet").toList();
+        selectedWords = words
+            .where((element) => element.topic == "Alphabet")
+            .toList()
+          ..shuffle();
+
+        selectedWords = selectedWords.take(10).toList();
       }
     } else {
       selectedWords = incorrectCards.toList();

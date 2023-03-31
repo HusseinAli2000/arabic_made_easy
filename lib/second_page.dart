@@ -2,6 +2,7 @@ import 'package:arabic_made_easy/body_parts.dart';
 import 'package:arabic_made_easy/cuw.dart';
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:arabic_made_easy/transport.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,8 +72,12 @@ class _PageTwoState extends State<PageTwo> {
                 activeColor: const Color.fromARGB(255, 235, 234, 243),
                 onTabChange: (index) {
                   if (index == 0) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
+
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         FirebaseAuth.instance.signOut();
                         setState(
@@ -88,8 +93,11 @@ class _PageTwoState extends State<PageTwo> {
                       },
                     );
                   } else if (index == 1) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         Provider.of<FlashCardNotifier>(context, listen: false)
                             .setTopic(topic: 'Review');
@@ -113,6 +121,9 @@ class _PageTwoState extends State<PageTwo> {
                       },
                     );
                   } else if (index == 2) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
                       const Duration(milliseconds: 500),
                       () {
@@ -204,12 +215,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const AlphabetPage(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AlphabetPage(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -269,16 +286,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Numbers(),
-                                  ),
-                                );
-                              },
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Numbers(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -338,7 +357,11 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,
@@ -407,16 +430,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Animals(),
-                                  ),
-                                );
-                              },
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Animals(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -476,16 +501,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Shapes(),
-                                  ),
-                                );
-                              },
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Shapes(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -545,12 +572,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const BodyParts(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const BodyParts(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -610,12 +643,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Transport(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Transport(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -675,17 +714,18 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
-                              () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BasicSentences(),
-                                  ),
-                                );
-                              },
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const BasicSentences(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -745,12 +785,19 @@ class _PageTwoState extends State<PageTwo> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CommonlyUsedWords(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
                             );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CommonlyUsedWords(),
+                                ),
+                              );
+                            });
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(

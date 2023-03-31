@@ -1,6 +1,8 @@
 import 'package:arabic_made_easy/quick_box.dart';
+import 'package:arabic_made_easy/review_page.dart';
 import 'package:arabic_made_easy/settings.dart';
 import 'package:arabic_made_easy/settings_notifier.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -57,27 +59,32 @@ class _SettingsPageState extends State<SettingsPage> {
                   activeColor: const Color.fromARGB(255, 235, 234, 243),
                   onTabChange: (index) {
                     if (index == 0) {
+                      AudioPlayer().play(
+                        AssetSource('spelling/click.mp3'),
+                      );
                       Future.delayed(
-                        const Duration(seconds: 1),
+                        const Duration(milliseconds: 500),
                         () {
-                          setState(
-                            () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const PageTwo(),
-                                ),
-                              );
-                            },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PageTwo(),
+                            ),
                           );
                         },
                       );
                     } else if (index == 1) {
+                      AudioPlayer().play(
+                        AssetSource('spelling/click.mp3'),
+                      );
                       Future.delayed(
-                        const Duration(seconds: 1),
+                        const Duration(milliseconds: 500),
                         () {
-                          setState(
-                            () {},
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ReviewPage(),
+                            ),
                           );
                         },
                       );
@@ -89,8 +96,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       text: 'Classes',
                     ),
                     GButton(
-                      icon: Icons.settings,
-                      text: 'Settings',
+                      icon: Icons.reviews,
+                      text: 'Review Quizzes',
                     ),
                   ],
                 ),
@@ -234,9 +241,11 @@ class _SettingsPageState extends State<SettingsPage> {
 
   runQuickBox({required String text, required BuildContext context}) {
     showDialog(
-      barrierDismissible: false,
       context: context,
       builder: (context) => QuickBox(text: text),
+    );
+    AudioPlayer().play(
+      AssetSource('spelling/click.mp3'),
     );
     Future.delayed(const Duration(milliseconds: 1000), () {
       Navigator.maybePop(context);

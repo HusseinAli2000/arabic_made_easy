@@ -4,6 +4,7 @@ import 'package:arabic_made_easy/bodyparts_flashcards.dart';
 import 'package:arabic_made_easy/bodyparts_memory_option.dart';
 import 'package:arabic_made_easy/bodyparts_spelling.dart';
 import 'package:arabic_made_easy/game_manager.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/services.dart';
@@ -64,8 +65,11 @@ class _BodyPartsState extends State<BodyParts> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -80,8 +84,11 @@ class _BodyPartsState extends State<BodyParts> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -167,11 +174,20 @@ class _BodyPartsState extends State<BodyParts> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const BodyPartsClass(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const BodyPartsClass(),
+                                  ),
+                                );
+                              },
                             );
                           },
                           style: ButtonStyle(
@@ -232,17 +248,25 @@ class _BodyPartsState extends State<BodyParts> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<FlashCardNotifier>(context,
-                                        listen: false)
-                                    .setTopic(topic: 'Body Parts');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BodypartsFlashcards(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<FlashCardNotifier>(context,
+                                            listen: false)
+                                        .setTopic(topic: 'Body Parts');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const BodypartsFlashcards(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -317,13 +341,21 @@ class _BodyPartsState extends State<BodyParts> {
                           ),
                           child: ElevatedButton(
                             onPressed: () {
-                              notifier.reset();
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  PageRouteBuilder(
-                                      pageBuilder: (_, __, ___) =>
-                                          const BodyPartsMemoryOption()),
-                                  (route) => false);
+                              AudioPlayer().play(
+                                AssetSource('spelling/click.mp3'),
+                              );
+                              Future.delayed(
+                                const Duration(milliseconds: 500),
+                                () {
+                                  notifier.reset();
+                                  Navigator.pushAndRemoveUntil(
+                                      context,
+                                      PageRouteBuilder(
+                                          pageBuilder: (_, __, ___) =>
+                                              const BodyPartsMemoryOption()),
+                                      (route) => false);
+                                },
+                              );
                             },
                             style: ButtonStyle(
                               shape: MaterialStatePropertyAll(
@@ -384,16 +416,25 @@ class _BodyPartsState extends State<BodyParts> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const BodypartsSpelling(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<Controller>(context,
+                                            listen: false)
+                                        .reset();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const BodypartsSpelling(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -456,7 +497,11 @@ class _BodyPartsState extends State<BodyParts> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,

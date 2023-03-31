@@ -6,6 +6,7 @@ import 'package:arabic_made_easy/flip_animation.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/word_memory.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -109,8 +110,11 @@ class _AnimalsMemoryCardsState extends State<AnimalsMemoryCards> {
                         activeColor: const Color.fromARGB(255, 235, 234, 243),
                         onTabChange: (index) {
                           if (index == 0) {
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
                             Future.delayed(
-                              const Duration(seconds: 1),
+                              const Duration(milliseconds: 500),
                               () {
                                 setState(
                                   () {
@@ -125,8 +129,11 @@ class _AnimalsMemoryCardsState extends State<AnimalsMemoryCards> {
                               },
                             );
                           } else if (index == 1) {
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
                             Future.delayed(
-                              const Duration(seconds: 1),
+                              const Duration(milliseconds: 500),
                               () {
                                 setState(
                                   () {
@@ -216,9 +223,7 @@ class _AnimalsMemoryCardsState extends State<AnimalsMemoryCards> {
             },
           );
         } else {
-          return const Center(
-              child:
-                  CircularProgressIndicator()); // display main content when data is ready
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

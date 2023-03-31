@@ -1,7 +1,10 @@
 import 'package:arabic_made_easy/auth_service.dart';
+import 'package:arabic_made_easy/limited_access_page.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'forgot_password_page.dart';
 
@@ -15,6 +18,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -97,267 +109,294 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           child: Center(
             child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'images/icon4.png',
-                    height: 70,
-                    width: 70,
-                  ),
-                  const Text(
-                    'Welcome !',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'Pacifico',
-                      color: Color.fromARGB(255, 235, 234, 243),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'images/icon4.png',
+                      height: 70,
+                      width: 70,
                     ),
-                  ),
-                  const Text(
-                    'Sign In to acess your Arabic learning',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'Pacifico',
-                      color: Color.fromARGB(255, 235, 234, 243),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 235, 234, 243),
-                        border: Border.all(color: Colors.white70),
-                        borderRadius: BorderRadius.circular(12),
+                    const Text(
+                      'Welcome !',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: 'Pacifico',
+                        color: Color.fromARGB(255, 235, 234, 243),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: TextField(
-                          style: const TextStyle(
-                            color: Color.fromARGB(200, 20, 0, 75),
-                            fontSize: 20,
-                            fontFamily: 'Caveat',
-                          ),
-                          controller: emailController,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Email',
-                            hintStyle: TextStyle(
-                              color: Color.fromARGB(150, 20, 0, 75),
+                    ),
+                    const Text(
+                      'Sign In to acess your Arabic learning',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Pacifico',
+                        color: Color.fromARGB(255, 235, 234, 243),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 235, 234, 243),
+                          border: Border.all(color: Colors.white70),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15.0),
+                          child: TextField(
+                            style: const TextStyle(
+                              color: Color.fromARGB(200, 20, 0, 75),
                               fontSize: 20,
                               fontFamily: 'Caveat',
                             ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 235, 234, 243),
-                        border: Border.all(color: Colors.white70),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15.0),
-                        child: TextField(
-                          style: const TextStyle(
-                            color: Color.fromARGB(200, 20, 0, 75),
-                            fontFamily: 'Caveat',
-                            fontSize: 20,
-                          ),
-                          controller: passwordController,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Password',
-                            hintStyle: TextStyle(
-                              color: Color.fromARGB(150, 20, 0, 75),
-                              fontSize: 20,
-                              fontFamily: 'Caveat',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    const ForgotPasswordPage(),
+                            controller: emailController,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Email',
+                              hintStyle: TextStyle(
+                                color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
                               ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 235, 234, 243),
+                          border: Border.all(color: Colors.white70),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15.0),
+                          child: TextField(
+                            style: const TextStyle(
+                              color: Color.fromARGB(200, 20, 0, 75),
+                              fontFamily: 'Caveat',
+                              fontSize: 20,
+                            ),
+                            controller: passwordController,
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Password',
+                              hintStyle: TextStyle(
+                                color: Color.fromARGB(150, 20, 0, 75),
+                                fontSize: 20,
+                                fontFamily: 'Caveat',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              AudioPlayer().play(
+                                AssetSource('spelling/click.mp3'),
+                              );
+                              Future.delayed(const Duration(milliseconds: 500),
+                                  () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ForgotPasswordPage(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: const Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Akaya',
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 32, 6, 96),
+                            Color.fromARGB(255, 57, 119, 194),
+                          ],
+                        ),
+                      ),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
+                          );
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            setState(
+                              signIn,
                             );
-                          },
+                          });
+                        },
+                        style: ButtonStyle(
+                          shape: MaterialStatePropertyAll(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          backgroundColor: const MaterialStatePropertyAll(
+                            Color.fromARGB(130, 35, 61, 155),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            SizedBox(
+                              width: 30,
+                              height: 50,
+                            ),
+                            Text(
+                              'Sign In',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 235, 234, 243),
+                                fontFamily: 'Pacifico',
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 35,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(const Duration(milliseconds: 500), () {
+                          AuthService().signInWithGoogle();
+                        });
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: const Color.fromARGB(255, 235, 234, 243),
+                        ),
+                        width: 50,
+                        height: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Image.asset(
+                            'images/google.png',
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Not a member? ',
+                          style: TextStyle(
+                            color: Color.fromARGB(100, 235, 234, 243),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Akaya',
+                            fontSize: 16,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: widget.showRegisterPage,
                           child: const Text(
-                            'Forgot Password?',
+                            'Sign Up',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
                               fontWeight: FontWeight.bold,
                               fontFamily: 'Akaya',
+                              fontSize: 15,
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color.fromARGB(255, 32, 6, 96),
-                          Color.fromARGB(255, 57, 119, 194),
-                        ],
-                      ),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        setState(
-                          signIn,
-                        );
-                      },
-                      style: ButtonStyle(
-                        shape: MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Or ',
+                          style: TextStyle(
+                            color: Color.fromARGB(100, 235, 234, 243),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Akaya',
+                            fontSize: 16,
                           ),
                         ),
-                        backgroundColor: const MaterialStatePropertyAll(
-                          Color.fromARGB(130, 35, 61, 155),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          SizedBox(
-                            width: 30,
-                            height: 50,
-                          ),
-                          Text(
-                            'Sign In',
+                        GestureDetector(
+                          onTap: () {
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(const Duration(milliseconds: 500),
+                                () {
+                              setState(() {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const LimitedAccessPage(),
+                                  ),
+                                );
+                              });
+                            });
+                          },
+                          child: const Text(
+                            'Continue as a Guest',
                             style: TextStyle(
                               color: Color.fromARGB(255, 235, 234, 243),
-                              fontFamily: 'Pacifico',
-                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Akaya',
+                              fontSize: 15,
                             ),
                           ),
-                          SizedBox(
-                            width: 35,
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  GestureDetector(
-                    onTap: () => AuthService().signInWithGoogle(),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: const Color.fromARGB(255, 235, 234, 243),
-                      ),
-                      width: 50,
-                      height: 50,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Image.asset(
-                          'images/google.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Not a member? ',
-                        style: TextStyle(
-                          color: Color.fromARGB(100, 235, 234, 243),
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Akaya',
-                          fontSize: 16,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: widget.showRegisterPage,
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Akaya',
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Or ',
-                        style: TextStyle(
-                          color: Color.fromARGB(100, 235, 234, 243),
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Akaya',
-                          fontSize: 16,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const PageTwo(),
-                              ),
-                            );
-                          });
-                        },
-                        child: const Text(
-                          'Continue as a Guest',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 235, 234, 243),
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Akaya',
-                            fontSize: 15,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/fade_in_animation.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class GuideBox extends StatelessWidget {
@@ -68,7 +69,15 @@ class GuideBox extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.maybePop(context);
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
+                          );
+                          Future.delayed(
+                            const Duration(milliseconds: 500),
+                            () {
+                              Navigator.maybePop(context);
+                            },
+                          );
                         },
                         child: const Text('Got It!'),
                       ),
@@ -111,7 +120,15 @@ class GuideBox extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.maybePop(context);
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                Navigator.maybePop(context);
+                              },
+                            );
                           },
                           child: const Text('Got It!'),
                         ),

@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MessageBox extends StatelessWidget {
     String content = 'Word Completed';
     String image = 'images/welldone.png';
     if (sessionCompleted) {
-      buttonText = 'Back to classes';
+      buttonText = 'Classes';
       content = 'All Words Completed!';
       image = 'images/completed.png';
     }
@@ -84,20 +85,28 @@ class MessageBox extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        if (sessionCompleted) {
-                          Provider.of<Controller>(context, listen: false)
-                              .reset();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PageTwo(),
-                            ),
-                          );
-                        } else {
-                          Provider.of<Controller>(context, listen: false)
-                              .requestWord(request: true);
-                          Navigator.of(context).pop();
-                        }
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            if (sessionCompleted) {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PageTwo(),
+                                ),
+                              );
+                            } else {
+                              Provider.of<Controller>(context, listen: false)
+                                  .requestWord(request: true);
+                              Navigator.of(context).pop();
+                            }
+                          },
+                        );
                       },
                       child: Text(buttonText),
                     ),

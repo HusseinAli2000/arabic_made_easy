@@ -214,6 +214,9 @@ class _AlphabetMcqFiveState extends State<AlphabetMcqFive> {
               color: const Color.fromARGB(255, 235, 234, 243),
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
+                AudioPlayer().play(
+                  AssetSource('spelling/click.mp3'),
+                );
                 if (index == 0) {
                   Future.delayed(
                     const Duration(milliseconds: 500),
@@ -231,8 +234,11 @@ class _AlphabetMcqFiveState extends State<AlphabetMcqFive> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {

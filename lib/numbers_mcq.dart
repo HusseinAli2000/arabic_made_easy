@@ -3,6 +3,7 @@ import 'package:arabic_made_easy/numbers_mcq_five.dart';
 import 'package:arabic_made_easy/numbers_mcq_ten.dart';
 import 'package:arabic_made_easy/numbers_mcq_twenty.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -47,8 +48,11 @@ class _NumbersMcqState extends State<NumbersMcq> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -63,8 +67,11 @@ class _NumbersMcqState extends State<NumbersMcq> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -149,11 +156,19 @@ class _NumbersMcqState extends State<NumbersMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NumbersMcqFive(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NumbersMcqFive(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(
@@ -214,11 +229,19 @@ class _NumbersMcqState extends State<NumbersMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NumbersMcqTen(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NumbersMcqTen(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(
@@ -279,11 +302,19 @@ class _NumbersMcqState extends State<NumbersMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NumbersMcqTwenty(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NumbersMcqTwenty(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(

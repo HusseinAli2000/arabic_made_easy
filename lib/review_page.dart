@@ -5,6 +5,7 @@ import 'package:arabic_made_easy/language_button_notifier.dart';
 import 'package:arabic_made_easy/language_type.dart';
 import 'package:arabic_made_easy/settings_to_text.dart';
 import 'package:arabic_made_easy/tts_button.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
@@ -58,8 +59,11 @@ class _ReviewPageState extends State<ReviewPage> {
                 activeColor: const Color.fromARGB(255, 235, 234, 243),
                 onTabChange: (index) {
                   if (index == 0) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         setState(
                           () {
@@ -74,8 +78,11 @@ class _ReviewPageState extends State<ReviewPage> {
                       },
                     );
                   } else if (index == 1) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
-                      const Duration(seconds: 1),
+                      const Duration(milliseconds: 500),
                       () {
                         setState(
                           () {
@@ -83,23 +90,6 @@ class _ReviewPageState extends State<ReviewPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const PageTwo(),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    );
-                  } else if (index == 2) {
-                    Future.delayed(
-                      const Duration(milliseconds: 500),
-                      () {
-                        setState(
-                          () {
-                            notifier.reset();
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SettingsPage(),
                               ),
                             );
                           },
@@ -116,10 +106,6 @@ class _ReviewPageState extends State<ReviewPage> {
                   GButton(
                     icon: Icons.class_,
                     text: 'Classes',
-                  ),
-                  GButton(
-                    icon: Icons.settings,
-                    text: 'Settings',
                   ),
                 ],
               ),
@@ -175,45 +161,71 @@ class _ReviewPageState extends State<ReviewPage> {
                               isDisabled: disable,
                               title: 'Test All',
                               onPressed: () {
-                                final provider = Provider.of<FlashCardNotifier>(
-                                    context,
-                                    listen: false);
-                                provider.selectedWords.clear();
-                                DatabaseManager().selectWord().then((words) {
-                                  provider.selectedWords = words.toList();
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const AnimalsQuiz()));
-                                });
+                                AudioPlayer().play(
+                                  AssetSource('spelling/click.mp3'),
+                                );
+                                Future.delayed(
+                                  const Duration(milliseconds: 500),
+                                  () {
+                                    final provider =
+                                        Provider.of<FlashCardNotifier>(context,
+                                            listen: false);
+                                    provider.selectedWords.clear();
+                                    DatabaseManager()
+                                        .selectWord()
+                                        .then((words) {
+                                      provider.selectedWords = words.toList();
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const AnimalsQuiz()));
+                                    });
+                                  },
+                                );
                               },
                             ),
                             HeaderButton(
                               isDisabled: disable,
                               title: 'Test 3',
                               onPressed: () {
-                                final provider = Provider.of<FlashCardNotifier>(
-                                    context,
-                                    listen: false);
-                                provider.selectedWords.clear();
-                                DatabaseManager()
-                                    .selectWord(limit: 3)
-                                    .then((words) {
-                                  provider.selectedWords = words.toList();
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const AnimalsQuiz()));
-                                });
+                                AudioPlayer().play(
+                                  AssetSource('spelling/click.mp3'),
+                                );
+                                Future.delayed(
+                                  const Duration(milliseconds: 500),
+                                  () {
+                                    final provider =
+                                        Provider.of<FlashCardNotifier>(context,
+                                            listen: false);
+                                    provider.selectedWords.clear();
+                                    DatabaseManager()
+                                        .selectWord(limit: 3)
+                                        .then((words) {
+                                      provider.selectedWords = words.toList();
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const AnimalsQuiz()));
+                                    });
+                                  },
+                                );
                               },
                             ),
                             HeaderButton(
                               isDisabled: disable,
                               title: 'Clear All',
                               onPressed: () {
-                                _clearAllWords();
+                                AudioPlayer().play(
+                                  AssetSource('spelling/click.mp3'),
+                                );
+                                Future.delayed(
+                                  const Duration(milliseconds: 500),
+                                  () {
+                                    _clearAllWords();
+                                  },
+                                );
                               },
                             ),
                           ],
@@ -376,8 +388,17 @@ class LanguageButton extends StatelessWidget {
             onPressed: isDisabled
                 ? null
                 : () {
-                    Provider.of<LanguageButtonNotifier>(context, listen: false)
-                        .updateShowLanguage(language: languageType);
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        Provider.of<LanguageButtonNotifier>(context,
+                                listen: false)
+                            .updateShowLanguage(language: languageType);
+                      },
+                    );
                   },
             child: Text(languageType.toSymbol()),
           ),
@@ -439,7 +460,9 @@ class WordTile extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(2),
                             child: Image.asset(
-                              'images/${word.english}.png'.toLowerCase(),
+                              'images/${word.english}.png'
+                                  .toLowerCase()
+                                  .replaceAll(' ', ''),
                             ),
                           ),
                         )
@@ -509,11 +532,6 @@ class WordTile extends StatelessWidget {
               ),
             ),
           ),
-          // const Divider(
-          //   height: 1,
-          //   thickness: 1,
-          //   color: Color.fromARGB(78, 0, 17, 115),
-          // )
         ],
       ),
     );

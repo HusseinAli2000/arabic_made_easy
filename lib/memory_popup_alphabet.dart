@@ -1,6 +1,7 @@
 import 'package:arabic_made_easy/alphabet_memory_option.dart';
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -52,13 +53,11 @@ class _MemoryPopupAlphabetState extends State<MemoryPopupAlphabet> {
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Image.asset(
-                    'images/welldone.png',
-                    width: 100,
-                    height: 100,
-                  ),
+                flex: 2,
+                child: Image.asset(
+                  'images/welldone.png',
+                  width: 150,
+                  height: 150,
                 ),
               ),
               Row(
@@ -81,15 +80,23 @@ class _MemoryPopupAlphabetState extends State<MemoryPopupAlphabet> {
                         ),
                       ),
                       onPressed: () {
-                        notifier.reset();
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            PageRouteBuilder(
-                                pageBuilder: (_, __, ___) =>
-                                    const AlphabetMemoryOption()),
-                            (route) => false);
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            notifier.reset();
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                PageRouteBuilder(
+                                    pageBuilder: (_, __, ___) =>
+                                        const AlphabetMemoryOption()),
+                                (route) => false);
+                          },
+                        );
                       },
-                      child: const Text('Replay'),
+                      child: const Text('New Game'),
                     ),
                   ),
                   Padding(
@@ -109,15 +116,23 @@ class _MemoryPopupAlphabetState extends State<MemoryPopupAlphabet> {
                         ),
                       ),
                       onPressed: () {
-                        notifier.reset();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageTwo(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            notifier.reset();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PageTwo(),
+                              ),
+                            );
+                          },
                         );
                       },
-                      child: const Text('Exit'),
+                      child: const Text('Classes'),
                     ),
                   ),
                 ],

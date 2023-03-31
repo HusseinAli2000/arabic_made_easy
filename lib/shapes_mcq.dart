@@ -1,6 +1,7 @@
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:arabic_made_easy/shapes.dart';
 import 'package:arabic_made_easy/shapes_mcq_five.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -47,8 +48,11 @@ class _ShapesMcqState extends State<ShapesMcq> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -63,8 +67,11 @@ class _ShapesMcqState extends State<ShapesMcq> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -149,11 +156,19 @@ class _ShapesMcqState extends State<ShapesMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ShapesMcqFive(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ShapesMcqFive(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(
@@ -214,11 +229,19 @@ class _ShapesMcqState extends State<ShapesMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ShapesMcqTen(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ShapesMcqTen(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(

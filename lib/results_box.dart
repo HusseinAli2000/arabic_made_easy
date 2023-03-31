@@ -3,6 +3,7 @@ import 'package:arabic_made_easy/database_manager.dart';
 import 'package:arabic_made_easy/flashcards_notifier.dart';
 import 'package:arabic_made_easy/quick_box.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -146,12 +147,20 @@ class _ResultsBoxState extends State<ResultsBox> {
                     ),
                   ),
                   onPressed: () {
-                    notifier.reset();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PageTwo(),
-                      ),
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
+                    Future.delayed(
+                      const Duration(milliseconds: 500),
+                      () {
+                        notifier.reset();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PageTwo(),
+                          ),
+                        );
+                      },
                     );
                   },
                   child: const Text('Back to Classes'),

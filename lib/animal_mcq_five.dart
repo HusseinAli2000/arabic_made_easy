@@ -214,6 +214,9 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
                     const Duration(milliseconds: 500),
                     () {
@@ -230,8 +233,11 @@ class _AnimalsMCQFiveState extends State<AnimalsMCQFive> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {

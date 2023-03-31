@@ -1,5 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'main_page.dart';
 import 'second_page.dart';
 
@@ -11,6 +13,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.initState();
+  }
+
   final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
@@ -95,13 +106,18 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: ElevatedButton(
                         onPressed: () {
-                          setState(() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const PageTwo(),
-                              ),
-                            );
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
+                          );
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PageTwo(),
+                                ),
+                              );
+                            });
                           });
                         },
                         style: ButtonStyle(
@@ -164,14 +180,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          FirebaseAuth.instance.signOut();
-                          setState(() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const MainPage(),
-                              ),
-                            );
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
+                          );
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            FirebaseAuth.instance.signOut();
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const MainPage(),
+                                ),
+                              );
+                            });
                           });
                         },
                         icon: const Icon(

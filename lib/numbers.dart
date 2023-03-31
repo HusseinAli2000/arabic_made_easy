@@ -4,6 +4,7 @@ import 'package:arabic_made_easy/numbers_flashcards.dart';
 import 'package:arabic_made_easy/numbers_mcq.dart';
 import 'package:arabic_made_easy/numbers_memory_option.dart';
 import 'package:arabic_made_easy/numbers_spelling.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -62,8 +63,11 @@ class _NumbersState extends State<Numbers> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -78,8 +82,11 @@ class _NumbersState extends State<Numbers> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -165,7 +172,11 @@ class _NumbersState extends State<Numbers> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,
@@ -235,17 +246,25 @@ class _NumbersState extends State<Numbers> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<FlashCardNotifier>(context,
-                                        listen: false)
-                                    .setTopic(topic: 'Numbers');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const NumbersFlashcards(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<FlashCardNotifier>(context,
+                                            listen: false)
+                                        .setTopic(topic: 'Numbers');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const NumbersFlashcards(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -308,13 +327,21 @@ class _NumbersState extends State<Numbers> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            notifier.reset();
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                PageRouteBuilder(
-                                    pageBuilder: (_, __, ___) =>
-                                        const NumbersMemoryOption()),
-                                (route) => false);
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                notifier.reset();
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    PageRouteBuilder(
+                                        pageBuilder: (_, __, ___) =>
+                                            const NumbersMemoryOption()),
+                                    (route) => false);
+                              },
+                            );
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -374,16 +401,25 @@ class _NumbersState extends State<Numbers> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const NumbersSpelling(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<Controller>(context,
+                                            listen: false)
+                                        .reset();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const NumbersSpelling(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -446,7 +482,11 @@ class _NumbersState extends State<Numbers> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,

@@ -4,6 +4,7 @@ import 'package:arabic_made_easy/body_parts.dart';
 
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
@@ -77,6 +78,9 @@ class _BodypartsFlashcardsState extends State<BodypartsFlashcards> {
                 activeColor: const Color.fromARGB(255, 235, 234, 243),
                 onTabChange: (index) {
                   if (index == 0) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
                       const Duration(milliseconds: 500),
                       () {
@@ -94,6 +98,9 @@ class _BodypartsFlashcardsState extends State<BodypartsFlashcards> {
                       },
                     );
                   } else if (index == 1) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
                       const Duration(milliseconds: 500),
                       () {

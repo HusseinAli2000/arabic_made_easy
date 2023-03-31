@@ -6,6 +6,7 @@ import 'package:arabic_made_easy/progress_bar.dart';
 import 'package:arabic_made_easy/settings_to_text.dart';
 import 'package:arabic_made_easy/slide_animation.dart';
 import 'package:arabic_made_easy/slide_direction.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -76,6 +77,9 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                 activeColor: const Color.fromARGB(255, 235, 234, 243),
                 onTabChange: (index) {
                   if (index == 0) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
                       const Duration(milliseconds: 500),
                       () {
@@ -93,6 +97,9 @@ class _AnimalsQuizState extends State<AnimalsQuiz> {
                       },
                     );
                   } else if (index == 1) {
+                    AudioPlayer().play(
+                      AssetSource('spelling/click.mp3'),
+                    );
                     Future.delayed(
                       const Duration(milliseconds: 500),
                       () {

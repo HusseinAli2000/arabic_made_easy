@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'main_page.dart';
@@ -70,16 +71,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              setState(
-                () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MainPage(),
-                    ),
-                  );
-                },
+              AudioPlayer().play(
+                AssetSource('spelling/click.mp3'),
               );
+              Future.delayed(const Duration(milliseconds: 500), () {
+                setState(
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainPage(),
+                      ),
+                    );
+                  },
+                );
+              });
             },
             icon: const Icon(
               Icons.arrow_back,
@@ -89,12 +95,19 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           actions: [
             GestureDetector(
               onTap: () {
-                setState(() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MainPage(),
-                    ),
+                AudioPlayer().play(
+                  AssetSource('spelling/click.mp3'),
+                );
+                Future.delayed(const Duration(milliseconds: 500), () {
+                  setState(
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainPage(),
+                        ),
+                      );
+                    },
                   );
                 });
               },
@@ -213,8 +226,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       ),
                       child: ElevatedButton(
                         onPressed: () {
-                          setState(() {
-                            passwordReset();
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
+                          );
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            setState(() {
+                              passwordReset();
+                            });
                           });
                         },
                         style: ButtonStyle(

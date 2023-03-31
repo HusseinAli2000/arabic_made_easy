@@ -1,5 +1,6 @@
 import 'package:arabic_made_easy/colors.dart';
 import 'package:arabic_made_easy/second_page.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -149,11 +150,19 @@ class _ColorsMcqState extends State<ColorsMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ColorsMcqFive(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ColorsMcqFive(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(
@@ -214,11 +223,19 @@ class _ColorsMcqState extends State<ColorsMcq> {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ColorsMcqTen(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ColorsMcqTen(),
+                              ),
+                            );
+                          },
                         );
                       },
                       style: ButtonStyle(

@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -30,7 +31,15 @@ class _TTSButtonTwoState extends State<TTSButtonTwo> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        _runTts(text: widget.word);
+        AudioPlayer().play(
+          AssetSource('spelling/click.mp3'),
+        );
+        Future.delayed(
+          const Duration(milliseconds: 500),
+          () {
+            _runTts(text: widget.word);
+          },
+        );
       },
       icon: Icon(
         Icons.volume_up,

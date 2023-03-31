@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -273,9 +274,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       child: ElevatedButton(
                         onPressed: () {
-                          setState(
-                            signUp,
+                          AudioPlayer().play(
+                            AssetSource('spelling/click.mp3'),
                           );
+                          Future.delayed(const Duration(milliseconds: 500), () {
+                            setState(
+                              signUp,
+                            );
+                          });
                         },
                         style: ButtonStyle(
                           shape: MaterialStatePropertyAll(
@@ -313,7 +319,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       height: 10,
                     ),
                     GestureDetector(
-                      onTap: () => AuthService().signInWithGoogle(),
+                      onTap: () {
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(const Duration(milliseconds: 500), () {
+                          AuthService().signInWithGoogle();
+                        });
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),

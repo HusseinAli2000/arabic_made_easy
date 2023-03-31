@@ -1,6 +1,6 @@
 import 'package:arabic_made_easy/game_manager.dart';
 import 'package:arabic_made_easy/numbers_memory_option.dart';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:arabic_made_easy/second_page.dart';
 
 import 'package:flutter/material.dart';
@@ -54,13 +54,11 @@ class _MemoryPopupNumbersState extends State<MemoryPopupNumbers> {
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Image.asset(
-                    'images/welldone.png',
-                    width: 100,
-                    height: 100,
-                  ),
+                flex: 2,
+                child: Image.asset(
+                  'images/welldone.png',
+                  width: 150,
+                  height: 150,
                 ),
               ),
               Row(
@@ -83,15 +81,23 @@ class _MemoryPopupNumbersState extends State<MemoryPopupNumbers> {
                         ),
                       ),
                       onPressed: () {
-                        notifier.reset();
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            PageRouteBuilder(
-                                pageBuilder: (_, __, ___) =>
-                                    const NumbersMemoryOption()),
-                            (route) => false);
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            notifier.reset();
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                PageRouteBuilder(
+                                    pageBuilder: (_, __, ___) =>
+                                        const NumbersMemoryOption()),
+                                (route) => false);
+                          },
+                        );
                       },
-                      child: const Text('Replay'),
+                      child: const Text('New Game'),
                     ),
                   ),
                   Padding(
@@ -111,15 +117,23 @@ class _MemoryPopupNumbersState extends State<MemoryPopupNumbers> {
                         ),
                       ),
                       onPressed: () {
-                        notifier.reset();
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PageTwo(),
-                          ),
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(
+                          const Duration(milliseconds: 500),
+                          () {
+                            notifier.reset();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PageTwo(),
+                              ),
+                            );
+                          },
                         );
                       },
-                      child: const Text('Exit'),
+                      child: const Text('Classes'),
                     ),
                   ),
                 ],

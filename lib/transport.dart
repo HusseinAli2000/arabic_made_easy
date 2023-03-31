@@ -4,6 +4,7 @@ import 'package:arabic_made_easy/transport_flashcards.dart';
 import 'package:arabic_made_easy/transport_mcq.dart';
 import 'package:arabic_made_easy/transport_memory_option.dart';
 import 'package:arabic_made_easy/transport_spelling.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:arabic_made_easy/second_page.dart';
 import 'package:flutter/services.dart';
@@ -65,8 +66,11 @@ class _TransportState extends State<Transport> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -81,8 +85,11 @@ class _TransportState extends State<Transport> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
@@ -170,11 +177,20 @@ class _TransportState extends State<Transport> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const TransportClass(),
-                              ),
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const TransportClass(),
+                                  ),
+                                );
+                              },
                             );
                           },
                           style: ButtonStyle(
@@ -235,17 +251,25 @@ class _TransportState extends State<Transport> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<FlashCardNotifier>(context,
-                                        listen: false)
-                                    .setTopic(topic: 'Transport');
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const TransportFlashcards(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<FlashCardNotifier>(context,
+                                            listen: false)
+                                        .setTopic(topic: 'Transport');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TransportFlashcards(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -308,13 +332,21 @@ class _TransportState extends State<Transport> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            notifier.reset();
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                PageRouteBuilder(
-                                    pageBuilder: (_, __, ___) =>
-                                        const TransportMemoryOption()),
-                                (route) => false);
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
+                              () {
+                                notifier.reset();
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    PageRouteBuilder(
+                                        pageBuilder: (_, __, ___) =>
+                                            const TransportMemoryOption()),
+                                    (route) => false);
+                              },
+                            );
                           },
                           style: ButtonStyle(
                             shape: MaterialStatePropertyAll(
@@ -374,16 +406,25 @@ class _TransportState extends State<Transport> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
-                                Provider.of<Controller>(context, listen: false)
-                                    .reset();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        const TransportSpelling(),
-                                  ),
+                                setState(
+                                  () {
+                                    Provider.of<Controller>(context,
+                                            listen: false)
+                                        .reset();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TransportSpelling(),
+                                      ),
+                                    );
+                                  },
                                 );
                               },
                             );
@@ -446,7 +487,11 @@ class _TransportState extends State<Transport> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            setState(
+                            AudioPlayer().play(
+                              AssetSource('spelling/click.mp3'),
+                            );
+                            Future.delayed(
+                              const Duration(milliseconds: 500),
                               () {
                                 Navigator.push(
                                   context,

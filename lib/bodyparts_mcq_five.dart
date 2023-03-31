@@ -215,6 +215,9 @@ class _BodyPartsMcqFiveState extends State<BodyPartsMcqFive> {
               activeColor: const Color.fromARGB(255, 235, 234, 243),
               onTabChange: (index) {
                 if (index == 0) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
                     const Duration(milliseconds: 500),
                     () {
@@ -231,8 +234,11 @@ class _BodyPartsMcqFiveState extends State<BodyPartsMcqFive> {
                     },
                   );
                 } else if (index == 1) {
+                  AudioPlayer().play(
+                    AssetSource('spelling/click.mp3'),
+                  );
                   Future.delayed(
-                    const Duration(seconds: 1),
+                    const Duration(milliseconds: 500),
                     () {
                       setState(
                         () {
