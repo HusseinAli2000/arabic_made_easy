@@ -1,4 +1,5 @@
 import 'package:arabic_made_easy/colors.dart';
+import 'package:arabic_made_easy/limited_access_page.dart';
 import 'package:arabic_made_easy/tts_button_two.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -7,14 +8,14 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'second_page.dart';
 
-class ColorsClass extends StatefulWidget {
-  const ColorsClass({super.key});
+class ColorsLimited extends StatefulWidget {
+  const ColorsLimited({super.key});
 
   @override
-  State<ColorsClass> createState() => _ColorsClassState();
+  State<ColorsLimited> createState() => _ColorsLimitedState();
 }
 
-class _ColorsClassState extends State<ColorsClass> {
+class _ColorsLimitedState extends State<ColorsLimited> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -59,26 +60,7 @@ class _ColorsClassState extends State<ColorsClass> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ColorsPage(),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  );
-                } else if (index == 1) {
-                  AudioPlayer().play(
-                    AssetSource('spelling/click.mp3'),
-                  );
-                  Future.delayed(
-                    const Duration(milliseconds: 500),
-                    () {
-                      setState(
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PageTwo(),
+                              builder: (context) => const LimitedAccessPage(),
                             ),
                           );
                         },
@@ -91,10 +73,6 @@ class _ColorsClassState extends State<ColorsClass> {
                 GButton(
                   icon: Icons.arrow_back,
                   text: 'Back',
-                ),
-                GButton(
-                  icon: Icons.class_,
-                  text: 'Classes',
                 ),
               ],
             ),

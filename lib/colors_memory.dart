@@ -179,7 +179,7 @@ class _ColorsMemoryState extends State<ColorsMemory> {
                     ),
                     title: const Center(
                       child: Text(
-                        'Colors Memory Game',
+                        'Colours Memory Game',
                         style: TextStyle(
                           fontFamily: 'Akaya',
                           fontSize: 25,

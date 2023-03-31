@@ -131,7 +131,7 @@ class _ColorsPageState extends State<ColorsPage> {
           ),
           title: const Center(
             child: Text(
-              'Colors Class',
+              'Colours Class',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
@@ -206,7 +206,7 @@ class _ColorsPageState extends State<ColorsPage> {
                                 height: 70,
                               ),
                               const Text(
-                                'Colors',
+                                'Colours',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
                                   fontFamily: 'Pacifico',

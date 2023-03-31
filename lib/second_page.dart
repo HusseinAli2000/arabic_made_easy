@@ -390,7 +390,7 @@ class _PageTwoState extends State<PageTwo> {
                                 height: 70,
                               ),
                               const Text(
-                                'Colors',
+                                'Colours',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 235, 234, 243),
                                   fontFamily: 'Pacifico',

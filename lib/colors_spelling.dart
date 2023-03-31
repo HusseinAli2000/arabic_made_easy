@@ -154,7 +154,7 @@ class _ColorsSpellingState extends State<ColorsSpelling> {
               ),
               title: const Center(
                 child: Text(
-                  'Colors Writing Quiz',
+                  'Colours Writing Quiz',
                   style: TextStyle(
                     fontFamily: 'Akaya',
                     fontSize: 25,

@@ -109,7 +109,7 @@ class _ColorsMcqState extends State<ColorsMcq> {
           ),
           title: const Center(
             child: Text(
-              'Colors Quiz',
+              'Colours Quiz',
               style: TextStyle(
                 fontFamily: 'Akaya',
                 fontSize: 25,
