@@ -844,6 +844,23 @@ final List<Word> words = [
   Word(topic: 'Cuw', arabic: 'سرقة', english: 'Theft', pronunciation: 'Sariqa'),
   Word(topic: 'Cuw', arabic: 'أمن', english: 'Security', pronunciation: 'Aman'),
 ];
+const List<String> BasicPhrases = [
+  'مرحبا',
+  'شكرا',
+  'صباح الخير',
+  'تصبح على خير',
+  'كيف حالك',
+  'مع السلامة',
+  'الى اللقاء',
+  'نعم',
+  'لا',
+  'انا اسف',
+  'ماذا',
+  'اهلا وسهلا',
+  'كم الساعة',
+  'حظ سعيد',
+  'مبروك',
+];
 const List<String> ColorWords = [
   'بنفسجي',
   'أحمر',
