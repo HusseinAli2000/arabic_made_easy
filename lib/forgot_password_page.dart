@@ -68,6 +68,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
@@ -155,120 +156,124 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               ],
             ),
           ),
-          child: Center(
-            child: SingleChildScrollView(
-              child: SafeArea(
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'images/icon4.png',
-                      height: 70,
-                      width: 70,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      'Enter your Email below and click Reset Password',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 235, 234, 243),
-                          fontFamily: 'Pacifico',
-                          fontSize: 17),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 235, 234, 243),
-                          border: Border.all(color: Colors.white70),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 15.0),
-                          child: TextField(
-                            style: const TextStyle(
-                              color: Color.fromARGB(200, 20, 0, 75),
+          child: SingleChildScrollView(
+            child: SafeArea(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 155,
+                  ),
+                  Image.asset(
+                    'images/icon4.png',
+                    height: 70,
+                    width: 70,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Enter your Email below and click Reset Password',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 235, 234, 243),
+                        fontFamily: 'Pacifico',
+                        fontSize: 17),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 235, 234, 243),
+                        border: Border.all(color: Colors.white70),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: TextField(
+                          style: const TextStyle(
+                            color: Color.fromARGB(200, 20, 0, 75),
+                            fontFamily: 'Caveat',
+                            fontSize: 20,
+                          ),
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Email',
+                            hintStyle: TextStyle(
+                              color: Color.fromARGB(150, 20, 0, 75),
                               fontFamily: 'Caveat',
                               fontSize: 20,
                             ),
-                            controller: emailController,
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Email',
-                              hintStyle: TextStyle(
-                                color: Color.fromARGB(150, 20, 0, 75),
-                                fontFamily: 'Caveat',
-                                fontSize: 20,
-                              ),
-                            ),
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: const LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 32, 6, 96),
-                            Color.fromARGB(255, 57, 119, 194),
-                          ],
-                        ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: const LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromARGB(255, 32, 6, 96),
+                          Color.fromARGB(255, 57, 119, 194),
+                        ],
                       ),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          AudioPlayer().play(
-                            AssetSource('spelling/click.mp3'),
-                          );
-                          Future.delayed(const Duration(milliseconds: 500), () {
-                            setState(() {
-                              passwordReset();
-                            });
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        AudioPlayer().play(
+                          AssetSource('spelling/click.mp3'),
+                        );
+                        Future.delayed(const Duration(milliseconds: 500), () {
+                          setState(() {
+                            passwordReset();
                           });
-                        },
-                        style: ButtonStyle(
-                          shape: MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          backgroundColor: const MaterialStatePropertyAll(
-                            Color.fromARGB(130, 35, 61, 155),
+                        });
+                      },
+                      style: ButtonStyle(
+                        shape: MaterialStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: const [
-                            SizedBox(
-                              width: 10,
-                              height: 50,
-                            ),
-                            Text(
-                              'Reset Password',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 235, 234, 243),
-                                fontFamily: 'Pacifico',
-                                fontSize: 17.0,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
+                        backgroundColor: const MaterialStatePropertyAll(
+                          Color.fromARGB(130, 35, 61, 155),
                         ),
                       ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          SizedBox(
+                            width: 10,
+                            height: 50,
+                          ),
+                          Text(
+                            'Reset Password',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 235, 234, 243),
+                              fontFamily: 'Pacifico',
+                              fontSize: 17.0,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: 330,
+                  )
+                ],
               ),
             ),
           ),

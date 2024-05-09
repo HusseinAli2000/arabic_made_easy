@@ -95,6 +95,8 @@ class _CuwSpellingState extends State<CuwSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -115,6 +117,8 @@ class _CuwSpellingState extends State<CuwSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(

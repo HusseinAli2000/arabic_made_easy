@@ -247,9 +247,7 @@ class _SettingsPageState extends State<SettingsPage> {
     AudioPlayer().play(
       AssetSource('spelling/click.mp3'),
     );
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      Navigator.maybePop(context);
-    });
+    Future.delayed(const Duration(milliseconds: 1000), () {});
   }
 }
 

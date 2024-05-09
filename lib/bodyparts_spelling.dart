@@ -96,6 +96,8 @@ class _BodypartsSpellingState extends State<BodypartsSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -115,6 +117,8 @@ class _BodypartsSpellingState extends State<BodypartsSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(

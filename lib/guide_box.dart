@@ -88,7 +88,7 @@ class GuideBox extends StatelessWidget {
                 Column(
                   children: [
                     SizedBox(
-                      height: 190,
+                      height: 300,
                       width: 500,
                       child: Row(
                         children: const [

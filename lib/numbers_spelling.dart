@@ -95,6 +95,8 @@ class _NumbersSpellingState extends State<NumbersSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -114,6 +116,8 @@ class _NumbersSpellingState extends State<NumbersSpelling> {
                         () {
                           setState(
                             () {
+                              Provider.of<Controller>(context, listen: false)
+                                  .reset();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
