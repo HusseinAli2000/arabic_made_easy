@@ -1,6 +1,8 @@
 # arabic_made_easy
 
-A new Flutter project.
+My final year project at University which scored an outstanding 74% "A" grade. 
+A modern Flutter mobile application which can be used to learn the Arabic language in a fun, gamified, and effective way.
+After thorough research on the current best ways to learn a new language a few different methods were found, this app uses all those methods in a gamified approach to keep users engaged.
 
 ## Getting Started
 
