@@ -103,7 +103,7 @@ class _BasicSentencesState extends State<BasicSentences> {
                 ),
                 GButton(
                   icon: Icons.class_,
-                  text: 'Classes',
+                  text: "Classes",
                 ),
               ],
             ),
